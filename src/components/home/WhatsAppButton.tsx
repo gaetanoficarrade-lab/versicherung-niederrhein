@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
       transition={{ delay: 1, type: "spring", stiffness: 200 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 left-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg hover:bg-[#20bd5a] transition-colors group"
+      className="fixed bottom-8 right-8 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg hover:bg-[#20bd5a] transition-colors group"
       aria-label="Kontakt per WhatsApp"
     >
       <MessageCircle className="h-6 w-6 fill-current" />
