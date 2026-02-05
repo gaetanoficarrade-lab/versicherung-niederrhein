@@ -27,7 +27,7 @@ export default function Tierhalterhaftpflicht() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-16 pb-24 bg-gradient-to-b from-amber-50 to-background">
+      <section className="pt-16 pb-24 bg-gradient-to-b from-primary/5 to-background">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -35,8 +35,11 @@ export default function Tierhalterhaftpflicht() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-100 text-amber-600 mb-6">
-              <PawPrint className="h-8 w-8" />
+            <div className="relative inline-flex mb-6">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-sm" />
+              <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
+                <PawPrint className="h-8 w-8 text-primary" strokeWidth={1.5} />
+              </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Tierhalterhaftpflicht
@@ -58,7 +61,7 @@ export default function Tierhalterhaftpflicht() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="p-8 rounded-2xl bg-amber-50 border border-amber-200 mb-12">
+              <div className="p-8 rounded-2xl bg-primary/5 border border-primary/10 mb-12">
                 <h2 className="text-xl font-semibold text-foreground mb-4">
                   Wichtig zu wissen
                 </h2>
@@ -79,7 +82,7 @@ export default function Tierhalterhaftpflicht() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button size="lg" className="gap-2 bg-amber-600 hover:bg-amber-700">
+                  <Button size="lg" className="gap-2">
                     Jetzt vergleichen
                     <ArrowRight className="h-5 w-5" />
                   </Button>

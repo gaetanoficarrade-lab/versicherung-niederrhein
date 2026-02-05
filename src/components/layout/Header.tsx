@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import logo from "@/assets/logo.png";
 
 const navigation = [
   { name: "Startseite", href: "/" },
@@ -44,9 +45,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">S</span>
-            </div>
+            <img src={logo} alt="Smits & Kollegen Logo" className="h-10 w-10 object-contain" />
             <div className="hidden sm:block">
               <span className="text-lg font-semibold text-foreground">Smits & Kollegen</span>
               <span className="block text-xs text-muted-foreground">Versicherungsmakler</span>
@@ -108,7 +107,7 @@ export default function Header() {
               </Button>
             </a>
             <a
-              href="https://www.versicherungen-niederrhein.de/"
+              href="https://smits.insurgo.cloud/auth/anmelden"
               target="_blank"
               rel="noopener noreferrer"
             >

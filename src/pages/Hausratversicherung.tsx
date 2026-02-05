@@ -14,7 +14,7 @@ export default function Hausratversicherung() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-16 pb-24 bg-gradient-to-b from-emerald-50 to-background">
+      <section className="pt-16 pb-24 bg-gradient-to-b from-primary/5 to-background">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -22,8 +22,11 @@ export default function Hausratversicherung() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 mb-6">
-              <Home className="h-8 w-8" />
+            <div className="relative inline-flex mb-6">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-sm" />
+              <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
+                <Home className="h-8 w-8 text-primary" strokeWidth={1.5} />
+              </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Hausratversicherung
@@ -56,8 +59,10 @@ export default function Hausratversicherung() {
               
               <div className="grid sm:grid-cols-2 gap-4 mb-12">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-emerald-50">
-                    <Check className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Check className="h-4 w-4 text-primary" />
+                    </div>
                     <span className="font-medium text-foreground">{benefit}</span>
                   </div>
                 ))}
@@ -76,7 +81,7 @@ export default function Hausratversicherung() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button size="lg" className="gap-2 bg-emerald-600 hover:bg-emerald-700">
+                  <Button size="lg" className="gap-2">
                     Jetzt vergleichen
                     <ArrowRight className="h-5 w-5" />
                   </Button>
