@@ -41,11 +41,10 @@ export default function CTASection() {
             <a href="tel:02824809293">
               <Button
                 size="lg"
-                variant="outline"
-                className="gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8"
+                className="gap-2 bg-background/20 backdrop-blur-sm border-2 border-white text-white hover:bg-background/30 px-8"
               >
                 <Phone className="h-5 w-5" />
-                02824-809293
+                <span className="font-semibold">02824-809293</span>
               </Button>
             </a>
           </div>

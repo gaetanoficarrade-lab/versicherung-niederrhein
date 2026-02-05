@@ -128,6 +128,23 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* ProvenExpert Widget */}
+      <div className="section-container py-8 border-t border-background/10">
+        <div className="flex justify-center">
+          <noscript>
+            <a 
+              href="https://www.provenexpert.com/smits-kollegen/?utm_source=seals&utm_campaign=proseal&utm_medium=profile&utm_content=9dcc7b28-7d39-4156-a201-a87688acf47a" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Kundenbewertungen für Smits & Kollegen"
+              className="text-primary hover:underline"
+            >
+              Mehr Infos
+            </a>
+          </noscript>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-background/10">
         <div className="section-container py-6">
