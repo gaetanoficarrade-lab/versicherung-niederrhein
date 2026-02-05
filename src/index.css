@@ -10,13 +10,14 @@
 @layer base {
   :root {
     /* Primary brand colors - Petrol/Teal family */
-    --background: 0 0% 100%;
+    /* Warm champagne/cream background - complements teal beautifully */
+    --background: 40 30% 97%;
     --foreground: 210 25% 15%;
 
-    --card: 0 0% 100%;
+    --card: 40 25% 99%;
     --card-foreground: 210 25% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 40 25% 99%;
     --popover-foreground: 210 25% 15%;
 
     /* Primary - Warm Petrol */
@@ -27,8 +28,8 @@
     --secondary: 165 20% 95%;
     --secondary-foreground: 178 45% 30%;
 
-    /* Muted - Soft gray */
-    --muted: 210 15% 96%;
+    /* Muted - Warm gray with cream undertone */
+    --muted: 40 20% 94%;
     --muted-foreground: 210 15% 45%;
 
     /* Accent - Warm coral */
