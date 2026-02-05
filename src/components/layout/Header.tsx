@@ -45,7 +45,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Smits & Kollegen Logo" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="Smits & Kollegen Logo" className="h-14 w-14 object-contain" />
             <div className="hidden sm:block">
               <span className="text-lg font-semibold text-foreground">Smits & Kollegen</span>
               <span className="block text-xs text-muted-foreground">Versicherungsmakler</span>
@@ -101,7 +101,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="hidden sm:flex"
             >
-              <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
+              <Button size="sm" className="gap-2 bg-primary hover:bg-accent text-primary-foreground">
                 <Download className="h-4 w-4" />
                 Impressum PDF
               </Button>
