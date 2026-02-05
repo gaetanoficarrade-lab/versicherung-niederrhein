@@ -45,7 +45,11 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Smits & Kollegen Logo" className="h-14 w-14 object-contain" />
+            <img
+              src={logo}
+              alt="Smits & Kollegen Logo"
+              className="h-20 w-20 object-contain"
+            />
             <div className="hidden sm:block">
               <span className="text-lg font-semibold text-foreground">Smits & Kollegen</span>
               <span className="block text-xs text-muted-foreground">Versicherungsmakler</span>
