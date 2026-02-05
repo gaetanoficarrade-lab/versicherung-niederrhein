@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import aboutExperience from "@/assets/about-experience.jpg";
 
 const benefits = [
   "Wir arbeiten ausschließlich in Ihrem Auftrag, nicht für Versicherungsgesellschaften",
@@ -68,7 +69,7 @@ export default function AboutPreview() {
             </div>
           </motion.div>
 
-          {/* Image placeholder */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,18 +77,30 @@ export default function AboutPreview() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center overflow-hidden">
-              <div className="text-center p-8">
-                <div className="h-40 w-40 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-primary">30+</span>
-                </div>
-                <p className="text-xl font-medium text-foreground">Jahre Erfahrung</p>
-                <p className="text-muted-foreground">am Niederrhein</p>
-              </div>
+            <div className="aspect-square rounded-3xl overflow-hidden shadow-strong">
+              <img
+                src={aboutExperience}
+                alt="Beratungsgespräch mit Familie"
+                className="w-full h-full object-cover"
+              />
             </div>
             
+            {/* Experience badge overlay */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="absolute -top-6 -right-6 bg-primary text-primary-foreground rounded-2xl p-6 shadow-strong"
+            >
+              <div className="text-center">
+                <span className="text-4xl font-bold">30+</span>
+                <p className="text-sm font-medium mt-1">Jahre Erfahrung</p>
+              </div>
+            </motion.div>
+            
             {/* Decorative card */}
-            <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-strong p-6 max-w-xs">
+            <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-strong p-6 max-w-xs border border-border/50">
               <p className="text-sm text-muted-foreground mb-2">Standort</p>
               <p className="font-semibold text-foreground">Markt 3, 47546 Kalkar</p>
             </div>

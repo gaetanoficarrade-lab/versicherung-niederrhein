@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import teamMartin from "@/assets/team-martin.jpg";
+import teamMarc from "@/assets/team-marc.jpg";
+import teamNina from "@/assets/team-nina.jpg";
 
 const teamMembers = [
   {
@@ -9,21 +12,21 @@ const teamMembers = [
     role: "Versicherungsmakler/Inhaber",
     email: "martin.smits@makler-kalkar.de",
     phone: "02824-809293",
-    image: null, // Placeholder
+    image: teamMartin,
   },
   {
     name: "Marc Hülsken",
     role: "Kooperationspartner",
     email: "marc.huelsken@makler-kalkar.de",
     phone: "02824-809293-9",
-    image: null, // Placeholder
+    image: teamMarc,
   },
   {
     name: "Nina Hüster",
     role: "Versicherungsfachfrau (IHK)",
     email: "nina.huester@makler-kalkar.de",
     phone: "02824-809293-4",
-    image: null, // Placeholder
+    image: teamNina,
   },
 ];
 
@@ -59,13 +62,13 @@ export default function TeamPreview() {
               viewport={{ once: true }}
               className="card-premium overflow-hidden group"
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-primary/10 to-secondary flex items-center justify-center">
-                <div className="h-32 w-32 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary">
-                    {member.name.split(" ").map(n => n[0]).join("")}
-                  </span>
-                </div>
+              {/* Image */}
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               
               <div className="p-6">
