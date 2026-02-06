@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Home, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import HausratRechner from "@/components/HausratRechner";
 
 const benefits = [
   "Direkter Onlineabschluss",
@@ -67,26 +68,63 @@ export default function Hausratversicherung() {
                   </div>
                 ))}
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-              <div className="p-8 rounded-2xl bg-primary/5 text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Finden Sie die passende Hausratversicherung
-                </h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Vergleichen Sie jetzt verschiedene Angebote und finden Sie den optimalen 
-                  Schutz für Ihren Hausrat.
+      {/* Rechner */}
+      <section className="py-16 bg-muted/30">
+        <div className="section-container">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Hausrat-Rechner
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Berechnen Sie eine empfohlene Versicherungssumme auf Basis von 
+                  Wohnfläche, Ausstattungsniveau und optionalen Wertgegenständen.
                 </p>
-                <a
-                  href="https://landingpage.vema-eg.de/?z=bewertung&m=maklerkalkar&p=hausrat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button size="lg" className="gap-2">
-                    Jetzt vergleichen
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
-                </a>
               </div>
+
+              <HausratRechner />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-background">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="p-8 rounded-2xl bg-primary/5 text-center"
+            >
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Finden Sie die passende Hausratversicherung
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Vergleichen Sie jetzt verschiedene Angebote und finden Sie den optimalen 
+                Schutz für Ihren Hausrat.
+              </p>
+              <a
+                href="https://landingpage.vema-eg.de/?z=bewertung&m=maklerkalkar&p=hausrat"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="gap-2">
+                  Jetzt vergleichen
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </a>
             </motion.div>
           </div>
         </div>
