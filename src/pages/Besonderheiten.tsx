@@ -5,15 +5,15 @@ import Layout from "@/components/layout/Layout";
 const benefits = [
   {
     title: "Unabhängige Beratung",
-    description: "Als Versicherungsmakler arbeiten wir im Gegensatz zum einfachen Versicherungsvertreter nicht im Auftrag einer Gesellschaft, sondern ausschließlich in Ihrem Auftrag.",
+    description: "Als Versicherungsmakler arbeiten wir im Gegensatz zum einfachen Versicherungsvertreter nicht im Auftrag einer Gesellschaft, sondern ausschließlich in deinem Auftrag.",
   },
   {
     title: "Marktübergreifende Suche",
-    description: "Als Sachwalter suchen wir für Sie in den Bereichen Versicherungen, Finanzierungen und Geldanlagen die preiswertesten und leistungsstärksten Angebote ohne von einem Produktanbieter abhängig zu sein.",
+    description: "Als Sachwalter suchen wir für dich in den Bereichen Versicherungen, Finanzierungen und Geldanlagen die preiswertesten und leistungsstärksten Angebote ohne von einem Produktanbieter abhängig zu sein.",
   },
   {
     title: "Zugang zu allen Versicherern",
-    description: "Wir können uns bei jedem Versicherer in Deutschland um Ihren Versicherungsschutz bemühen. Uns ist es ein besonderes Anliegen, immer ein optimales, individuelles und in Preis und Leistung ausgewogenes Angebot zu erarbeiten.",
+    description: "Wir können uns bei jedem Versicherer in Deutschland um deinen Versicherungsschutz bemühen. Uns ist es ein besonderes Anliegen, immer ein optimales, individuelles und in Preis und Leistung ausgewogenes Angebot zu erarbeiten.",
   },
   {
     title: "Praktische Erfahrung",
@@ -21,7 +21,7 @@ const benefits = [
   },
   {
     title: "Jahrzehntelange Erfahrung",
-    description: "Durch jahrzehntelange Erfahrung und strikte Wahrung der Unabhängigkeit können wir Ihnen beste Qualität vermitteln und einen ausgezeichneten Service bieten.",
+    description: "Durch jahrzehntelange Erfahrung und strikte Wahrung der Unabhängigkeit können wir dir beste Qualität vermitteln und einen ausgezeichneten Service bieten.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function Besonderheiten() {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Wir sind als Versicherungsmakler Sachwalter unserer Kunden und bieten 
-              Ihnen ein umfangreiches Dienstleistungspaket.
+              dir ein umfangreiches Dienstleistungspaket.
             </p>
           </motion.div>
         </div>
@@ -100,15 +100,15 @@ export default function Besonderheiten() {
           >
             <p className="text-lg text-foreground leading-relaxed">
               Dabei stehen Vertrauen, Individualität und Flexibilität immer im Vordergrund 
-              unserer Arbeit. Ihre Anforderungen und Bedürfnisse sind der Maßstab für unsere 
+              unserer Arbeit. Deine Anforderungen und Bedürfnisse sind der Maßstab für unsere 
               Arbeit. <strong>Wir agieren ausschließlich im Interesse unserer Kunden und stehen 
-              Ihnen zur Seite.</strong>
+              dir zur Seite.</strong>
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-              Das heißt für Sie:
+              Das heißt für dich:
             </h2>
             
             <div className="space-y-6">

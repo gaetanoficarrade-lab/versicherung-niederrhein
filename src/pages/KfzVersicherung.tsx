@@ -7,7 +7,7 @@ import Layout from "@/components/layout/Layout";
 const benefits = [
   "Direkter Onlineabschluss",
   "Vergleich zahlreicher Anbieter",
-  "Sondertarife, die zu Ihnen passen",
+  "Sondertarife, die zu dir passen",
   "Anpassung und Neubewertung der Versicherung durch uns",
 ];
 
@@ -22,11 +22,11 @@ const faqs = [
   },
   {
     question: "Was ist eine Teilkaskoversicherung?",
-    answer: "Die Teilkasko ersetzt Schäden an Ihrem Auto, die unabhängig von einem Unfall entstehen. In der Regel sind Glasbruchschäden, Elementarschäden, Tierverbiss oder Schäden durch Zusammenstöße mit Tieren mitversichert.",
+    answer: "Die Teilkasko ersetzt Schäden an deinem Auto, die unabhängig von einem Unfall entstehen. In der Regel sind Glasbruchschäden, Elementarschäden, Tierverbiss oder Schäden durch Zusammenstöße mit Tieren mitversichert.",
   },
   {
     question: "Was ist eine Vollkaskoversicherung?",
-    answer: "Die Vollkasko versichert alle Leistungen der Teilkasko. Zusätzlich übernimmt die Vollkasko die Kosten für Schäden an Ihrem Fahrzeug, die durch ein Unfall entstanden sind, unabhängig davon, ob Sie den Unfall selbst verschuldet haben.",
+    answer: "Die Vollkasko versichert alle Leistungen der Teilkasko. Zusätzlich übernimmt die Vollkasko die Kosten für Schäden an deinem Fahrzeug, die durch ein Unfall entstanden sind, unabhängig davon, ob du den Unfall selbst verschuldet hast.",
   },
 ];
 
@@ -70,11 +70,11 @@ export default function KfzVersicherung() {
             >
               <p className="text-lg text-foreground leading-relaxed mb-8">
                 Ein rechtzeitiger Wechsel der Kfz-Versicherung kann mehrere hundert Euro 
-                einsparen und trotzdem den gewohnten Schutz bieten. Sichern Sie sich die 
-                passende Versicherung für Ihr Fahrzeug zum optimalen Preis-Leistungsverhältnis.
+                einsparen und trotzdem den gewohnten Schutz bieten. Sichere dir die 
+                passende Versicherung für dein Fahrzeug zum optimalen Preis-Leistungsverhältnis.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mb-6">Ihre Vorteile:</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Deine Vorteile:</h2>
               
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {benefits.map((benefit, index) => (
@@ -93,7 +93,7 @@ export default function KfzVersicherung() {
                 </h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Bei den Vergleichen werden die verschiedenen Preise und Leistungen ausführlich 
-                  berücksichtigt. Geben Sie einfach alle benötigten Daten in unseren Vergleichsrechner ein.
+                  berücksichtigt. Gib einfach alle benötigten Daten in unseren Vergleichsrechner ein.
                 </p>
                 <a
                   href="https://landingpage.vema-eg.de/?m=maklerkalkar&p=kfz&z=kfzrechner"

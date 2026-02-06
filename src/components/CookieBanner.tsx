@@ -82,7 +82,7 @@ export default function CookieBanner() {
                       Wir nutzen Cookies
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung
+                      Wir verwenden Cookies, um dir die bestmögliche Erfahrung
                       auf unserer Website zu bieten. Einige sind notwendig,
                       andere helfen uns, unsere Dienste zu verbessern.{" "}
                       <a

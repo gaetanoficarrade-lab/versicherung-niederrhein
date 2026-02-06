@@ -7,7 +7,7 @@ import Layout from "@/components/layout/Layout";
 const faqs = [
   {
     question: "Wer braucht eine Tierhalterhaftpflichtversicherung?",
-    answer: "Jeder, der ein Tier besitzt. Als Tierhalter haften Sie auch ohne Ihr eigenes Verschulden.",
+    answer: "Jeder, der ein Tier besitzt. Als Tierhalter haftest du auch ohne dein eigenes Verschulden.",
   },
   {
     question: "Wer ist versichert?",
@@ -45,8 +45,8 @@ export default function Tierhalterhaftpflicht() {
               Tierhalterhaftpflicht
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Als Halter eines Tieres haften Sie für Schäden, die das Tier verursacht, 
-              auch wenn Sie selbst keine Schuld trifft.
+              Als Halter eines Tieres haftest du für Schäden, die das Tier verursacht, 
+              auch wenn dich selbst keine Schuld trifft.
             </p>
           </motion.div>
         </div>
@@ -66,14 +66,14 @@ export default function Tierhalterhaftpflicht() {
                   Wichtig zu wissen
                 </h2>
                 <p className="text-foreground leading-relaxed">
-                  Allein die Tatsache, dass Sie ein Tier besitzen genügt, damit Sie haftbar 
-                  gemacht werden können. Dies fällt unter den Bestand der <strong>Gefährdungshaftung</strong>.
+                  Allein die Tatsache, dass du ein Tier besitzt genügt, damit du haftbar 
+                  gemacht werden kannst. Dies fällt unter den Bestand der <strong>Gefährdungshaftung</strong>.
                 </p>
               </div>
 
               <p className="text-lg text-foreground leading-relaxed mb-8">
                 Die Tierhalterhaftpflicht ist für jeden privaten Tierbesitzer eine zwingende 
-                Notwendigkeit, denn <strong>Sie haften in unbegrenzter Höhe</strong> für Ihr Tier.
+                Notwendigkeit, denn <strong>du haftest in unbegrenzter Höhe</strong> für dein Tier.
               </p>
 
               <div className="text-center mb-12">

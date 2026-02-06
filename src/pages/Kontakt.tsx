@@ -16,14 +16,14 @@ export default function Kontakt() {
     e.preventDefault();
     if (!agreed) {
       toast({
-        title: "Bitte bestätigen Sie die Datenschutzbestimmungen",
+        title: "Bitte bestätige die Datenschutzbestimmungen",
         variant: "destructive",
       });
       return;
     }
     toast({
       title: "Nachricht gesendet",
-      description: "Wir melden uns schnellstmöglich bei Ihnen.",
+      description: "Wir melden uns schnellstmöglich bei dir.",
     });
   };
 
@@ -42,8 +42,8 @@ export default function Kontakt() {
               Kontakt
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Haben Sie Fragen oder möchten Sie einen Beratungstermin vereinbaren? 
-              Wir sind gerne für Sie da.
+              Hast du Fragen oder möchtest du einen Beratungstermin vereinbaren? 
+              Wir sind gerne für dich da.
             </p>
           </motion.div>
         </div>
@@ -60,7 +60,7 @@ export default function Kontakt() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-2xl font-bold text-foreground mb-8">
-                So erreichen Sie uns
+                So erreichst du uns
               </h2>
 
               <div className="space-y-6 mb-12">
@@ -134,27 +134,27 @@ export default function Kontakt() {
             >
               <div className="card-premium p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
-                  Schreiben Sie uns
+                  Schreib uns
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Ihr Name *
+                      Dein Name *
                     </label>
                     <Input placeholder="Max Mustermann" required />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Ihre E-Mail *
+                      Deine E-Mail *
                     </label>
                     <Input type="email" placeholder="max@example.de" required />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Ihre Telefonnummer
+                      Deine Telefonnummer
                     </label>
                     <Input type="tel" placeholder="+49 123 456789" />
                   </div>
@@ -168,10 +168,10 @@ export default function Kontakt() {
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Ihre Nachricht
+                      Deine Nachricht
                     </label>
                     <Textarea
-                      placeholder="Wie können wir Ihnen helfen?"
+                      placeholder="Wie können wir dir helfen?"
                       rows={5}
                     />
                   </div>

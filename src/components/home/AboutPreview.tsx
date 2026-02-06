@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import aboutExperience from "@/assets/about-experience.jpg";
 
 const benefits = [
-  "Wir arbeiten ausschließlich in Ihrem Auftrag, nicht für Versicherungsgesellschaften",
+  "Wir arbeiten ausschließlich in deinem Auftrag, nicht für Versicherungsgesellschaften",
   "Wir prüfen Angebote aller Versicherer in Deutschland",
   "Jahrzehntelange Erfahrung und strikte Wahrung der Unabhängigkeit",
   "Optimales Preis-Leistungsverhältnis durch umfassenden Marktvergleich",
@@ -33,7 +33,7 @@ export default function AboutPreview() {
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Als Versicherungsmakler sind wir Sachwalter unserer Kunden. Vertrauen, 
               Individualität und Flexibilität stehen immer im Vordergrund unserer Arbeit. 
-              Ihre Anforderungen und Bedürfnisse sind der Maßstab.
+              Deine Anforderungen und Bedürfnisse sind der Maßstab.
             </p>
 
             <ul className="space-y-4 mb-8">
