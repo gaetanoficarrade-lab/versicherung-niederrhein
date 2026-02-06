@@ -58,12 +58,12 @@ export default function Team() {
               Das Unternehmen
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Ihre Ansprechpartner
+              Deine Ansprechpartner
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               "Auch der weiteste Weg beginnt mit einem ersten Schritt", sagt Konfuzius. 
-              Sprechen Sie mit uns, wenn Sie Interesse an einer unabhängigen Beratung haben. 
-              <strong> Wir sind gerne für Sie da.</strong>
+              Sprich mit uns, wenn du Interesse an einer unabhängigen Beratung hast. 
+              <strong> Wir sind gerne für dich da.</strong>
             </p>
           </motion.div>
         </div>

@@ -7,25 +7,25 @@ const services = [
   {
     icon: Car,
     title: "KFZ-Versicherung",
-    description: "Sichern Sie Ihr Fahrzeug mit dem optimalen Preis-Leistungsverhältnis. Wir vergleichen zahlreiche Anbieter für Sie.",
+    description: "Sichere dein Fahrzeug mit dem optimalen Preis-Leistungsverhältnis. Wir vergleichen zahlreiche Anbieter für dich.",
     href: "/kfz-versicherung",
   },
   {
     icon: PawPrint,
     title: "Tierhalterhaftpflicht",
-    description: "Als Tierhalter haften Sie unbegrenzt. Schützen Sie sich vor finanziellen Risiken durch Ihren Vierbeiner.",
+    description: "Als Tierhalter haftest du unbegrenzt. Schütze dich vor finanziellen Risiken durch deinen Vierbeiner.",
     href: "/tierhalterhaftpflicht",
   },
   {
     icon: Home,
     title: "Hausratversicherung",
-    description: "Schützen Sie Ihr gesamtes Eigentum gegen Wasserschäden, Einbruch und mehr mit individuellem Schutz.",
+    description: "Schütze dein gesamtes Eigentum gegen Wasserschäden, Einbruch und mehr mit individuellem Schutz.",
     href: "/hausratversicherung",
   },
   {
     icon: HeartPulse,
     title: "Gesundheit & Vorsorge",
-    description: "Von Krankenversicherung bis Altersvorsorge – wir finden die passende Absicherung für Ihre Zukunft.",
+    description: "Von Krankenversicherung bis Altersvorsorge – wir finden die passende Absicherung für deine Zukunft.",
     href: "/kontakt",
   },
   {
@@ -37,7 +37,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: "Weitere Versicherungen",
-    description: "Wir beraten Sie zu allen Versicherungsfragen. Sprechen Sie uns an für eine individuelle Beratung.",
+    description: "Wir beraten dich zu allen Versicherungsfragen. Sprich uns an für eine individuelle Beratung.",
     href: "/kontakt",
   },
 ];
@@ -60,8 +60,8 @@ export default function Services() {
             Versicherungen für jeden Bedarf
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Egal ob Sie eine Absicherung für Ihr Alter, Ihre Gesundheit oder eine 
-            Haftpflichtversicherung brauchen: Wir richten uns nach Ihrem Bedarf.
+            Egal ob du eine Absicherung für dein Alter, deine Gesundheit oder eine 
+            Haftpflichtversicherung brauchst: Wir richten uns nach deinem Bedarf.
           </p>
         </motion.div>
 

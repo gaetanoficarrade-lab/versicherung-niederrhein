@@ -6,22 +6,22 @@ const steps = [
   {
     icon: MessageCircle,
     title: "Erstgespräch",
-    description: "Wir lernen Sie und Ihre Bedürfnisse kennen – unverbindlich und kostenlos.",
+    description: "Wir lernen dich und deine Bedürfnisse kennen – unverbindlich und kostenlos.",
   },
   {
     icon: Search,
     title: "Analyse",
-    description: "Wir analysieren Ihre aktuelle Situation und identifizieren Optimierungspotenzial.",
+    description: "Wir analysieren deine aktuelle Situation und identifizieren Optimierungspotenzial.",
   },
   {
     icon: FileCheck,
     title: "Konzept",
-    description: "Wir erstellen ein maßgeschneidertes Versicherungskonzept für Sie.",
+    description: "Wir erstellen ein maßgeschneidertes Versicherungskonzept für dich.",
   },
   {
     icon: Handshake,
     title: "Umsetzung",
-    description: "Wir begleiten Sie bei der Umsetzung und stehen Ihnen dauerhaft zur Seite.",
+    description: "Wir begleiten dich bei der Umsetzung und stehen dir dauerhaft zur Seite.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function ProcessTimeline() {
             So kommen wir zusammen
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            In vier einfachen Schritten zu Ihrer optimalen Absicherung
+            In vier einfachen Schritten zu deiner optimalen Absicherung
           </p>
         </motion.div>
 

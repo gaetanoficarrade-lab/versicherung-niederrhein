@@ -31,12 +31,12 @@ export default function Datenschutz() {
             <h2 className="text-2xl font-bold text-foreground">Inhaltsangabe</h2>
             <ol className="text-foreground">
               <li><a href="#allgemeine-hinweise" className="text-primary">Allgemeine Hinweise</a></li>
-              <li><a href="#wer-verarbeitet" className="text-primary">Wer verarbeitet Ihre Daten</a></li>
+              <li><a href="#wer-verarbeitet" className="text-primary">Wer verarbeitet deine Daten</a></li>
               <li><a href="#cookies" className="text-primary">Welche Datenverarbeitung wird durchgeführt / Cookies</a></li>
               <li><a href="#newsletter" className="text-primary">Datenverarbeitung bei Newsletter-Versand</a></li>
               <li><a href="#social-media" className="text-primary">Social Media</a></li>
               <li><a href="#sonstige" className="text-primary">Sonstige Datenverarbeitungen</a></li>
-              <li><a href="#ihre-rechte" className="text-primary">Ihre Rechte</a></li>
+              <li><a href="#ihre-rechte" className="text-primary">Deine Rechte</a></li>
             </ol>
 
             <hr className="my-8" />
@@ -45,18 +45,18 @@ export default function Datenschutz() {
               a. Allgemeine Hinweise
             </h2>
             <p className="text-foreground">
-              Jede Verarbeitung Ihrer Daten soll so erfolgen, dass sie für Sie verständlich 
-              und nachvollziehbar sind. Daher geben wir Ihnen hier einen Überblick über alle 
-              wesentlichen Umstände, die die Verarbeitung Ihrer Daten betreffen.
+              Jede Verarbeitung deiner Daten soll so erfolgen, dass sie für dich verständlich 
+              und nachvollziehbar sind. Daher geben wir dir hier einen Überblick über alle 
+              wesentlichen Umstände, die die Verarbeitung deiner Daten betreffen.
             </p>
             <p className="text-foreground">
               Wir haben diese Information mit dem Ziel der bestmöglichen Verständlichkeit 
-              erstellt. Sollten Sie dennoch Verständnisfragen haben, kommen Sie bitte auf uns zu.
+              erstellt. Solltest du dennoch Verständnisfragen haben, komm bitte auf uns zu.
             </p>
             <p className="text-foreground">
-              Das trifft auch auf alle anderen Fragen zu, die die Verarbeitung Ihrer Daten 
+              Das trifft auch auf alle anderen Fragen zu, die die Verarbeitung deiner Daten 
               betreffen. Alle Gesetze und Vorschriften, auf die in dieser Information verwiesen 
-              wird, können Sie unter{" "}
+              wird, kannst du unter{" "}
               <a href="https://www.gesetze-im-internet.de/" target="_blank" rel="noopener noreferrer" className="text-primary">
                 https://www.gesetze-im-internet.de/
               </a>{" "}
@@ -66,10 +66,10 @@ export default function Datenschutz() {
             <hr className="my-8" />
 
             <h2 id="wer-verarbeitet" className="text-2xl font-bold text-foreground">
-              b. Wer verarbeitet Ihre Daten
+              b. Wer verarbeitet deine Daten
             </h2>
             <p className="text-foreground">
-              Verantwortlich für die Datenverarbeitung und Ihr Ansprechpartner ist:
+              Verantwortlich für die Datenverarbeitung und dein Ansprechpartner ist:
             </p>
             <div className="p-6 rounded-xl bg-muted">
               <p className="text-foreground mb-0">
@@ -93,27 +93,27 @@ export default function Datenschutz() {
               Inhalte genutzt werden.
             </p>
             <p className="text-foreground">
-              Bitte beachten Sie, dass auf Basis Ihrer Einstellungen evtl. nicht mehr alle 
+              Bitte beachte, dass auf Basis deiner Einstellungen evtl. nicht mehr alle 
               Funktionalitäten zur Verfügung stehen.
             </p>
 
             <hr className="my-8" />
 
             <h2 id="ihre-rechte" className="text-2xl font-bold text-foreground">
-              g. Ihre Rechte
+              g. Deine Rechte
             </h2>
             <p className="text-foreground">
-              Sie haben das Recht auf Auskunft über die Sie betreffenden personenbezogenen 
-              Daten. Sie können sich für eine Auskunft jederzeit an uns wenden.
+              Du hast das Recht auf Auskunft über die dich betreffenden personenbezogenen 
+              Daten. Du kannst dich für eine Auskunft jederzeit an uns wenden.
             </p>
             <p className="text-foreground">
               Bei einer Auskunftsanfrage, die nicht schriftlich erfolgt, bitten wir um 
-              Verständnis dafür, dass wir ggf. Nachweise von Ihnen verlangen, die belegen, 
-              dass Sie die Person sind, für die Sie sich ausgeben.
+              Verständnis dafür, dass wir ggf. Nachweise von dir verlangen, die belegen, 
+              dass du die Person bist, für die du dich ausgibst.
             </p>
             <p className="text-foreground">
-              Ferner haben Sie ein Recht auf Berichtigung oder Löschung oder auf Einschränkung 
-              der Verarbeitung, soweit Ihnen dies gesetzlich zusteht. Schließlich haben Sie 
+              Ferner hast du ein Recht auf Berichtigung oder Löschung oder auf Einschränkung 
+              der Verarbeitung, soweit dir dies gesetzlich zusteht. Schließlich hast du 
               ein Widerspruchsrecht gegen die Verarbeitung im Rahmen der gesetzlichen Vorgaben.
             </p>
             <p className="text-foreground">
@@ -125,7 +125,7 @@ export default function Datenschutz() {
 
             <h3 className="text-lg font-bold text-foreground">Beschwerderecht</h3>
             <p className="text-foreground">
-              Sie haben das Recht, sich über die Verarbeitung personenbezogener Daten durch 
+              Du hast das Recht, dich über die Verarbeitung personenbezogener Daten durch 
               uns bei einer Aufsichtsbehörde für den Datenschutz zu beschweren.
             </p>
           </motion.div>

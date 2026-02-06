@@ -8,7 +8,7 @@ const benefits = [
   "Direkter Onlineabschluss",
   "Spezielle Produkte zu günstigen Konditionen",
   "Individuell angepasster Versicherungsschutz",
-  "Dynamischer Schutz, der sich Ihrem Hausrat anpasst",
+  "Dynamischer Schutz, der sich deinem Hausrat anpasst",
 ];
 
 export default function Hausratversicherung() {
@@ -34,7 +34,7 @@ export default function Hausratversicherung() {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Ein Wasserschaden kommt fast immer unverhofft. Auch Einbrecher kündigen 
-              ihren Besuch selten an. Schützen Sie sich vor großen unerwarteten Belastungen.
+              ihren Besuch selten an. Schütze dich vor großen unerwarteten Belastungen.
             </p>
           </motion.div>
         </div>
@@ -50,13 +50,13 @@ export default function Hausratversicherung() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <p className="text-lg text-foreground leading-relaxed mb-8">
-                Die Hausratversicherung umfasst Ihr gesamtes Eigentum, das sich in Ihren 
+                Die Hausratversicherung umfasst dein gesamtes Eigentum, das sich in deinen 
                 Wohnräumen und allen dazugehörigen Räumen befindet. Durch einen Wasserschaden 
-                oder einen Einbruch können Sie Ihren gesamten Besitz verlieren. Eine 
-                Hausratversicherung sichert Sie gegen diese Schäden ab.
+                oder einen Einbruch kannst du deinen gesamten Besitz verlieren. Eine 
+                Hausratversicherung sichert dich gegen diese Schäden ab.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mb-6">Ihre Vorteile:</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Deine Vorteile:</h2>
               
               <div className="grid sm:grid-cols-2 gap-4 mb-12">
                 {benefits.map((benefit, index) => (
@@ -87,7 +87,7 @@ export default function Hausratversicherung() {
                   Hausrat-Rechner
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Berechnen Sie eine empfohlene Versicherungssumme auf Basis von 
+                  Berechne eine empfohlene Versicherungssumme auf Basis von 
                   Wohnfläche, Ausstattungsniveau und optionalen Wertgegenständen.
                 </p>
               </div>
@@ -109,11 +109,11 @@ export default function Hausratversicherung() {
               className="p-8 rounded-2xl bg-primary/5 text-center"
             >
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                Finden Sie die passende Hausratversicherung
+                Finde die passende Hausratversicherung
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Vergleichen Sie jetzt verschiedene Angebote und finden Sie den optimalen 
-                Schutz für Ihren Hausrat.
+                Vergleiche jetzt verschiedene Angebote und finde den optimalen 
+                Schutz für deinen Hausrat.
               </p>
               <a
                 href="https://landingpage.vema-eg.de/?z=bewertung&m=maklerkalkar&p=hausrat"

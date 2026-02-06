@@ -33,7 +33,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
               <Shield className="h-4 w-4" />
-              Ihr unabhängiger Versicherungsmakler
+              Dein unabhängiger Versicherungsmakler
             </span>
           </motion.div>
 
@@ -54,8 +54,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-background/80 mb-8 leading-relaxed"
           >
-            Wir prüfen alle verfügbaren Versicherungsprodukte und bieten Ihnen 
-            einen Versicherungsschutz, der genau zu Ihnen passt. Qualität und 
+            Wir prüfen alle verfügbaren Versicherungsprodukte und bieten dir 
+            einen Versicherungsschutz, der genau zu dir passt. Qualität und 
             Preis-Leistung stehen dabei im Fokus.
           </motion.p>
 

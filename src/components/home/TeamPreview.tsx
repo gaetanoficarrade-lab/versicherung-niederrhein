@@ -45,10 +45,10 @@ export default function TeamPreview() {
             Unser Team
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ihre Ansprechpartner
+            Deine Ansprechpartner
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Persönlich, kompetent und immer für Sie da. Lernen Sie unser Team kennen.
+            Persönlich, kompetent und immer für dich da. Lerne unser Team kennen.
           </p>
         </motion.div>
 

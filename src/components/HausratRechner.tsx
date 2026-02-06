@@ -104,7 +104,7 @@ export default function HausratRechner() {
             <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
               <Calculator className="h-5 w-5 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold text-foreground">Ihre Angaben</h3>
+            <h3 className="text-lg font-semibold text-foreground">Deine Angaben</h3>
           </div>
 
           <div className="space-y-5">
@@ -272,13 +272,13 @@ export default function HausratRechner() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-3">
                   <Home className="h-4 w-4" />
-                  Empfehlung auf Basis Ihrer Angaben
+                  Empfehlung auf Basis deiner Angaben
                 </div>
                 <p className="text-4xl font-bold text-foreground">
                   {formatEuro(ergebnis.gesamt)}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Empfohlene Versicherungssumme für Ihren Hausrat.
+                  Empfohlene Versicherungssumme für deinen Hausrat.
                 </p>
               </div>
 
@@ -309,7 +309,7 @@ export default function HausratRechner() {
                   Lass uns prüfen, welche Versicherung für dich in Frage kommt.
                 </p>
                 <p className="text-xs text-muted-foreground mb-4">
-                  Unsere Experten beraten Sie individuell und finden den passenden Tarif für Ihre Bedürfnisse.
+                  Unsere Experten beraten dich individuell und finden den passenden Tarif für deine Bedürfnisse.
                 </p>
                 <Link to="/kontakt">
                   <Button size="sm" className="gap-2">
@@ -325,7 +325,7 @@ export default function HausratRechner() {
                 <Calculator className="h-8 w-8 text-muted-foreground/50" />
               </div>
               <p className="text-muted-foreground">
-                Geben Sie Ihre Daten ein und klicken Sie auf "Summe berechnen".
+                Gib deine Daten ein und klicke auf "Summe berechnen".
               </p>
             </div>
           )}

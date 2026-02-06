@@ -8,25 +8,25 @@ const services = [
   {
     icon: ClipboardList,
     title: "Datenänderung",
-    description: "Wenn sich Ihre Lebensumstände ändern (z.B. Änderung der Kontoverbindung, Heirat, Nachwuchs, Ortswechsel, beruflicher Auslandsaufenthalt, Scheidung, Selbstständigkeit), können Sie uns dies einfach über unser Online-Formular mitteilen.",
+    description: "Wenn sich deine Lebensumstände ändern (z.B. Änderung der Kontoverbindung, Heirat, Nachwuchs, Ortswechsel, beruflicher Auslandsaufenthalt, Scheidung, Selbstständigkeit), kannst du uns dies einfach über unser Online-Formular mitteilen.",
     link: "https://www.versicherungen-niederrhein.de/downloadcenter/datenanderung/",
   },
   {
     icon: FileText,
     title: "Schaden melden",
-    description: "Einen Schaden können Sie über unser Online-Formular melden. Füllen Sie schnell und unkompliziert alle nötigen Felder des Formulars aus. Wir melden uns dann bei Ihnen, um den Schaden schnellstmöglich aus der Welt zu schaffen.",
+    description: "Einen Schaden kannst du über unser Online-Formular melden. Füll schnell und unkompliziert alle nötigen Felder des Formulars aus. Wir melden uns dann bei dir, um den Schaden schnellstmöglich aus der Welt zu schaffen.",
     link: "https://www.versicherungen-niederrhein.de/downloadcenter/schaden-melden/",
   },
   {
     icon: Car,
     title: "Versicherungsunterlagen anfordern",
-    description: "Sie möchten ein neues Fahrzeug zulassen und benötigen eine elektronische Versicherungsbestätigung? Sie brauchen eine Internationale Versicherungskarte (Grüne Karte)? Fordern Sie diese Unterlagen einfach online bei uns an.",
+    description: "Du möchtest ein neues Fahrzeug zulassen und benötigst eine elektronische Versicherungsbestätigung? Du brauchst eine Internationale Versicherungskarte (Grüne Karte)? Fordere diese Unterlagen einfach online bei uns an.",
     link: "https://www.versicherungen-niederrhein.de/downloadcenter/versicherungsunterlagen-anfordern/",
   },
   {
     icon: Calendar,
     title: "Beratungstermin vereinbaren",
-    description: "Vereinbaren Sie einen unverbindlichen Beratungstermin mit uns. Wir nehmen uns Zeit für Ihre Fragen und finden gemeinsam die optimale Absicherung für Ihre Bedürfnisse.",
+    description: "Vereinbare einen unverbindlichen Beratungstermin mit uns. Wir nehmen uns Zeit für deine Fragen und finden gemeinsam die optimale Absicherung für deine Bedürfnisse.",
     link: "/kontakt",
     internal: true,
   },
@@ -48,8 +48,8 @@ export default function Service() {
               Service-Center
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              In unserem Service-Center bieten wir Ihnen die Möglichkeit, uns Änderungen 
-              Ihrer persönlichen Lebensumstände mitzuteilen. Ferner können Sie uns unkompliziert 
+              In unserem Service-Center bieten wir dir die Möglichkeit, uns Änderungen 
+              deiner persönlichen Lebensumstände mitzuteilen. Ferner kannst du uns unkompliziert 
               einen Schaden melden, Unterlagen anfordern oder einen unverbindlichen Beratungstermin 
               vereinbaren.
             </p>
