@@ -5,7 +5,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-tierhalterhaftpflicht.jpg";
 
 const faqs = [
@@ -43,10 +42,6 @@ export default function Tierhalterhaftpflicht() {
   return (
     <Layout>
       <SEO
-        title={seoData.tierhalterhaftpflicht.title}
-        description={seoData.tierhalterhaftpflicht.description}
-        canonical={seoData.tierhalterhaftpflicht.canonical}
-        keywords={seoData.tierhalterhaftpflicht.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, serviceSchema, breadcrumbSchema]

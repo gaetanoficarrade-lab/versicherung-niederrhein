@@ -8,7 +8,6 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 
 export default function Kontakt() {
   const { toast } = useToast();
@@ -45,10 +44,6 @@ export default function Kontakt() {
   return (
     <Layout>
       <SEO
-        title={seoData.kontakt.title}
-        description={seoData.kontakt.description}
-        canonical={seoData.kontakt.canonical}
-        keywords={seoData.kontakt.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [contactPageSchema, breadcrumbSchema]

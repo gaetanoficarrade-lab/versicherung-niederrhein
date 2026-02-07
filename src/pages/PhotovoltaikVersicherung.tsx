@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-photovoltaik.jpg";
 
 const benefits = [
@@ -39,6 +40,7 @@ const risks = [
 export default function PhotovoltaikVersicherung() {
   return (
     <Layout>
+      <SEO />
       <InsuranceHero
         icon={Sun}
         title="Photovoltaik-Versicherung"

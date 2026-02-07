@@ -6,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-unterbrechung.jpg";
 
 const benefits = [
@@ -65,10 +64,6 @@ export default function Betriebsunterbrechung() {
   return (
     <Layout>
       <SEO
-        title={seoData.betriebsunterbrechung.title}
-        description={seoData.betriebsunterbrechung.description}
-        canonical={seoData.betriebsunterbrechung.canonical}
-        keywords={seoData.betriebsunterbrechung.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, serviceSchema, breadcrumbSchema]

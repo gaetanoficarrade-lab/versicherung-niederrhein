@@ -5,7 +5,6 @@ import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
 import SEO, { createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-gebaeude.jpg";
 
 const benefits = [
@@ -48,10 +47,6 @@ export default function GewerblicheGebaeude() {
   return (
     <Layout>
       <SEO
-        title={seoData.gewerblicheGebaeude.title}
-        description={seoData.gewerblicheGebaeude.description}
-        canonical={seoData.gewerblicheGebaeude.canonical}
-        keywords={seoData.gewerblicheGebaeude.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [serviceSchema, breadcrumbSchema]

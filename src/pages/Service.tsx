@@ -3,6 +3,7 @@ import { FileText, ClipboardList, Car, Calendar, ArrowRight } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 const services = [
   {
@@ -35,6 +36,7 @@ const services = [
 export default function Service() {
   return (
     <Layout>
+      <SEO />
       {/* Hero */}
       <section className="pt-16 pb-24 bg-gradient-to-b from-secondary to-background">
         <div className="section-container">

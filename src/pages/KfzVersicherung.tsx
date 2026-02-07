@@ -5,7 +5,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-kfz.jpg";
 
 const benefits = [
@@ -50,10 +49,6 @@ export default function KfzVersicherung() {
   return (
     <Layout>
       <SEO
-        title={seoData.kfzVersicherung.title}
-        description={seoData.kfzVersicherung.description}
-        canonical={seoData.kfzVersicherung.canonical}
-        keywords={seoData.kfzVersicherung.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, serviceSchema, breadcrumbSchema]

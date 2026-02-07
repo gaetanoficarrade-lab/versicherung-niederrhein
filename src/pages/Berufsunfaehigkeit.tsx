@@ -5,7 +5,6 @@ import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
 import SEO, { createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-berufsunfaehigkeit.jpg";
 
 const benefits = [
@@ -48,10 +47,6 @@ export default function Berufsunfaehigkeit() {
   return (
     <Layout>
       <SEO
-        title={seoData.berufsunfaehigkeit.title}
-        description={seoData.berufsunfaehigkeit.description}
-        canonical={seoData.berufsunfaehigkeit.canonical}
-        keywords={seoData.berufsunfaehigkeit.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [serviceSchema, breadcrumbSchema]
