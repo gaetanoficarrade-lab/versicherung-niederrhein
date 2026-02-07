@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import kalkarPanorama from "@/assets/kalkar-panorama.jpg";
+import kalkarPanorama from "@/assets/kalkar-panorama-centered.jpg";
 
 const benefits = [
   "Wir arbeiten ausschließlich in deinem Auftrag, nicht für Versicherungsgesellschaften",
