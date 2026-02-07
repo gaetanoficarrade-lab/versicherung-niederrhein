@@ -224,12 +224,18 @@ export default function Versicherungen() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]">
+                <h1 className={cn(
+                  "text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]",
+                  isGewerbe ? "text-white" : "text-primary"
+                )}>
                   {isGewerbe 
                     ? "Versicherungen für Ihr Unternehmen" 
                     : "Versicherungen für dein Leben"}
                 </h1>
-                <p className="text-lg md:text-xl max-w-2xl text-white/90 drop-shadow-[0_1px_5px_rgba(0,0,0,0.3)]">
+                <p className={cn(
+                  "text-lg md:text-xl max-w-2xl drop-shadow-[0_1px_5px_rgba(0,0,0,0.3)]",
+                  isGewerbe ? "text-white/90" : "text-foreground/80"
+                )}>
                   {isGewerbe 
                     ? "Maßgeschneiderte Absicherung für Gewerbetreibende. Wir analysieren Ihre Risiken und finden die optimale Lösung für Ihren Betrieb." 
                     : "Finde die perfekte Absicherung für dich und deine Familie. Wir beraten dich persönlich und finden gemeinsam die beste Lösung."}
@@ -269,13 +275,13 @@ export default function Versicherungen() {
                     <div className={cn(
                       "relative h-full rounded-2xl p-6 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl",
                       isGewerbe 
-                        ? "bg-[hsl(178,45%,25%)]/50 border border-[hsl(178,45%,35%)]/30 hover:border-[hsl(178,45%,45%)]/50" 
+                        ? "bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/15" 
                         : "bg-card border border-border hover:border-primary/30 hover:shadow-primary/5"
                     )}>
                       {/* Gradient overlay */}
                       <div className={cn(
                         "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br",
-                        isGewerbe ? "from-primary/20 to-primary/5" : "from-primary/10 to-transparent"
+                        isGewerbe ? "from-white/10 to-transparent" : "from-primary/10 to-transparent"
                       )} />
                       
                       <div className="relative z-10">
