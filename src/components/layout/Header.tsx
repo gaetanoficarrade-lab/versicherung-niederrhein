@@ -18,17 +18,10 @@ const navigation = [
     children: [
       { name: "Unsere Geschichte", href: "/geschichte" },
       { name: "Was uns besonders macht", href: "/besonderheiten" },
-      { name: "Ihre Ansprechpartner", href: "/team" },
+      { name: "Deine Ansprechpartner", href: "/team" },
     ],
   },
-  {
-    name: "Versicherungen",
-    children: [
-      { name: "KFZ-Versicherung", href: "/kfz-versicherung" },
-      { name: "Tierhalterhaftpflicht", href: "/tierhalterhaftpflicht" },
-      { name: "Hausratversicherung", href: "/hausratversicherung" },
-    ],
-  },
+  { name: "Versicherungen", href: "/versicherungen" },
   { name: "Service-Center", href: "/service" },
   { name: "Kontakt", href: "/kontakt" },
 ];
