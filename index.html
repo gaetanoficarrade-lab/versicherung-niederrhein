@@ -3,32 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon / Icons -->
     <link rel="icon" href="/favicon.png" type="image/png" />
-    
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#097E92" />
+
     <!-- Primary Meta Tags -->
     <title>Versicherungsmakler Kalkar | Smits & Kollegen - Unabhängige Beratung am Niederrhein</title>
-    <meta name="title" content="Versicherungsmakler Kalkar | Smits & Kollegen - Unabhängige Beratung am Niederrhein" />
-    <meta name="description" content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung ✓ KFZ, Hausrat, Tierhalterhaftpflicht, Gewerbeversicherungen & mehr. Jetzt kostenlos beraten lassen!" />
-    <meta name="keywords" content="Versicherungsmakler Kalkar, Versicherungen Niederrhein, KFZ Versicherung Kalkar, Hausratversicherung, Tierhalterhaftpflicht, Betriebshaftpflicht, unabhängige Versicherungsberatung, Smits Kollegen, Versicherungsmakler Kleve, Versicherungsmakler Emmerich" />
-    <meta name="author" content="Smits & Kollegen Versicherungsmakler" />
+    <meta
+      name="description"
+      content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung ✓ KFZ, Hausrat, Tierhalterhaftpflicht, Gewerbeversicherungen & mehr. Jetzt kostenlos beraten lassen!"
+    />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="language" content="de" />
-    <meta name="revisit-after" content="7 days" />
-    
-    <!-- Geo Tags for Local SEO -->
-    <meta name="geo.region" content="DE-NW" />
-    <meta name="geo.placename" content="Kalkar" />
-    <meta name="geo.position" content="51.7387;6.2922" />
-    <meta name="ICBM" content="51.7387, 6.2922" />
-    
-    <!-- Canonical URL -->
+
+    <!-- Canonical -->
     <link rel="canonical" href="https://makler-kalkar.de/" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://makler-kalkar.de/" />
     <meta property="og:title" content="Versicherungsmakler Kalkar | Smits & Kollegen" />
-    <meta property="og:description" content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung ✓ KFZ, Hausrat, Gewerbe & mehr." />
+    <meta
+      property="og:description"
+      content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung ✓ KFZ, Hausrat, Gewerbe & mehr."
+    />
     <meta property="og:image" content="https://makler-kalkar.de/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -39,144 +40,106 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://makler-kalkar.de/" />
     <meta name="twitter:title" content="Versicherungsmakler Kalkar | Smits & Kollegen" />
-    <meta name="twitter:description" content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung." />
+    <meta
+      name="twitter:description"
+      content="Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Persönliche Beratung für Privat- und Gewerbekunden."
+    />
     <meta name="twitter:image" content="https://makler-kalkar.de/og-image.png" />
 
-    <!-- Structured Data - Organization -->
+    <!-- Structured Data: InsuranceAgency (als Haupt-Entity) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "InsuranceAgency",
-      "name": "Smits & Kollegen Versicherungsmakler",
-      "alternateName": "Smits Versicherungsmakler GmbH & Co. KG",
-      "url": "https://makler-kalkar.de",
-      "logo": "https://makler-kalkar.de/logo.png",
-      "image": "https://makler-kalkar.de/og-image.png",
-      "description": "Unabhängiger Versicherungsmakler am Niederrhein in Kalkar. Persönliche Beratung für Privat- und Gewerbekunden seit vielen Jahren.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Markt 3",
-        "addressLocality": "Kalkar",
-        "postalCode": "47546",
-        "addressRegion": "Nordrhein-Westfalen",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "51.7387",
-        "longitude": "6.2922"
-      },
-      "telephone": "+49-2824-809293",
-      "email": "info@makler-kalkar.de",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "12:30"
+      {
+        "@context": "https://schema.org",
+        "@type": ["InsuranceAgency", "LocalBusiness"],
+        "@id": "https://makler-kalkar.de/#agency",
+        "name": "Smits & Kollegen Versicherungsmakler",
+        "alternateName": "Smits Versicherungsmakler GmbH & Co. KG",
+        "url": "https://makler-kalkar.de/",
+        "logo": "https://makler-kalkar.de/logo.png",
+        "image": "https://makler-kalkar.de/og-image.png",
+        "description": "Unabhängiger Versicherungsmakler am Niederrhein in Kalkar. Persönliche Beratung für Privat- und Gewerbekunden.",
+        "telephone": "+49-2824-809293",
+        "email": "info@makler-kalkar.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Markt 3",
+          "addressLocality": "Kalkar",
+          "postalCode": "47546",
+          "addressRegion": "Nordrhein-Westfalen",
+          "addressCountry": "DE"
         },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-          "opens": "15:00",
-          "closes": "17:30"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/SmitsundKollegen/",
-        "https://www.provenexpert.com/smits-kollegen/"
-      ],
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
+        "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "51.7387",
-          "longitude": "6.2922"
+          "latitude": 51.7387,
+          "longitude": 6.2922
         },
-        "geoRadius": "50000"
-      },
-      "priceRange": "€€",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Versicherungsdienstleistungen",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "KFZ-Versicherung"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hausratversicherung"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tierhalterhaftpflicht"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Betriebshaftpflicht"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rechtsschutzversicherung"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Berufsunfähigkeitsversicherung"}}
-        ]
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.7387,
+            "longitude": 6.2922
+          },
+          "geoRadius": 50000
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "12:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "15:00",
+            "closes": "17:30"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/SmitsundKollegen/",
+          "https://www.provenexpert.com/smits-kollegen/"
+        ],
+        "priceRange": "€€",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Versicherungsdienstleistungen",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KFZ-Versicherung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hausratversicherung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tierhalterhaftpflicht" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Betriebshaftpflicht" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rechtsschutzversicherung" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Berufsunfähigkeitsversicherung" } }
+          ]
+        }
       }
-    }
     </script>
 
-    <!-- Structured Data - LocalBusiness -->
+    <!-- Structured Data: WebSite (ohne SearchAction, solange es keine Suche gibt) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Smits & Kollegen Versicherungsmakler",
-      "@id": "https://makler-kalkar.de/#localbusiness",
-      "url": "https://makler-kalkar.de",
-      "telephone": "+49-2824-809293",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Markt 3",
-        "addressLocality": "Kalkar",
-        "postalCode": "47546",
-        "addressRegion": "NW",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.7387,
-        "longitude": 6.2922
-      },
-      "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "12:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "17:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "12:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "15:00", "closes": "17:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "12:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "15:00", "closes": "17:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "12:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "15:00", "closes": "17:30"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "12:30"}
-      ]
-    }
-    </script>
-
-    <!-- Structured Data - WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Smits & Kollegen Versicherungsmakler",
-      "url": "https://makler-kalkar.de",
-      "description": "Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Smits & Kollegen Versicherungsmakler"
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://makler-kalkar.de/#website",
+        "name": "Smits & Kollegen Versicherungsmakler",
+        "url": "https://makler-kalkar.de/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Smits & Kollegen Versicherungsmakler",
+          "@id": "https://makler-kalkar.de/#agency"
+        }
       }
-    }
     </script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- ProvenExpert Widget -->
+
+    <!-- ProvenExpert Widget (optional: nach Consent laden, falls ihr Cookie/Consent nutzt) -->
     <script id="proSeal">
-      window.loadProSeal = function(){
+      window.loadProSeal = function () {
         if (window.provenExpert && window.provenExpert.proSeal) {
           window.provenExpert.proSeal({
             widgetId: "9dcc7b28-7d39-4156-a201-a87688acf47a",
@@ -193,7 +156,7 @@
             stickyToSide: "left",
             googleStars: true,
             zIndex: "9999",
-            displayReviewerLastName: false,
+            displayReviewerLastName: false
           });
         }
       };
