@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-berufsunfaehigkeit.jpg";
 
 const benefits = [
@@ -32,8 +34,29 @@ const facts = [
 ];
 
 export default function Berufsunfaehigkeit() {
+  const serviceSchema = createServiceSchema({
+    name: "Berufsunfähigkeitsversicherung",
+    description: "Absicherung des Einkommens bei Berufsunfähigkeit durch Unfall oder Krankheit.",
+    url: "/berufsunfaehigkeit"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Berufsunfähigkeitsversicherung", url: "/berufsunfaehigkeit" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.berufsunfaehigkeit.title}
+        description={seoData.berufsunfaehigkeit.description}
+        canonical={seoData.berufsunfaehigkeit.canonical}
+        keywords={seoData.berufsunfaehigkeit.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema]
+        }}
+      />
       <InsuranceHero
         icon={Briefcase}
         title="Berufsunfähigkeitsversicherung"

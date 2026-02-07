@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-dno.jpg";
 
 const benefits = [
@@ -61,8 +63,30 @@ const faqs = [
 ];
 
 export default function DOVersicherung() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "D&O Versicherung",
+    description: "Managerhaftpflicht für Geschäftsführer, Vorstände und Aufsichtsräte.",
+    url: "/do-versicherung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "D&O Versicherung", url: "/do-versicherung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.doVersicherung.title}
+        description={seoData.doVersicherung.description}
+        canonical={seoData.doVersicherung.canonical}
+        keywords={seoData.doVersicherung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <BusinessInsuranceHero
         icon={Scale}
         title="D&O-Versicherung"

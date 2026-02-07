@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-rechtsschutz.jpg";
 
 const benefits = [
@@ -57,8 +59,30 @@ const faqs = [
 ];
 
 export default function Rechtsschutzversicherung() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "Rechtsschutzversicherung",
+    description: "Kostenübernahme für Anwalt und Gericht bei Rechtsstreitigkeiten.",
+    url: "/rechtsschutzversicherung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Rechtsschutzversicherung", url: "/rechtsschutzversicherung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.rechtsschutzversicherung.title}
+        description={seoData.rechtsschutzversicherung.description}
+        canonical={seoData.rechtsschutzversicherung.canonical}
+        keywords={seoData.rechtsschutzversicherung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <InsuranceHero
         icon={Scale}
         title="Rechtsschutzversicherung"

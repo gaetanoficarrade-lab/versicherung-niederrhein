@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-tierhalterhaftpflicht.jpg";
 
 const faqs = [
@@ -26,8 +28,30 @@ const faqs = [
 ];
 
 export default function Tierhalterhaftpflicht() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "Tierhalterhaftpflichtversicherung",
+    description: "Haftpflichtschutz für Hunde- und Pferdehalter gegen Schadenersatzforderungen.",
+    url: "/tierhalterhaftpflicht"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Tierhalterhaftpflicht", url: "/tierhalterhaftpflicht" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.tierhalterhaftpflicht.title}
+        description={seoData.tierhalterhaftpflicht.description}
+        canonical={seoData.tierhalterhaftpflicht.canonical}
+        keywords={seoData.tierhalterhaftpflicht.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <InsuranceHero
         icon={PawPrint}
         title="Tierhalterhaftpflicht"

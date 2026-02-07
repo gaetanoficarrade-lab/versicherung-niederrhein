@@ -7,6 +7,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 
 export default function Kontakt() {
   const { toast } = useToast();
@@ -27,9 +29,31 @@ export default function Kontakt() {
     });
   };
 
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt - Smits & Kollegen",
+    "description": "Kontaktieren Sie uns für eine persönliche Beratung",
+    "url": "https://makler-kalkar.de/kontakt"
+  };
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Kontakt", url: "/kontakt" }
+  ]);
+
   return (
     <Layout>
-      {/* Hero */}
+      <SEO
+        title={seoData.kontakt.title}
+        description={seoData.kontakt.description}
+        canonical={seoData.kontakt.canonical}
+        keywords={seoData.kontakt.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [contactPageSchema, breadcrumbSchema]
+        }}
+      />
       <section className="pt-16 pb-24 bg-gradient-to-b from-secondary to-background">
         <div className="section-container">
           <motion.div

@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-betriebshaftpflicht.jpg";
 
 const benefits = [
@@ -52,8 +54,30 @@ const faqs = [
 ];
 
 export default function Betriebshaftpflicht() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "Betriebshaftpflichtversicherung",
+    description: "Schutz für Unternehmen vor Haftungsansprüchen bei Personen-, Sach- und Vermögensschäden.",
+    url: "/betriebshaftpflicht"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Betriebshaftpflicht", url: "/betriebshaftpflicht" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.betriebshaftpflicht.title}
+        description={seoData.betriebshaftpflicht.description}
+        canonical={seoData.betriebshaftpflicht.canonical}
+        keywords={seoData.betriebshaftpflicht.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <BusinessInsuranceHero
         icon={Briefcase}
         title="Betriebshaftpflicht"

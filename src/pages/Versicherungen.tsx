@@ -26,6 +26,8 @@ import {
 import Layout from "@/components/layout/Layout";
 import SegmentedToggle from "@/components/SegmentedToggle";
 import { cn } from "@/lib/utils";
+import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 
 // Sachversicherungen (Property Insurance)
 const sachversicherungen = [
@@ -294,9 +296,20 @@ export default function Versicherungen() {
     setSearchParams({ tab: newIsGewerbe ? "gewerbe" : "privat" });
   };
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" }
+  ]);
+
   return (
     <Layout>
-      {/* Hero Section with Ken Burns effect for Private, Business style for Gewerbe */}
+      <SEO
+        title={seoData.versicherungen.title}
+        description={seoData.versicherungen.description}
+        canonical={seoData.versicherungen.canonical}
+        keywords={seoData.versicherungen.keywords}
+        structuredData={breadcrumbSchema}
+      />
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         {/* Background - Ken Burns effect for both modes */}
         <AnimatePresence mode="wait">

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Calendar, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 
 const teamMembers = [
   {
@@ -43,8 +45,20 @@ const teamMembers = [
 ];
 
 export default function Team() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Unser Team", url: "/team" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.team.title}
+        description={seoData.team.description}
+        canonical={seoData.team.canonical}
+        keywords={seoData.team.keywords}
+        structuredData={breadcrumbSchema}
+      />
       {/* Hero */}
       <section className="pt-16 pb-24 bg-gradient-to-b from-secondary to-background">
         <div className="section-container">
