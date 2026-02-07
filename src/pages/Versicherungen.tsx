@@ -147,8 +147,8 @@ export default function Versicherungen() {
                 }}
                 className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
             </motion.div>
           ) : (
             <motion.div
@@ -179,7 +179,12 @@ export default function Versicherungen() {
           <div className="max-w-3xl">
             {/* Toggle Switch */}
             <motion.div 
-              className="mb-8 inline-flex items-center gap-2 p-1 rounded-full bg-muted/50 backdrop-blur-sm border border-border/50"
+              className={cn(
+                "mb-8 inline-flex items-center gap-2 p-1.5 rounded-full backdrop-blur-md border",
+                isGewerbe 
+                  ? "bg-slate-800/70 border-slate-600/50" 
+                  : "bg-white/20 border-white/30"
+              )}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -190,7 +195,7 @@ export default function Versicherungen() {
                   "flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
                   !isGewerbe 
                     ? "bg-primary text-primary-foreground shadow-lg" 
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-white hover:text-white/80 hover:bg-white/10"
                 )}
               >
                 <Users className="h-4 w-4" />
@@ -201,8 +206,8 @@ export default function Versicherungen() {
                 className={cn(
                   "flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
                   isGewerbe 
-                    ? "bg-slate-700 text-white shadow-lg" 
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-white text-slate-900 shadow-lg" 
+                    : "text-foreground/70 hover:text-foreground hover:bg-black/5"
                 )}
               >
                 <Building className="h-4 w-4" />
