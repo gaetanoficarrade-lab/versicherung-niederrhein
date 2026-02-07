@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Download } from "lucide-react";
+import logo from "@/assets/logo-new.png";
 
 const footerLinks = {
   unternehmen: [
@@ -29,9 +30,11 @@ export default function Footer() {
           {/* Company info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">S</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Smits & Kollegen Logo" 
+                className="h-12 w-12 object-contain"
+              />
               <div>
                 <span className="text-lg font-semibold">Smits & Kollegen</span>
                 <span className="block text-xs opacity-70">Versicherungsmakler</span>

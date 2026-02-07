@@ -3,7 +3,9 @@ import { Stethoscope, Check, ArrowRight, Sparkles, Clock, Wallet } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
+import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-krankenversicherung.jpg";
 
 const benefits = [
   "Individuelle Tarifgestaltung",
@@ -48,31 +50,12 @@ const faqs = [
 export default function PrivateKrankenversicherung() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-16 pb-24 bg-gradient-to-b from-primary/5 to-background">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <div className="relative inline-flex mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-sm" />
-              <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
-                <Stethoscope className="h-8 w-8 text-primary" strokeWidth={1.5} />
-              </div>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Private Krankenversicherung
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Mit dem Wechsel in die private Krankenversicherung kannst du Geld sparen 
-              und bessere Leistungen erhalten. Ein Vergleich lohnt sich!
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <InsuranceHero
+        icon={Stethoscope}
+        title="Private Krankenversicherung"
+        description="Mit dem Wechsel in die private Krankenversicherung kannst du Geld sparen und bessere Leistungen erhalten. Ein Vergleich lohnt sich!"
+        heroImage={heroImage}
+      />
 
       {/* Content */}
       <section className="py-16 bg-background">
