@@ -244,7 +244,7 @@ function InsuranceCard({ insurance, index, isGewerbe }: InsuranceCardProps) {
             </div>
             
             <h3 className={cn(
-              "text-xl font-semibold mb-3 transition-colors",
+              "text-lg font-semibold mb-3 transition-colors leading-tight line-clamp-2",
               isGewerbe 
                 ? "text-white group-hover:text-white" 
                 : "text-foreground group-hover:text-primary"

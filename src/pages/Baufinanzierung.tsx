@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { Building2, Check, ArrowRight, Calculator, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-baufinanzierung.jpg";
 
 const benefits = [
   "Persönliche Beratung vor Ort",
@@ -37,31 +39,12 @@ const services = [
 export default function Baufinanzierung() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-16 pb-24 bg-gradient-to-b from-primary/5 to-background">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <div className="relative inline-flex mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-sm" />
-              <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
-                <Building2 className="h-8 w-8 text-primary" strokeWidth={1.5} />
-              </div>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Baufinanzierung
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Wir optimieren deine Immobilienfinanzierung – mit persönlicher Beratung 
-              und dem Vergleich von über 200 Darlehensgebern.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <InsuranceHero
+        icon={Building2}
+        title="Baufinanzierung"
+        description="Wir optimieren deine Immobilienfinanzierung – mit persönlicher Beratung und dem Vergleich von über 200 Darlehensgebern."
+        heroImage={heroImage}
+      />
 
       {/* Content */}
       <section className="py-16 bg-background">

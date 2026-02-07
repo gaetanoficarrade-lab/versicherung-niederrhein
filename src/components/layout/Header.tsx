@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-new.png";
 
 const navigation = [
   { name: "Startseite", href: "/" },
