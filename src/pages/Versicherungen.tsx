@@ -147,8 +147,8 @@ export default function Versicherungen() {
                 }}
                 className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
             </motion.div>
           ) : (
             <motion.div
