@@ -261,8 +261,10 @@ export default function Services() {
             "text-lg max-w-2xl mx-auto mb-8",
             isGewerbe ? "text-white/70" : "text-muted-foreground"
           )}>
-            Egal ob du eine Absicherung für dein Alter, deine Gesundheit oder eine 
-            Haftpflichtversicherung brauchst: Wir richten uns nach deinem Bedarf.
+            {isGewerbe 
+              ? "Ob Betriebshaftpflicht, Gebäudeversicherung oder Fuhrparkschutz: Wir finden die optimale Absicherung für Ihr Unternehmen."
+              : "Egal ob du eine Absicherung für dein Alter, deine Gesundheit oder eine Haftpflichtversicherung brauchst: Wir richten uns nach deinem Bedarf."
+            }
           </p>
           
           <SegmentedToggle
