@@ -168,8 +168,8 @@ export default function Versicherungen() {
                 }}
                 className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/75 to-slate-900/50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)]/95 via-[hsl(178,45%,20%)]/75 to-[hsl(178,45%,25%)]/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,15%)] via-[hsl(178,45%,20%)]/40 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -224,18 +224,12 @@ export default function Versicherungen() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h1 className={cn(
-                  "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-                  isGewerbe ? "text-white" : "text-foreground"
-                )}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]">
                   {isGewerbe 
                     ? "Versicherungen für Ihr Unternehmen" 
                     : "Versicherungen für dein Leben"}
                 </h1>
-                <p className={cn(
-                  "text-lg md:text-xl max-w-2xl",
-                  isGewerbe ? "text-slate-300" : "text-muted-foreground"
-                )}>
+                <p className="text-lg md:text-xl max-w-2xl text-white/90 drop-shadow-[0_1px_5px_rgba(0,0,0,0.3)]">
                   {isGewerbe 
                     ? "Maßgeschneiderte Absicherung für Gewerbetreibende. Wir analysieren Ihre Risiken und finden die optimale Lösung für Ihren Betrieb." 
                     : "Finde die perfekte Absicherung für dich und deine Familie. Wir beraten dich persönlich und finden gemeinsam die beste Lösung."}
@@ -249,7 +243,7 @@ export default function Versicherungen() {
       {/* Insurance Cards Section */}
       <section className={cn(
         "py-20 transition-colors duration-500",
-        isGewerbe ? "bg-slate-900" : "bg-muted/30"
+        isGewerbe ? "bg-[hsl(178,45%,20%)]" : "bg-muted/30"
       )}>
         <div className="section-container">
           <AnimatePresence mode="wait">
@@ -275,44 +269,58 @@ export default function Versicherungen() {
                     <div className={cn(
                       "relative h-full rounded-2xl p-6 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl",
                       isGewerbe 
-                        ? "bg-slate-800/50 border border-slate-700/50 hover:border-slate-600" 
+                        ? "bg-[hsl(178,45%,25%)]/50 border border-[hsl(178,45%,35%)]/30 hover:border-[hsl(178,45%,45%)]/50" 
                         : "bg-card border border-border hover:border-primary/30 hover:shadow-primary/5"
                     )}>
                       {/* Gradient overlay */}
                       <div className={cn(
                         "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br",
-                        insurance.color
+                        isGewerbe ? "from-primary/20 to-primary/5" : "from-primary/10 to-transparent"
                       )} />
                       
                       <div className="relative z-10">
-                        <div className={cn(
-                          "inline-flex items-center justify-center w-14 h-14 rounded-xl mb-4 transition-colors",
-                          isGewerbe 
-                            ? "bg-slate-700 text-slate-300 group-hover:bg-slate-600" 
-                            : "bg-primary/10 text-primary group-hover:bg-primary/20"
-                        )}>
-                          <insurance.icon className="h-7 w-7" />
+                        {/* Premium icon container with gradient border - matching homepage style */}
+                        <div className="relative inline-flex mb-5">
+                          <div className={cn(
+                            "absolute inset-0 rounded-2xl blur-sm group-hover:blur-md transition-all",
+                            isGewerbe 
+                              ? "bg-gradient-to-br from-white/20 to-white/5" 
+                              : "bg-gradient-to-br from-primary/20 to-primary/5"
+                          )} />
+                          <div className={cn(
+                            "relative h-14 w-14 rounded-2xl bg-gradient-to-br border flex items-center justify-center transition-all",
+                            isGewerbe 
+                              ? "from-white/10 to-transparent border-white/20 group-hover:border-white/40 group-hover:from-white/20" 
+                              : "from-primary/10 to-transparent border-primary/20 group-hover:border-primary/40 group-hover:from-primary/20"
+                          )}>
+                            <insurance.icon className={cn(
+                              "h-7 w-7",
+                              isGewerbe ? "text-white" : "text-primary"
+                            )} strokeWidth={1.5} />
+                          </div>
                         </div>
                         
                         <h3 className={cn(
-                          "text-xl font-semibold mb-3",
-                          isGewerbe ? "text-white" : "text-foreground"
+                          "text-xl font-semibold mb-3 transition-colors",
+                          isGewerbe 
+                            ? "text-white group-hover:text-white" 
+                            : "text-foreground group-hover:text-primary"
                         )}>
                           {insurance.title}
                         </h3>
                         
                         <p className={cn(
                           "text-sm leading-relaxed mb-4",
-                          isGewerbe ? "text-slate-400" : "text-muted-foreground"
+                          isGewerbe ? "text-white/70" : "text-muted-foreground"
                         )}>
                           {insurance.description}
                         </p>
                         
                         <div className={cn(
                           "inline-flex items-center gap-2 text-sm font-medium transition-all group-hover:gap-3",
-                          isGewerbe ? "text-slate-300" : "text-primary"
+                          isGewerbe ? "text-white/90" : "text-primary"
                         )}>
-                          {isGewerbe ? "Mehr erfahren" : "Mehr erfahren"}
+                          Mehr erfahren
                           <ArrowRight className="h-4 w-4" />
                         </div>
                       </div>
@@ -328,7 +336,7 @@ export default function Versicherungen() {
       {/* CTA Section */}
       <section className={cn(
         "py-20 transition-colors duration-500",
-        isGewerbe ? "bg-slate-800" : "bg-background"
+        isGewerbe ? "bg-[hsl(178,45%,15%)]" : "bg-background"
       )}>
         <div className="section-container">
           <motion.div 
@@ -347,7 +355,7 @@ export default function Versicherungen() {
             </h2>
             <p className={cn(
               "text-lg mb-8",
-              isGewerbe ? "text-slate-300" : "text-muted-foreground"
+              isGewerbe ? "text-white/70" : "text-muted-foreground"
             )}>
               {isGewerbe 
                 ? "Vereinbaren Sie ein unverbindliches Beratungsgespräch. Wir analysieren Ihre Risiken und erstellen ein maßgeschneidertes Konzept." 
@@ -360,7 +368,7 @@ export default function Versicherungen() {
                 className={cn(
                   "inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all",
                   isGewerbe 
-                    ? "bg-white text-slate-900 hover:bg-slate-100" 
+                    ? "bg-white text-primary hover:bg-white/90" 
                     : "bg-primary text-primary-foreground hover:bg-accent"
                 )}
               >
