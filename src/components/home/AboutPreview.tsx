@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import aboutExperience from "@/assets/about-experience.jpg";
+import kalkarPanorama from "@/assets/kalkar-panorama.jpg";
 
 const benefits = [
   "Wir arbeiten ausschließlich in deinem Auftrag, nicht für Versicherungsgesellschaften",
@@ -77,11 +77,11 @@ export default function AboutPreview() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square rounded-3xl overflow-hidden shadow-strong">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-strong">
               <img
-                src={aboutExperience}
-                alt="Beratungsgespräch mit Familie"
-                className="w-full h-full object-cover"
+                src={kalkarPanorama}
+                alt="Panorama von Kalkar mit Kirche und Rathaus"
+                className="w-full h-full object-cover object-bottom"
               />
             </div>
             
