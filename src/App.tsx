@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Geschichte from "./pages/Geschichte";
 import Besonderheiten from "./pages/Besonderheiten";
 import Team from "./pages/Team";
+import Versicherungen from "./pages/Versicherungen";
 import KfzVersicherung from "./pages/KfzVersicherung";
 import Tierhalterhaftpflicht from "./pages/Tierhalterhaftpflicht";
 import Hausratversicherung from "./pages/Hausratversicherung";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/geschichte" element={<Geschichte />} />
           <Route path="/besonderheiten" element={<Besonderheiten />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/versicherungen" element={<Versicherungen />} />
           <Route path="/kfz-versicherung" element={<KfzVersicherung />} />
           <Route path="/tierhalterhaftpflicht" element={<Tierhalterhaftpflicht />} />
           <Route path="/hausratversicherung" element={<Hausratversicherung />} />
