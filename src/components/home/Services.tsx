@@ -14,10 +14,10 @@ import SegmentedToggle from "@/components/SegmentedToggle";
 
 // Import hero images for backgrounds
 import heroKfz from "@/assets/hero-kfz.jpg";
-import heroHausrat from "@/assets/hero-hausrat.jpg";
+import carouselHausrat from "@/assets/carousel-hausrat.jpg";
 import heroTier from "@/assets/hero-tierhalterhaftpflicht.jpg";
 import heroBU from "@/assets/hero-berufsunfaehigkeit.jpg";
-import heroRechtsschutz from "@/assets/hero-rechtsschutz.jpg";
+import carouselRechtsschutz from "@/assets/carousel-rechtsschutz.jpg";
 import heroBaufi from "@/assets/hero-baufinanzierung.jpg";
 import heroBetriebshaftpflicht from "@/assets/hero-business-betriebshaftpflicht.jpg";
 import heroGebaeude from "@/assets/hero-business-gebaeude.jpg";
@@ -37,7 +37,7 @@ const privatServices = [
     title: "Hausratversicherung",
     description: "Schütze dein gesamtes Eigentum gegen Wasserschäden und Einbruch.",
     href: "/hausratversicherung",
-    image: heroHausrat,
+    image: carouselHausrat,
   },
   {
     title: "Tierhalterhaftpflicht",
@@ -55,7 +55,7 @@ const privatServices = [
     title: "Rechtsschutz",
     description: "Bei Rechtsstreitigkeiten stehen wir an deiner Seite.",
     href: "/rechtsschutzversicherung",
-    image: heroRechtsschutz,
+    image: carouselRechtsschutz,
   },
   {
     title: "Baufinanzierung",
@@ -113,8 +113,8 @@ export default function Services() {
   
   const services = isGewerbe ? gewerbeServices : privatServices;
   const totalItems = services.length;
-  const AUTO_PLAY_DURATION = 5000; // 5 seconds per slide
-  const PROGRESS_INTERVAL = 50; // Update progress every 50ms
+  const AUTO_PLAY_DURATION = 7000; // 7 seconds per slide for smoother effect
+  const PROGRESS_INTERVAL = 30; // Update progress every 30ms for smoother animation
 
   // Smooth auto-play with progress
   useEffect(() => {
@@ -339,12 +339,19 @@ export default function Services() {
                             : "border border-border"
                         )}
                       >
-                        {/* Image Header with Overlay */}
+                        {/* Image Header with Overlay and Zoom Effect */}
                         <div className="h-44 md:h-52 relative overflow-hidden">
-                          <img 
+                          <motion.img 
                             src={service.image} 
                             alt={service.title}
                             className="absolute inset-0 w-full h-full object-cover"
+                            animate={{
+                              scale: style.isActive ? 1.1 : 1.0,
+                            }}
+                            transition={{
+                              duration: 7,
+                              ease: "easeOut"
+                            }}
                           />
                           {/* Dark gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
