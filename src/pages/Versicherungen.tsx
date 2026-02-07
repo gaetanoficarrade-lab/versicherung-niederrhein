@@ -127,7 +127,7 @@ export default function Versicherungen() {
     <Layout>
       {/* Hero Section with Ken Burns effect for Private, Business style for Gewerbe */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        {/* Background - Ken Burns for Private, Static gradient for Business */}
+        {/* Background - Ken Burns effect for both modes */}
         <AnimatePresence mode="wait">
           {!isGewerbe ? (
             <motion.div
@@ -147,8 +147,8 @@ export default function Versicherungen() {
                 }}
                 className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
             </motion.div>
           ) : (
             <motion.div
@@ -159,8 +159,17 @@ export default function Versicherungen() {
               transition={{ duration: 0.5 }}
               className="absolute inset-0"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwIDEgMSAwIDAgMC0yIDB6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9nPjwvc3ZnPg==')] opacity-50" />
+              <motion.div
+                animate={kenBurnsAnimation}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear" as const,
+                }}
+                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/75 to-slate-900/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
