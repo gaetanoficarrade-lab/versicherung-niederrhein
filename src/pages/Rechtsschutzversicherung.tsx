@@ -6,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-rechtsschutz.jpg";
 
 const benefits = [
@@ -74,10 +73,6 @@ export default function Rechtsschutzversicherung() {
   return (
     <Layout>
       <SEO
-        title={seoData.rechtsschutzversicherung.title}
-        description={seoData.rechtsschutzversicherung.description}
-        canonical={seoData.rechtsschutzversicherung.canonical}
-        keywords={seoData.rechtsschutzversicherung.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, serviceSchema, breadcrumbSchema]

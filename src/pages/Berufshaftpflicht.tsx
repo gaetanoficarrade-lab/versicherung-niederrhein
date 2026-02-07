@@ -6,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-berufshaftpflicht.jpg";
 
 const benefits = [
@@ -74,10 +73,6 @@ export default function Berufshaftpflicht() {
   return (
     <Layout>
       <SEO
-        title={seoData.berufshaftpflicht.title}
-        description={seoData.berufshaftpflicht.description}
-        canonical={seoData.berufshaftpflicht.canonical}
-        keywords={seoData.berufshaftpflicht.keywords}
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, serviceSchema, breadcrumbSchema]

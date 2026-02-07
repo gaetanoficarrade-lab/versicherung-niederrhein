@@ -1,213 +1,160 @@
 // SEO-Daten für alle Seiten der Website
-// Jede Seite erhält individuelle, keyword-optimierte Meta-Beschreibungen
+// Keys sind die Route-Pfade für einfache Zuordnung via location.pathname
 
-export const seoData = {
+export interface SEOPageData {
+  title: string;
+  description: string;
+  ogImage?: string; // Optional: individuelles OG-Image pro Seite
+}
+
+export const seoDataByPath: Record<string, SEOPageData> = {
   // Startseite
-  home: {
+  "/": {
     title: "Versicherungsmakler Kalkar | Smits & Kollegen",
     description: "Ihr unabhängiger Versicherungsmakler in Kalkar am Niederrhein ✓ Über 6.000 zufriedene Kunden ✓ Persönliche Beratung ✓ KFZ, Hausrat, Gewerbe & mehr. Jetzt beraten lassen!",
-    keywords: ["Versicherungsmakler Kalkar", "Versicherungen Niederrhein", "unabhängige Versicherungsberatung", "Smits Kollegen"],
-    canonical: "/",
   },
 
   // Unternehmensseiten
-  geschichte: {
+  "/geschichte": {
     title: "Unsere Geschichte | Versicherungsmakler seit Jahren",
     description: "Erfahren Sie mehr über die Geschichte von Smits & Kollegen Versicherungsmakler in Kalkar. Seit Jahren Ihr vertrauensvoller Partner für Versicherungen am Niederrhein.",
-    keywords: ["Versicherungsmakler Geschichte", "Smits Kollegen Kalkar", "Versicherungsagentur Niederrhein"],
-    canonical: "/geschichte",
   },
-  besonderheiten: {
+  "/besonderheiten": {
     title: "Was uns besonders macht | Unabhängige Beratung",
     description: "Entdecken Sie, was Smits & Kollegen als Versicherungsmakler auszeichnet: Unabhängigkeit, persönliche Beratung und maßgeschneiderte Versicherungslösungen in Kalkar.",
-    keywords: ["unabhängiger Makler", "Versicherungsberatung", "Vorteile Versicherungsmakler"],
-    canonical: "/besonderheiten",
   },
-  team: {
+  "/team": {
     title: "Unser Team | Ihre Ansprechpartner in Kalkar",
     description: "Lernen Sie das Team von Smits & Kollegen kennen. Erfahrene Versicherungsexperten beraten Sie persönlich zu allen Fragen rund um Ihre Absicherung.",
-    keywords: ["Versicherungsberater Team", "Ansprechpartner Versicherung", "Experten Kalkar"],
-    canonical: "/team",
   },
 
   // Privatversicherungen - Sachversicherungen
-  kfzVersicherung: {
+  "/kfz-versicherung": {
     title: "KFZ-Versicherung Kalkar | Autoversicherung vergleichen",
     description: "KFZ-Versicherung günstig abschließen ✓ Haftpflicht, Teilkasko & Vollkasko ✓ Über 50 Versicherer im Vergleich ✓ Persönliche Beratung in Kalkar. Jetzt Angebot anfordern!",
-    keywords: ["KFZ Versicherung Kalkar", "Autoversicherung Niederrhein", "KFZ Haftpflicht", "Vollkasko", "Teilkasko"],
-    canonical: "/kfz-versicherung",
   },
-  tierhalterhaftpflicht: {
+  "/tierhalterhaftpflicht": {
     title: "Tierhalterhaftpflicht | Hunde- & Pferdeversicherung",
     description: "Tierhalterhaftpflicht für Hunde und Pferde ✓ Schutz vor Schadenersatzforderungen ✓ Günstige Beiträge ✓ Beratung in Kalkar. Schützen Sie sich als Tierhalter!",
-    keywords: ["Tierhalterhaftpflicht", "Hundehaftpflicht", "Pferdehaftpflicht", "Tierversicherung Kalkar"],
-    canonical: "/tierhalterhaftpflicht",
   },
-  hausratversicherung: {
+  "/hausratversicherung": {
     title: "Hausratversicherung Kalkar | Einbruch & Feuer absichern",
     description: "Hausratversicherung für Ihren Besitz ✓ Schutz bei Einbruch, Feuer, Wasser & Sturm ✓ Faire Prämien ✓ Beratung in Kalkar. Sichern Sie Ihr Hab und Gut!",
-    keywords: ["Hausratversicherung Kalkar", "Einbruchschutz", "Hausrat versichern", "Wohnungsversicherung"],
-    canonical: "/hausratversicherung",
   },
-  rechtsschutzversicherung: {
+  "/rechtsschutzversicherung": {
     title: "Rechtsschutzversicherung | Ihr Recht durchsetzen",
     description: "Rechtsschutzversicherung für Privat & Beruf ✓ Verkehrsrechtsschutz ✓ Arbeitsrechtsschutz ✓ Mietrechtsschutz. Kämpfen Sie für Ihr Recht ohne Kostenrisiko!",
-    keywords: ["Rechtsschutzversicherung", "Verkehrsrechtsschutz", "Arbeitsrechtsschutz", "Rechtsschutz Kalkar"],
-    canonical: "/rechtsschutzversicherung",
   },
-  privatHaftpflicht: {
+  "/privat-haftpflicht": {
     title: "Private Haftpflichtversicherung | Existenzschutz",
     description: "Private Haftpflichtversicherung ab günstigen Beiträgen ✓ Schutz vor Millionenschäden ✓ Für Singles, Paare & Familien. Die wichtigste Versicherung überhaupt!",
-    keywords: ["Privathaftpflicht", "Haftpflichtversicherung", "Personenschäden", "Sachschäden"],
-    canonical: "/privat-haftpflicht",
   },
-  reiseversicherung: {
+  "/reiseversicherung": {
     title: "Reiseversicherung | Sorglos in den Urlaub",
     description: "Reiseversicherung für Ihren Urlaub ✓ Reiserücktritt ✓ Auslandskrankenversicherung ✓ Gepäckversicherung. Genießen Sie Ihren Urlaub ohne Sorgen!",
-    keywords: ["Reiseversicherung", "Reiserücktrittsversicherung", "Auslandskrankenversicherung", "Urlaubsschutz"],
-    canonical: "/reiseversicherung",
   },
-  photovoltaikVersicherung: {
+  "/photovoltaik-versicherung": {
     title: "Photovoltaikversicherung | Solaranlage absichern",
     description: "Photovoltaikversicherung für Ihre Solaranlage ✓ Ertragsausfall ✓ Diebstahl ✓ Blitzschlag ✓ Sturm. Schützen Sie Ihre Investition in erneuerbare Energien!",
-    keywords: ["Photovoltaikversicherung", "Solaranlagen Versicherung", "PV Versicherung", "Ertragsausfall"],
-    canonical: "/photovoltaik-versicherung",
   },
-  wohngebaeudeversicherung: {
+  "/wohngebaeudeversicherung": {
     title: "Wohngebäudeversicherung | Haus richtig versichern",
     description: "Wohngebäudeversicherung für Ihr Eigenheim ✓ Feuer, Sturm, Hagel, Leitungswasser ✓ Elementarschutz ✓ Faire Prämien. Schützen Sie Ihr Zuhause!",
-    keywords: ["Wohngebäudeversicherung", "Gebäudeversicherung", "Hausversicherung", "Elementarversicherung"],
-    canonical: "/wohngebaeudeversicherung",
   },
 
   // Vorsorge & Gesundheit
-  berufsunfaehigkeit: {
+  "/berufsunfaehigkeit": {
     title: "Berufsunfähigkeitsversicherung | Einkommen absichern",
     description: "Berufsunfähigkeitsversicherung: Sichern Sie Ihr Einkommen ✓ Bis zu 75% des Einkommens ✓ Alle Berufe ✓ Persönliche Beratung. Ihre Arbeitskraft ist Ihr größtes Kapital!",
-    keywords: ["Berufsunfähigkeitsversicherung", "BU Versicherung", "Einkommensabsicherung", "Arbeitskraft versichern"],
-    canonical: "/berufsunfaehigkeit",
   },
-  unfallversicherung: {
+  "/unfallversicherung": {
     title: "Unfallversicherung | Schutz rund um die Uhr",
     description: "Private Unfallversicherung ✓ 24/7 Schutz weltweit ✓ Invaliditätsleistung ✓ Unfallrente. Sichern Sie sich bei Unfällen in Freizeit und Beruf ab!",
-    keywords: ["Unfallversicherung", "private Unfallversicherung", "Invalidität", "Unfallschutz"],
-    canonical: "/unfallversicherung",
   },
-  krankenzusatz: {
+  "/krankenzusatz": {
     title: "Krankenzusatzversicherung | Besser versorgt",
     description: "Krankenzusatzversicherung für bessere Leistungen ✓ Zahnzusatz ✓ Brille ✓ Heilpraktiker ✓ Chefarzt. Ergänzen Sie Ihren Kassenschutz optimal!",
-    keywords: ["Krankenzusatzversicherung", "Zahnzusatzversicherung", "Brillenversicherung", "Heilpraktiker"],
-    canonical: "/krankenzusatz",
   },
-  privateKrankenversicherung: {
+  "/private-krankenversicherung": {
     title: "Private Krankenversicherung | PKV Beratung",
     description: "Private Krankenversicherung (PKV) ✓ Für Selbstständige & Angestellte ✓ Bessere Leistungen ✓ Individuelle Tarife. Lassen Sie sich unabhängig beraten!",
-    keywords: ["Private Krankenversicherung", "PKV", "Krankenversicherung Selbstständige", "PKV Vergleich"],
-    canonical: "/private-krankenversicherung",
   },
-  risikolebensversicherung: {
+  "/risikolebensversicherung": {
     title: "Risikolebensversicherung | Familie absichern",
     description: "Risikolebensversicherung: Schützen Sie Ihre Familie ✓ Günstige Beiträge ✓ Hohe Versicherungssummen ✓ Flexibel anpassbar. Für den Fall der Fälle vorsorgen!",
-    keywords: ["Risikolebensversicherung", "Todesfallschutz", "Hinterbliebenenabsicherung", "Familie absichern"],
-    canonical: "/risikolebensversicherung",
   },
-  kapitallebensversicherung: {
+  "/kapitallebensversicherung": {
     title: "Kapitallebensversicherung | Vorsorge & Vermögen",
     description: "Kapitallebensversicherung: Absicherung und Vermögensaufbau ✓ Garantierte Auszahlung ✓ Steuervorteile ✓ Todesfallschutz. Kombinieren Sie Vorsorge und Sparen!",
-    keywords: ["Kapitallebensversicherung", "Lebensversicherung", "Vermögensaufbau", "Altersvorsorge"],
-    canonical: "/kapitallebensversicherung",
   },
-  rentenversicherung: {
+  "/rentenversicherung": {
     title: "Private Rentenversicherung | Altersvorsorge",
     description: "Private Rentenversicherung für Ihre Altersvorsorge ✓ Lebenslange Rente ✓ Flexible Einzahlung ✓ Steuervorteile. Sichern Sie Ihren Lebensstandard im Alter!",
-    keywords: ["Rentenversicherung", "private Altersvorsorge", "Rente", "Vorsorge"],
-    canonical: "/rentenversicherung",
   },
-  kindervorsorge: {
+  "/kindervorsorge": {
     title: "Kindervorsorge | Zukunft der Kinder sichern",
     description: "Kindervorsorge: Sichern Sie die Zukunft Ihrer Kinder ✓ Ausbildungsversicherung ✓ Kinderunfallschutz ✓ Sparpläne. Investieren Sie in die Zukunft!",
-    keywords: ["Kindervorsorge", "Ausbildungsversicherung", "Kinderversicherung", "Kindersparen"],
-    canonical: "/kindervorsorge",
   },
 
   // Finanzierung
-  baufinanzierung: {
+  "/baufinanzierung": {
     title: "Baufinanzierung Kalkar | Immobilienkredit Vergleich",
     description: "Baufinanzierung zu Top-Konditionen ✓ Über 400 Banken im Vergleich ✓ Persönliche Beratung ✓ Anschlussfinanzierung. Erfüllen Sie sich den Traum vom Eigenheim!",
-    keywords: ["Baufinanzierung Kalkar", "Immobilienkredit", "Hypothek", "Hauskauf finanzieren"],
-    canonical: "/baufinanzierung",
   },
 
   // Gewerbeversicherungen
-  betriebshaftpflicht: {
+  "/betriebshaftpflicht": {
     title: "Betriebshaftpflichtversicherung | Gewerbe absichern",
     description: "Betriebshaftpflichtversicherung für Ihr Unternehmen ✓ Personen- und Sachschäden ✓ Branchenlösungen ✓ Faire Prämien. Schützen Sie Ihren Betrieb!",
-    keywords: ["Betriebshaftpflicht", "Gewerbeversicherung", "Firmenhaftpflicht", "Unternehmensversicherung"],
-    canonical: "/betriebshaftpflicht",
   },
-  berufshaftpflicht: {
+  "/berufshaftpflicht": {
     title: "Berufshaftpflichtversicherung | Freiberufler & Selbstständige",
     description: "Berufshaftpflichtversicherung für Freiberufler ✓ Architekten ✓ IT-Berater ✓ Steuerberater ✓ Vermögensschäden. Schützen Sie sich vor Berufsfehlern!",
-    keywords: ["Berufshaftpflicht", "Vermögensschadenhaftpflicht", "Freiberufler Versicherung", "Selbstständige"],
-    canonical: "/berufshaftpflicht",
   },
-  gewerblicheGebaeude: {
+  "/gewerbliche-gebaeude": {
     title: "Gewerbliche Gebäudeversicherung | Firmeneigentum",
     description: "Gewerbliche Gebäudeversicherung für Ihr Firmeneigentum ✓ Feuer, Sturm, Wasser ✓ Betriebsgebäude ✓ Lagerhallen. Schützen Sie Ihre Immobilien!",
-    keywords: ["Gewerbliche Gebäudeversicherung", "Firmengebäude", "Betriebsgebäude versichern", "Gewerbeimmobilie"],
-    canonical: "/gewerbliche-gebaeude",
   },
-  betriebsunterbrechung: {
+  "/betriebsunterbrechung": {
     title: "Betriebsunterbrechungsversicherung | Ertragsausfall",
     description: "Betriebsunterbrechungsversicherung: Schutz bei Ertragsausfall ✓ Fixkosten gedeckt ✓ Schnelle Hilfe im Schadenfall. Sichern Sie Ihre Existenz!",
-    keywords: ["Betriebsunterbrechungsversicherung", "Ertragsausfallversicherung", "Betriebsausfall", "Geschäftsschutz"],
-    canonical: "/betriebsunterbrechung",
   },
-  doVersicherung: {
+  "/do-versicherung": {
     title: "D&O Versicherung | Managerhaftpflicht",
     description: "D&O Versicherung (Directors and Officers) ✓ Schutz für Geschäftsführer ✓ Vorstände ✓ Aufsichtsräte. Schützen Sie Ihr Privatvermögen!",
-    keywords: ["D&O Versicherung", "Managerhaftpflicht", "Geschäftsführerhaftung", "Organhaftpflicht"],
-    canonical: "/do-versicherung",
   },
-  fuhrparkversicherung: {
+  "/fuhrparkversicherung": {
     title: "Fuhrparkversicherung | Firmenfahrzeuge absichern",
     description: "Fuhrparkversicherung für Ihre Firmenfahrzeuge ✓ Flottenrabatte ✓ Alle Fahrzeugtypen ✓ Individuelle Lösungen. Optimieren Sie Ihre Fuhrparkkosten!",
-    keywords: ["Fuhrparkversicherung", "Flottenversicherung", "Firmenfahrzeuge", "Dienstwagenversicherung"],
-    canonical: "/fuhrparkversicherung",
   },
 
   // Service & Rechtliches
-  service: {
+  "/service": {
     title: "Service-Center | Schaden melden & Dokumente",
     description: "Service-Center von Smits & Kollegen ✓ Schaden melden ✓ Dokumente herunterladen ✓ Verträge verwalten. Schneller Service für unsere Kunden!",
-    keywords: ["Versicherung Service", "Schaden melden", "Versicherungsdokumente", "Kundenservice"],
-    canonical: "/service",
   },
-  kontakt: {
+  "/kontakt": {
     title: "Kontakt | Beratungstermin vereinbaren",
     description: "Kontaktieren Sie Smits & Kollegen in Kalkar ✓ Telefon: 02824-809293 ✓ Persönliche Beratung ✓ Terminvereinbarung. Wir freuen uns auf Sie!",
-    keywords: ["Kontakt Versicherungsmakler", "Beratungstermin", "Versicherung Kalkar", "Anfahrt"],
-    canonical: "/kontakt",
   },
-  impressum: {
+  "/impressum": {
     title: "Impressum | Rechtliche Angaben",
     description: "Impressum der Smits Versicherungsmakler GmbH & Co. KG in Kalkar. Alle rechtlichen Informationen und Kontaktdaten.",
-    keywords: ["Impressum", "rechtliche Angaben", "Smits Kollegen"],
-    canonical: "/impressum",
   },
-  datenschutz: {
+  "/datenschutz": {
     title: "Datenschutz | DSGVO Informationen",
     description: "Datenschutzerklärung von Smits & Kollegen. Informationen zum Umgang mit Ihren personenbezogenen Daten gemäß DSGVO.",
-    keywords: ["Datenschutz", "DSGVO", "Datenschutzerklärung"],
-    canonical: "/datenschutz",
   },
-  versicherungen: {
+  "/versicherungen": {
     title: "Alle Versicherungen im Überblick | Privat & Gewerbe",
     description: "Alle Versicherungsprodukte von Smits & Kollegen ✓ Privatversicherungen ✓ Gewerbeversicherungen ✓ Vorsorge. Finden Sie die passende Absicherung!",
-    keywords: ["Versicherungen Überblick", "Versicherungsprodukte", "Privat Gewerbe Versicherung"],
-    canonical: "/versicherungen",
   },
 };
+
+// Helper-Funktion: SEO-Daten für aktuelle Route holen
+export function getSEOData(pathname: string): SEOPageData {
+  return seoDataByPath[pathname] || seoDataByPath["/"];
+}
 
 // FAQ-Daten für Homepage
 export const homeFAQs = [

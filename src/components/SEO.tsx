@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { getSEOData } from "@/lib/seoData";
 
 interface SEOProps {
-  title: string;
-  description: string;
-  canonical?: string;
+  title?: string;
+  description?: string;
   type?: "website" | "article" | "product";
   image?: string;
-  keywords?: string[];
   noIndex?: boolean;
   structuredData?: object;
 }
@@ -14,20 +14,28 @@ interface SEOProps {
 const BASE_URL = "https://makler-kalkar.de";
 
 export default function SEO({
-  title,
-  description,
-  canonical,
+  title: customTitle,
+  description: customDescription,
   type = "website",
   image = "/og-image.png",
-  keywords = [],
   noIndex = false,
   structuredData,
 }: SEOProps) {
+  const location = useLocation();
+  const pathname = location.pathname;
+  
+  // Hole SEO-Daten basierend auf aktuellem Pfad
+  const seoData = getSEOData(pathname);
+  
+  // Custom Props überschreiben automatische Daten
+  const title = customTitle || seoData.title;
+  const description = customDescription || seoData.description;
+  
   const fullTitle = title.includes("Smits") ? title : `${title} | Smits & Kollegen Versicherungsmakler Kalkar`;
-  const fullCanonical = canonical ? `${BASE_URL}${canonical}` : undefined;
+  const fullCanonical = `${BASE_URL}${pathname === "/" ? "" : pathname}`;
   const fullImage = image.startsWith("http") ? image : `${BASE_URL}${image}`;
 
-  // Default organization structured data
+  // Organization structured data
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
@@ -87,24 +95,12 @@ export default function SEO({
     }
   };
 
-  const defaultKeywords = [
-    "Versicherungsmakler",
-    "Kalkar",
-    "Niederrhein",
-    "Versicherungen",
-    "unabhängige Beratung",
-    "Versicherungsmakler Kalkar",
-    "Versicherungen Niederrhein",
-    ...keywords
-  ];
-
   return (
     <Helmet>
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
-      <meta name="keywords" content={defaultKeywords.join(", ")} />
       <meta name="author" content="Smits & Kollegen Versicherungsmakler" />
       <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
       <meta name="language" content="de" />
@@ -113,12 +109,12 @@ export default function SEO({
       <meta name="geo.position" content="51.7387;6.2922" />
       <meta name="ICBM" content="51.7387, 6.2922" />
 
-      {/* Canonical URL */}
-      {fullCanonical && <link rel="canonical" href={fullCanonical} />}
+      {/* Canonical URL - immer vollständig */}
+      <link rel="canonical" href={fullCanonical} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullCanonical || BASE_URL} />
+      <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImage} />
@@ -126,11 +122,11 @@ export default function SEO({
       <meta property="og:site_name" content="Smits & Kollegen Versicherungsmakler" />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={fullCanonical || BASE_URL} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={fullImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={fullCanonical} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={fullImage} />
 
       {/* Structured Data - Organization */}
       <script type="application/ld+json">
@@ -175,7 +171,7 @@ export function createServiceSchema(service: {
     "serviceType": service.name,
     "name": service.name,
     "description": service.description,
-    "url": `https://makler-kalkar.de${service.url}`,
+    "url": `${BASE_URL}${service.url}`,
     "provider": {
       "@type": "InsuranceAgency",
       "name": "Smits & Kollegen Versicherungsmakler",
@@ -203,7 +199,7 @@ export function createBreadcrumbSchema(items: { name: string; url: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://makler-kalkar.de${item.url}`,
+      "item": `${BASE_URL}${item.url}`,
     })),
   };
 }

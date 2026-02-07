@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
-import { seoData } from "@/lib/seoData";
 
 const benefits = [
   {
@@ -35,13 +34,7 @@ export default function Besonderheiten() {
 
   return (
     <Layout>
-      <SEO
-        title={seoData.besonderheiten.title}
-        description={seoData.besonderheiten.description}
-        canonical={seoData.besonderheiten.canonical}
-        keywords={seoData.besonderheiten.keywords}
-        structuredData={breadcrumbSchema}
-      />
+      <SEO structuredData={breadcrumbSchema} />
       {/* Hero */}
       <section className="pt-16 pb-24 bg-gradient-to-b from-secondary to-background relative overflow-hidden">
         {/* Decorative shapes */}

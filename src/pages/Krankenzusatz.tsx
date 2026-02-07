@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-krankenversicherung.jpg";
 
 const benefits = [
@@ -55,6 +56,7 @@ const faqs = [
 export default function Krankenzusatz() {
   return (
     <Layout>
+      <SEO />
       <InsuranceHero
         icon={Heart}
         title="Krankenzusatzversicherung"
