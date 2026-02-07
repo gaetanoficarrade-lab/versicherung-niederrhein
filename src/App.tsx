@@ -12,6 +12,20 @@ import Versicherungen from "./pages/Versicherungen";
 import KfzVersicherung from "./pages/KfzVersicherung";
 import Tierhalterhaftpflicht from "./pages/Tierhalterhaftpflicht";
 import Hausratversicherung from "./pages/Hausratversicherung";
+import Rechtsschutzversicherung from "./pages/Rechtsschutzversicherung";
+import PrivatHaftpflicht from "./pages/PrivatHaftpflicht";
+import Reiseversicherung from "./pages/Reiseversicherung";
+import PhotovoltaikVersicherung from "./pages/PhotovoltaikVersicherung";
+import Wohngebaeudeversicherung from "./pages/Wohngebaeudeversicherung";
+import Baufinanzierung from "./pages/Baufinanzierung";
+import Berufsunfaehigkeit from "./pages/Berufsunfaehigkeit";
+import Unfallversicherung from "./pages/Unfallversicherung";
+import Krankenzusatz from "./pages/Krankenzusatz";
+import PrivateKrankenversicherung from "./pages/PrivateKrankenversicherung";
+import Risikolebensversicherung from "./pages/Risikolebensversicherung";
+import Kapitallebensversicherung from "./pages/Kapitallebensversicherung";
+import Rentenversicherung from "./pages/Rentenversicherung";
+import Kindervorsorge from "./pages/Kindervorsorge";
 import Service from "./pages/Service";
 import Kontakt from "./pages/Kontakt";
 import Impressum from "./pages/Impressum";
@@ -33,9 +47,27 @@ const App = () => (
           <Route path="/besonderheiten" element={<Besonderheiten />} />
           <Route path="/team" element={<Team />} />
           <Route path="/versicherungen" element={<Versicherungen />} />
+          {/* Sachversicherungen */}
           <Route path="/kfz-versicherung" element={<KfzVersicherung />} />
           <Route path="/tierhalterhaftpflicht" element={<Tierhalterhaftpflicht />} />
           <Route path="/hausratversicherung" element={<Hausratversicherung />} />
+          <Route path="/rechtsschutzversicherung" element={<Rechtsschutzversicherung />} />
+          <Route path="/privat-haftpflicht" element={<PrivatHaftpflicht />} />
+          <Route path="/reiseversicherung" element={<Reiseversicherung />} />
+          <Route path="/photovoltaik-versicherung" element={<PhotovoltaikVersicherung />} />
+          <Route path="/wohngebaeudeversicherung" element={<Wohngebaeudeversicherung />} />
+          {/* Vorsorge */}
+          <Route path="/berufsunfaehigkeit" element={<Berufsunfaehigkeit />} />
+          <Route path="/unfallversicherung" element={<Unfallversicherung />} />
+          <Route path="/krankenzusatz" element={<Krankenzusatz />} />
+          <Route path="/private-krankenversicherung" element={<PrivateKrankenversicherung />} />
+          <Route path="/risikolebensversicherung" element={<Risikolebensversicherung />} />
+          <Route path="/kapitallebensversicherung" element={<Kapitallebensversicherung />} />
+          <Route path="/rentenversicherung" element={<Rentenversicherung />} />
+          <Route path="/kindervorsorge" element={<Kindervorsorge />} />
+          {/* Finanzierung */}
+          <Route path="/baufinanzierung" element={<Baufinanzierung />} />
+          {/* Service & Legal */}
           <Route path="/service" element={<Service />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/impressum" element={<Impressum />} />
