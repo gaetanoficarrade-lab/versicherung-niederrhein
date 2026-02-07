@@ -6,7 +6,7 @@ import heroImage from "@/assets/hero-family.jpg";
 
 const stats = [
   { icon: Shield, value: "30+", label: "Jahre Erfahrung" },
-  { icon: Users, value: "2.500+", label: "Zufriedene Kunden" },
+  { icon: Users, value: "6.000+", label: "Zufriedene Kunden" },
   { icon: Award, value: "100%", label: "Unabhängig" },
 ];
 
