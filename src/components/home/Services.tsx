@@ -68,37 +68,37 @@ const gewerbeServices = [
     icon: Briefcase,
     title: "Betriebshaftpflicht",
     description: "Schützen Sie Ihr Unternehmen vor Haftungsansprüchen Dritter.",
-    href: "/kontakt",
+    href: "/betriebshaftpflicht",
   },
   {
     icon: Building2,
     title: "Gewerbliche Gebäude",
     description: "Umfassender Schutz für Ihre Geschäftsimmobilien.",
-    href: "/kontakt",
+    href: "/gewerbliche-gebaeude",
   },
   {
     icon: Truck,
     title: "Fuhrparkversicherung",
     description: "Optimale Absicherung für Ihren gesamten Fuhrpark.",
-    href: "/kontakt",
+    href: "/fuhrparkversicherung",
   },
   {
     icon: Flame,
     title: "Betriebsunterbrechung",
     description: "Sichern Sie sich gegen finanzielle Ausfälle ab.",
-    href: "/kontakt",
+    href: "/betriebsunterbrechung",
   },
   {
     icon: HardHat,
     title: "Berufshaftpflicht",
     description: "Professioneller Schutz für Freiberufler und Selbstständige.",
-    href: "/kontakt",
+    href: "/berufshaftpflicht",
   },
   {
     icon: Scale,
     title: "D&O-Versicherung",
     description: "Absicherung für Geschäftsführer gegen Haftungsrisiken.",
-    href: "/kontakt",
+    href: "/do-versicherung",
   },
 ];
 
@@ -272,7 +272,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Link to="/versicherungen">
+          <Link to={`/versicherungen?tab=${isGewerbe ? "gewerbe" : "privat"}`}>
             <Button size="lg" className="gap-2">
               Alle Versicherungen entdecken
               <ArrowRight className="h-5 w-5" />

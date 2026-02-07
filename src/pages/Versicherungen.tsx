@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Car, 
@@ -147,37 +147,37 @@ const gewerbeInsurances = [
     title: "Betriebshaftpflicht",
     description: "Schützen Sie Ihr Unternehmen vor Haftungsansprüchen Dritter im Geschäftsalltag.",
     icon: Briefcase,
-    href: "/kontakt",
+    href: "/betriebshaftpflicht",
   },
   {
     title: "Gewerbliche Gebäudeversicherung",
     description: "Umfassender Schutz für Ihre Geschäftsimmobilien gegen alle relevanten Risiken.",
     icon: Building2,
-    href: "/kontakt",
+    href: "/gewerbliche-gebaeude",
   },
   {
     title: "Fuhrparkversicherung",
     description: "Optimale Absicherung für Ihren gesamten Fuhrpark – flexibel und kosteneffizient.",
     icon: Truck,
-    href: "/kontakt",
+    href: "/fuhrparkversicherung",
   },
   {
     title: "Betriebsunterbrechung",
     description: "Sichern Sie Ihren Betrieb gegen finanzielle Ausfälle bei unvorhergesehenen Ereignissen ab.",
     icon: Flame,
-    href: "/kontakt",
+    href: "/betriebsunterbrechung",
   },
   {
     title: "Berufshaftpflicht",
     description: "Professioneller Schutz für Freiberufler und Selbstständige bei beruflichen Risiken.",
     icon: HardHat,
-    href: "/kontakt",
+    href: "/berufshaftpflicht",
   },
   {
     title: "D&O-Versicherung",
     description: "Absicherung für Geschäftsführer und Vorstände gegen persönliche Haftungsrisiken.",
     icon: Scale,
-    href: "/kontakt",
+    href: "/do-versicherung",
   },
 ];
 
@@ -275,7 +275,24 @@ function InsuranceCard({ insurance, index, isGewerbe }: InsuranceCardProps) {
 }
 
 export default function Versicherungen() {
-  const [isGewerbe, setIsGewerbe] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get("tab");
+  const [isGewerbe, setIsGewerbe] = useState(tabParam === "gewerbe");
+
+  // Sync URL parameter with state
+  useEffect(() => {
+    if (tabParam === "gewerbe") {
+      setIsGewerbe(true);
+    } else if (tabParam === "privat") {
+      setIsGewerbe(false);
+    }
+  }, [tabParam]);
+
+  const handleToggleChange = (id: string) => {
+    const newIsGewerbe = id === "gewerbe";
+    setIsGewerbe(newIsGewerbe);
+    setSearchParams({ tab: newIsGewerbe ? "gewerbe" : "privat" });
+  };
 
   return (
     <Layout>
@@ -338,7 +355,7 @@ export default function Versicherungen() {
                 { id: "gewerbe", label: "Gewerbekunden", icon: Building },
               ]}
               activeId={isGewerbe ? "gewerbe" : "privat"}
-              onChange={(id) => setIsGewerbe(id === "gewerbe")}
+              onChange={handleToggleChange}
               variant={isGewerbe ? "dark" : "glass"}
               className="mb-8"
             />
