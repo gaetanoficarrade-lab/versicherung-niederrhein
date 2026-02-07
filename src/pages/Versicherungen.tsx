@@ -24,6 +24,7 @@ import {
   Baby
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SegmentedToggle from "@/components/SegmentedToggle";
 import { cn } from "@/lib/utils";
 
 // Sachversicherungen (Property Insurance)
@@ -331,42 +332,16 @@ export default function Versicherungen() {
         <div className="section-container relative z-10 py-20">
           <div className="max-w-3xl">
             {/* Toggle Switch */}
-            <motion.div 
-              className={cn(
-                "mb-8 inline-flex items-center gap-2 p-1.5 rounded-full backdrop-blur-md border",
-                isGewerbe 
-                  ? "bg-slate-800/70 border-slate-600/50" 
-                  : "bg-white/20 border-white/30"
-              )}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <button
-                onClick={() => setIsGewerbe(false)}
-                className={cn(
-                  "flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
-                  !isGewerbe 
-                    ? "bg-primary text-primary-foreground shadow-lg" 
-                    : "text-white hover:text-white/80 hover:bg-white/10"
-                )}
-              >
-                <Users className="h-4 w-4" />
-                Privatkunden
-              </button>
-              <button
-                onClick={() => setIsGewerbe(true)}
-                className={cn(
-                  "flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
-                  isGewerbe 
-                    ? "bg-white text-slate-900 shadow-lg" 
-                    : "text-foreground/70 hover:text-foreground hover:bg-black/5"
-                )}
-              >
-                <Building className="h-4 w-4" />
-                Gewerbekunden
-              </button>
-            </motion.div>
+            <SegmentedToggle
+              options={[
+                { id: "privat", label: "Privatkunden", icon: Users },
+                { id: "gewerbe", label: "Gewerbekunden", icon: Building },
+              ]}
+              activeId={isGewerbe ? "gewerbe" : "privat"}
+              onChange={(id) => setIsGewerbe(id === "gewerbe")}
+              variant={isGewerbe ? "dark" : "glass"}
+              className="mb-8"
+            />
 
             {/* Title */}
             <AnimatePresence mode="wait">
