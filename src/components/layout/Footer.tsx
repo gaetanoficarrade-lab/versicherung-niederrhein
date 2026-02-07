@@ -250,6 +250,30 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          {/* 
+            =====================================================================
+            WICHTIG / IMPORTANT - NICHT ENTFERNEN / DO NOT REMOVE
+            =====================================================================
+            Diese Zeile darf NICHT ohne schriftliche Genehmigung von 
+            Gaetano Ficarra (gaetanoficarra.de) entfernt oder geändert werden.
+            
+            This line must NOT be removed or modified without written permission 
+            from Gaetano Ficarra (gaetanoficarra.de).
+            =====================================================================
+          */}
+          <div className="mt-4 text-center">
+            <p className="text-xs opacity-40">
+              Created by{" "}
+              <a 
+                href="https://gaetanoficarra.de" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-100 transition-opacity underline"
+              >
+                Gaetano Ficarra
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
