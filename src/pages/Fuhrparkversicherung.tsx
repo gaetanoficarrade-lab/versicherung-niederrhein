@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-fuhrpark.jpg";
 
 const benefits = [
@@ -48,8 +50,30 @@ const faqs = [
 ];
 
 export default function Fuhrparkversicherung() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "Fuhrparkversicherung",
+    description: "Einheitliche Versicherungslösung für alle Firmenfahrzeuge mit Flottenrabatten.",
+    url: "/fuhrparkversicherung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Fuhrparkversicherung", url: "/fuhrparkversicherung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.fuhrparkversicherung.title}
+        description={seoData.fuhrparkversicherung.description}
+        canonical={seoData.fuhrparkversicherung.canonical}
+        keywords={seoData.fuhrparkversicherung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <BusinessInsuranceHero
         icon={Truck}
         title="Fuhrparkversicherung"

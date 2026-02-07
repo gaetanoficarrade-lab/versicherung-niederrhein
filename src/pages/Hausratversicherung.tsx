@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
 import HausratRechner from "@/components/HausratRechner";
+import SEO, { createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-hausrat.jpg";
 
 const benefits = [
@@ -14,8 +16,29 @@ const benefits = [
 ];
 
 export default function Hausratversicherung() {
+  const serviceSchema = createServiceSchema({
+    name: "Hausratversicherung",
+    description: "Schutz für Ihren Hausrat bei Einbruch, Feuer, Wasser und Sturm.",
+    url: "/hausratversicherung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Hausratversicherung", url: "/hausratversicherung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.hausratversicherung.title}
+        description={seoData.hausratversicherung.description}
+        canonical={seoData.hausratversicherung.canonical}
+        keywords={seoData.hausratversicherung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema]
+        }}
+      />
       <InsuranceHero
         icon={Home}
         title="Hausratversicherung"

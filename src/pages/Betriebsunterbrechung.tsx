@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-unterbrechung.jpg";
 
 const benefits = [
@@ -48,8 +50,30 @@ const faqs = [
 ];
 
 export default function Betriebsunterbrechung() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "Betriebsunterbrechungsversicherung",
+    description: "Schutz bei Ertragsausfall und Übernahme laufender Kosten bei Betriebsstillstand.",
+    url: "/betriebsunterbrechung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Betriebsunterbrechungsversicherung", url: "/betriebsunterbrechung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.betriebsunterbrechung.title}
+        description={seoData.betriebsunterbrechung.description}
+        canonical={seoData.betriebsunterbrechung.canonical}
+        keywords={seoData.betriebsunterbrechung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <BusinessInsuranceHero
         icon={Flame}
         title="Betriebsunterbrechungsversicherung"

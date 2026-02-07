@@ -8,10 +8,27 @@ const footerLinks = {
     { name: "Was uns besonders macht", href: "/besonderheiten" },
     { name: "Ihre Ansprechpartner", href: "/team" },
   ],
-  versicherungen: [
+  privatversicherungen: [
     { name: "KFZ-Versicherung", href: "/kfz-versicherung" },
-    { name: "Tierhalterhaftpflicht", href: "/tierhalterhaftpflicht" },
     { name: "Hausratversicherung", href: "/hausratversicherung" },
+    { name: "Tierhalterhaftpflicht", href: "/tierhalterhaftpflicht" },
+    { name: "Rechtsschutzversicherung", href: "/rechtsschutzversicherung" },
+    { name: "Privathaftpflicht", href: "/privat-haftpflicht" },
+    { name: "Wohngebäudeversicherung", href: "/wohngebaeudeversicherung" },
+  ],
+  vorsorge: [
+    { name: "Berufsunfähigkeit", href: "/berufsunfaehigkeit" },
+    { name: "Unfallversicherung", href: "/unfallversicherung" },
+    { name: "Private Krankenversicherung", href: "/private-krankenversicherung" },
+    { name: "Rentenversicherung", href: "/rentenversicherung" },
+    { name: "Risikolebensversicherung", href: "/risikolebensversicherung" },
+  ],
+  gewerbe: [
+    { name: "Betriebshaftpflicht", href: "/betriebshaftpflicht" },
+    { name: "Berufshaftpflicht", href: "/berufshaftpflicht" },
+    { name: "Fuhrparkversicherung", href: "/fuhrparkversicherung" },
+    { name: "Gewerbliche Gebäude", href: "/gewerbliche-gebaeude" },
+    { name: "D&O Versicherung", href: "/do-versicherung" },
   ],
   service: [
     { name: "Service-Center", href: "/service" },
@@ -75,13 +92,73 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Versicherungen */}
+          {/* Privatversicherungen */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Versicherungen
+              Privatversicherungen
             </h3>
             <ul className="space-y-3">
-              {footerLinks.versicherungen.map((link) => (
+              {footerLinks.privatversicherungen.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Vorsorge */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
+              Vorsorge
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.vorsorge.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Second row for Gewerbe and Kontakt */}
+        <div className="grid gap-12 md:grid-cols-3 mt-12 pt-12 border-t border-background/10">
+          {/* Gewerbeversicherungen */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
+              Gewerbeversicherungen
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.gewerbe.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Service */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
+              Service
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.service.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}

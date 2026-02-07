@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
+import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-kfz.jpg";
 
 const benefits = [
@@ -33,8 +35,30 @@ const faqs = [
 ];
 
 export default function KfzVersicherung() {
+  const faqSchema = createFAQSchema(faqs);
+  const serviceSchema = createServiceSchema({
+    name: "KFZ-Versicherung",
+    description: "Autoversicherung mit Haftpflicht, Teilkasko und Vollkasko. Vergleich von über 50 Versicherern.",
+    url: "/kfz-versicherung"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "KFZ-Versicherung", url: "/kfz-versicherung" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.kfzVersicherung.title}
+        description={seoData.kfzVersicherung.description}
+        canonical={seoData.kfzVersicherung.canonical}
+        keywords={seoData.kfzVersicherung.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, serviceSchema, breadcrumbSchema]
+        }}
+      />
       <InsuranceHero
         icon={Car}
         title="KFZ-Versicherung"

@@ -1,9 +1,23 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
+import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 
 export default function Geschichte() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Unsere Geschichte", url: "/geschichte" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.geschichte.title}
+        description={seoData.geschichte.description}
+        canonical={seoData.geschichte.canonical}
+        keywords={seoData.geschichte.keywords}
+        structuredData={breadcrumbSchema}
+      />
       {/* Hero */}
       <section className="pt-16 pb-24 bg-gradient-to-b from-secondary to-background relative overflow-hidden">
         {/* Subtle background pattern */}

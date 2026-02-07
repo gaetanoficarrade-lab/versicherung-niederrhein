@@ -9,10 +9,19 @@ import TeamPreview from "@/components/home/TeamPreview";
 import FAQ from "@/components/home/FAQ";
 import CTASection from "@/components/home/CTASection";
 import WhatsAppButton from "@/components/home/WhatsAppButton";
+import SEO, { createFAQSchema } from "@/components/SEO";
+import { seoData, homeFAQs } from "@/lib/seoData";
 
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title={seoData.home.title}
+        description={seoData.home.description}
+        canonical={seoData.home.canonical}
+        keywords={seoData.home.keywords}
+        structuredData={createFAQSchema(homeFAQs)}
+      />
       <Hero />
       <PartnerSlider />
       <Services />

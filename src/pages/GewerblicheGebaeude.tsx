@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import BusinessInsuranceHero from "@/components/BusinessInsuranceHero";
 import { Link } from "react-router-dom";
+import SEO, { createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
+import { seoData } from "@/lib/seoData";
 import heroImage from "@/assets/hero-business-gebaeude.jpg";
 
 const benefits = [
@@ -32,8 +34,29 @@ const coverages = [
 ];
 
 export default function GewerblicheGebaeude() {
+  const serviceSchema = createServiceSchema({
+    name: "Gewerbliche Gebäudeversicherung",
+    description: "Schutz für Firmengebäude, Lagerhallen und Betriebsimmobilien.",
+    url: "/gewerbliche-gebaeude"
+  });
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Startseite", url: "/" },
+    { name: "Versicherungen", url: "/versicherungen" },
+    { name: "Gewerbliche Gebäudeversicherung", url: "/gewerbliche-gebaeude" }
+  ]);
+
   return (
     <Layout>
+      <SEO
+        title={seoData.gewerblicheGebaeude.title}
+        description={seoData.gewerblicheGebaeude.description}
+        canonical={seoData.gewerblicheGebaeude.canonical}
+        keywords={seoData.gewerblicheGebaeude.keywords}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema]
+        }}
+      />
       <BusinessInsuranceHero
         icon={Building2}
         title="Gewerbliche Gebäudeversicherung"
