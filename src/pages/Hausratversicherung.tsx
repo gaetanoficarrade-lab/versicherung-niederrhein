@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { Home, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import InsuranceHero from "@/components/InsuranceHero";
 import HausratRechner from "@/components/HausratRechner";
+import heroImage from "@/assets/hero-hausrat.jpg";
 
 const benefits = [
   "Direkter Onlineabschluss",
@@ -14,31 +16,12 @@ const benefits = [
 export default function Hausratversicherung() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-16 pb-24 bg-gradient-to-b from-primary/5 to-background">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <div className="relative inline-flex mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-sm" />
-              <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
-                <Home className="h-8 w-8 text-primary" strokeWidth={1.5} />
-              </div>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Hausratversicherung
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Ein Wasserschaden kommt fast immer unverhofft. Auch Einbrecher kündigen 
-              ihren Besuch selten an. Schütze dich vor großen unerwarteten Belastungen.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <InsuranceHero
+        icon={Home}
+        title="Hausratversicherung"
+        description="Ein Wasserschaden kommt fast immer unverhofft. Auch Einbrecher kündigen ihren Besuch selten an. Schütze dich vor großen unerwarteten Belastungen."
+        heroImage={heroImage}
+      />
 
       {/* Content */}
       <section className="py-16 bg-background">

@@ -31,6 +31,13 @@ import Kontakt from "./pages/Kontakt";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
+// Gewerbeversicherungen
+import Betriebshaftpflicht from "./pages/Betriebshaftpflicht";
+import GewerblicheGebaeude from "./pages/GewerblicheGebaeude";
+import Fuhrparkversicherung from "./pages/Fuhrparkversicherung";
+import Betriebsunterbrechung from "./pages/Betriebsunterbrechung";
+import Berufshaftpflicht from "./pages/Berufshaftpflicht";
+import DOVersicherung from "./pages/DOVersicherung";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +74,13 @@ const App = () => (
           <Route path="/kindervorsorge" element={<Kindervorsorge />} />
           {/* Finanzierung */}
           <Route path="/baufinanzierung" element={<Baufinanzierung />} />
+          {/* Gewerbeversicherungen */}
+          <Route path="/betriebshaftpflicht" element={<Betriebshaftpflicht />} />
+          <Route path="/gewerbliche-gebaeude" element={<GewerblicheGebaeude />} />
+          <Route path="/fuhrparkversicherung" element={<Fuhrparkversicherung />} />
+          <Route path="/betriebsunterbrechung" element={<Betriebsunterbrechung />} />
+          <Route path="/berufshaftpflicht" element={<Berufshaftpflicht />} />
+          <Route path="/do-versicherung" element={<DOVersicherung />} />
           {/* Service & Legal */}
           <Route path="/service" element={<Service />} />
           <Route path="/kontakt" element={<Kontakt />} />
