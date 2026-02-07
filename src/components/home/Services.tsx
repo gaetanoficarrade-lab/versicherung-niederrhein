@@ -22,6 +22,7 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import SegmentedToggle from "@/components/SegmentedToggle";
 
 const privatServices = [
   {
@@ -129,37 +130,15 @@ export default function Services() {
           </p>
           
           {/* Toggle Switch - prominently placed */}
-          <motion.div 
-            className="inline-flex items-center gap-1 p-1.5 rounded-full bg-muted border border-border shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <button
-              onClick={() => setIsGewerbe(false)}
-              className={cn(
-                "flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300",
-                !isGewerbe 
-                  ? "bg-primary text-primary-foreground shadow-md" 
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              )}
-            >
-              <Users className="h-4 w-4" />
-              Privatkunden
-            </button>
-            <button
-              onClick={() => setIsGewerbe(true)}
-              className={cn(
-                "flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300",
-                isGewerbe 
-                  ? "bg-primary text-primary-foreground shadow-md" 
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              )}
-            >
-              <Building className="h-4 w-4" />
-              Gewerbekunden
-            </button>
-          </motion.div>
+          <SegmentedToggle
+            options={[
+              { id: "privat", label: "Privatkunden", icon: Users },
+              { id: "gewerbe", label: "Gewerbekunden", icon: Building },
+            ]}
+            activeId={isGewerbe ? "gewerbe" : "privat"}
+            onChange={(id) => setIsGewerbe(id === "gewerbe")}
+            variant="light"
+          />
         </motion.div>
 
         {/* Interactive Hexagon/Carousel Style Grid */}
