@@ -1,20 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Car, 
-  PawPrint, 
-  Home, 
-  HeartPulse, 
   ArrowRight,
   Users,
   Building,
-  Scale,
-  Briefcase,
-  Wallet,
-  Truck,
-  HardHat,
-  Flame,
-  Building2,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
@@ -39,42 +28,36 @@ import heroDNO from "@/assets/hero-business-dno.jpg";
 
 const privatServices = [
   {
-    icon: Car,
     title: "KFZ-Versicherung",
     description: "Sichere dein Fahrzeug mit dem optimalen Preis-Leistungsverhältnis.",
     href: "/kfz-versicherung",
     image: heroKfz,
   },
   {
-    icon: Home,
     title: "Hausratversicherung",
     description: "Schütze dein gesamtes Eigentum gegen Wasserschäden und Einbruch.",
     href: "/hausratversicherung",
     image: heroHausrat,
   },
   {
-    icon: PawPrint,
     title: "Tierhalterhaftpflicht",
     description: "Schütze dich vor finanziellen Risiken durch deinen Vierbeiner.",
     href: "/tierhalterhaftpflicht",
     image: heroTier,
   },
   {
-    icon: HeartPulse,
     title: "Berufsunfähigkeit",
     description: "Deine Arbeitskraft ist dein wertvollstes Gut – sichere sie ab.",
     href: "/berufsunfaehigkeit",
     image: heroBU,
   },
   {
-    icon: Scale,
     title: "Rechtsschutz",
     description: "Bei Rechtsstreitigkeiten stehen wir an deiner Seite.",
     href: "/rechtsschutzversicherung",
     image: heroRechtsschutz,
   },
   {
-    icon: Wallet,
     title: "Baufinanzierung",
     description: "Vergleich von über 200 Darlehensgebern für deine Immobilie.",
     href: "/baufinanzierung",
@@ -84,42 +67,36 @@ const privatServices = [
 
 const gewerbeServices = [
   {
-    icon: Briefcase,
     title: "Betriebshaftpflicht",
     description: "Schützen Sie Ihr Unternehmen vor Haftungsansprüchen Dritter.",
     href: "/betriebshaftpflicht",
     image: heroBetriebshaftpflicht,
   },
   {
-    icon: Building2,
     title: "Gewerbliche Gebäude",
     description: "Umfassender Schutz für Ihre Geschäftsimmobilien.",
     href: "/gewerbliche-gebaeude",
     image: heroGebaeude,
   },
   {
-    icon: Truck,
     title: "Fuhrparkversicherung",
     description: "Optimale Absicherung für Ihren gesamten Fuhrpark.",
     href: "/fuhrparkversicherung",
     image: heroFuhrpark,
   },
   {
-    icon: Flame,
     title: "Betriebsunterbrechung",
     description: "Sichern Sie sich gegen finanzielle Ausfälle ab.",
     href: "/betriebsunterbrechung",
     image: heroUnterbrechung,
   },
   {
-    icon: HardHat,
     title: "Berufshaftpflicht",
     description: "Professioneller Schutz für Freiberufler und Selbstständige.",
     href: "/berufshaftpflicht",
     image: heroBerufshaftpflicht,
   },
   {
-    icon: Scale,
     title: "D&O-Versicherung",
     description: "Absicherung für Geschäftsführer gegen Haftungsrisiken.",
     href: "/do-versicherung",
@@ -200,7 +177,7 @@ export default function Services() {
     }, AUTO_PLAY_DURATION);
   };
 
-  // Calculate position for each card with smooth scaling
+  // Calculate position for each card with smooth, flowing scaling
   const getCardStyle = (index: number) => {
     const diff = index - activeIndex;
     const normalizedDiff = ((diff + totalItems) % totalItems);
@@ -211,22 +188,38 @@ export default function Services() {
     const isAdjacent = absDistance === 1;
     const isVisible = absDistance <= 2;
     
-    // Smooth scale based on progress for active card
-    const progressScale = isActive ? 1 + (0.05 * (1 - progress / 100)) : 1;
+    // Flowing scale animation: active card grows then shrinks as progress advances
+    // When progress is 0-50%, active card is at max size
+    // When progress is 50-100%, active card shrinks while next card grows
+    const progressNormalized = progress / 100;
+    
+    // Active card: starts big, shrinks toward end
+    // Next card (adjustedDiff === 1): starts small, grows toward end
+    let dynamicScale = 1;
+    if (isActive) {
+      // Active card: max at 0%, shrinks to base at 100%
+      dynamicScale = 1.25 - (progressNormalized * 0.05);
+    } else if (adjustedDiff === 1) {
+      // Next card: grows as we approach transition
+      dynamicScale = 0.82 + (progressNormalized * 0.08);
+    } else if (adjustedDiff === -1) {
+      // Previous card
+      dynamicScale = 0.82;
+    } else {
+      dynamicScale = 0.65;
+    }
     
     // Calculate transforms
-    const translateX = adjustedDiff * 300;
-    const translateZ = isActive ? 80 : isAdjacent ? -20 : -80;
-    const baseScale = isActive ? 1.05 : isAdjacent ? 0.88 : 0.72;
-    const scale = isActive ? baseScale * progressScale : baseScale;
-    const rotateY = adjustedDiff * -12;
-    const opacity = isActive ? 1 : isAdjacent ? 0.75 : 0.35;
+    const translateX = adjustedDiff * 320;
+    const translateZ = isActive ? 120 : isAdjacent ? -30 : -100;
+    const rotateY = adjustedDiff * -10;
+    const opacity = isActive ? 1 : isAdjacent ? 0.7 : 0.3;
     const zIndex = isActive ? 30 : isAdjacent ? 20 : 10;
 
     return {
       translateX,
       translateZ,
-      scale,
+      scale: dynamicScale,
       rotateY,
       opacity: isVisible ? opacity : 0,
       zIndex,
@@ -304,8 +297,7 @@ export default function Services() {
             >
               {/* Cards */}
               <div className="absolute inset-0 flex items-center justify-center">
-                {services.map((service, index) => {
-                  const Icon = service.icon;
+              {services.map((service, index) => {
                   const style = getCardStyle(index);
                   
                   if (!style.isVisible) return null;
@@ -322,10 +314,9 @@ export default function Services() {
                         opacity: style.opacity,
                       }}
                       transition={{ 
-                        type: "spring", 
-                        stiffness: 200, 
-                        damping: 25,
-                        mass: 0.8
+                        type: "tween",
+                        duration: 0.15,
+                        ease: "easeOut"
                       }}
                       style={{ 
                         zIndex: style.zIndex,
@@ -339,7 +330,7 @@ export default function Services() {
                     >
                       <div 
                         className={cn(
-                          "w-[280px] md:w-[340px] rounded-2xl overflow-hidden transition-shadow duration-500",
+                          "w-[280px] md:w-[360px] rounded-2xl overflow-hidden transition-shadow duration-300",
                           style.isActive 
                             ? "shadow-2xl cursor-default" 
                             : "cursor-pointer",
@@ -349,35 +340,18 @@ export default function Services() {
                         )}
                       >
                         {/* Image Header with Overlay */}
-                        <div className="h-40 md:h-48 relative overflow-hidden">
+                        <div className="h-44 md:h-52 relative overflow-hidden">
                           <img 
                             src={service.image} 
                             alt={service.title}
                             className="absolute inset-0 w-full h-full object-cover"
                           />
                           {/* Dark gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                          
-                          {/* Icon */}
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className={cn(
-                              "h-16 w-16 md:h-20 md:w-20 rounded-xl flex items-center justify-center transition-all duration-300",
-                              "bg-white/10 backdrop-blur-sm border border-white/20",
-                              style.isActive && "shadow-lg shadow-primary/20"
-                            )}>
-                              <Icon 
-                                className={cn(
-                                  "h-8 w-8 md:h-10 md:w-10 text-white transition-all duration-300",
-                                  style.isActive && "text-primary"
-                                )} 
-                                strokeWidth={1.5} 
-                              />
-                            </div>
-                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
                           
                           {/* Title on image */}
                           <div className="absolute bottom-4 left-4 right-4">
-                            <h3 className="text-xl font-bold text-white">
+                            <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">
                               {service.title}
                             </h3>
                           </div>
