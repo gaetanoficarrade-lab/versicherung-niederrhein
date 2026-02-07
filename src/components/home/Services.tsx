@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Car, 
   PawPrint, 
@@ -23,48 +23,62 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import SegmentedToggle from "@/components/SegmentedToggle";
 
+// Import hero images for backgrounds
+import heroKfz from "@/assets/hero-kfz.jpg";
+import heroHausrat from "@/assets/hero-hausrat.jpg";
+import heroTier from "@/assets/hero-tierhalterhaftpflicht.jpg";
+import heroBU from "@/assets/hero-berufsunfaehigkeit.jpg";
+import heroRechtsschutz from "@/assets/hero-rechtsschutz.jpg";
+import heroBaufi from "@/assets/hero-baufinanzierung.jpg";
+import heroBetriebshaftpflicht from "@/assets/hero-business-betriebshaftpflicht.jpg";
+import heroGebaeude from "@/assets/hero-business-gebaeude.jpg";
+import heroFuhrpark from "@/assets/hero-business-fuhrpark.jpg";
+import heroUnterbrechung from "@/assets/hero-business-unterbrechung.jpg";
+import heroBerufshaftpflicht from "@/assets/hero-business-berufshaftpflicht.jpg";
+import heroDNO from "@/assets/hero-business-dno.jpg";
+
 const privatServices = [
   {
     icon: Car,
     title: "KFZ-Versicherung",
     description: "Sichere dein Fahrzeug mit dem optimalen Preis-Leistungsverhältnis.",
     href: "/kfz-versicherung",
-    gradient: "from-blue-500 to-cyan-400",
+    image: heroKfz,
   },
   {
     icon: Home,
     title: "Hausratversicherung",
     description: "Schütze dein gesamtes Eigentum gegen Wasserschäden und Einbruch.",
     href: "/hausratversicherung",
-    gradient: "from-amber-500 to-orange-400",
+    image: heroHausrat,
   },
   {
     icon: PawPrint,
     title: "Tierhalterhaftpflicht",
     description: "Schütze dich vor finanziellen Risiken durch deinen Vierbeiner.",
     href: "/tierhalterhaftpflicht",
-    gradient: "from-emerald-500 to-green-400",
+    image: heroTier,
   },
   {
     icon: HeartPulse,
     title: "Berufsunfähigkeit",
     description: "Deine Arbeitskraft ist dein wertvollstes Gut – sichere sie ab.",
     href: "/berufsunfaehigkeit",
-    gradient: "from-rose-500 to-pink-400",
+    image: heroBU,
   },
   {
     icon: Scale,
     title: "Rechtsschutz",
     description: "Bei Rechtsstreitigkeiten stehen wir an deiner Seite.",
     href: "/rechtsschutzversicherung",
-    gradient: "from-violet-500 to-purple-400",
+    image: heroRechtsschutz,
   },
   {
     icon: Wallet,
     title: "Baufinanzierung",
     description: "Vergleich von über 200 Darlehensgebern für deine Immobilie.",
     href: "/baufinanzierung",
-    gradient: "from-teal-500 to-cyan-400",
+    image: heroBaufi,
   },
 ];
 
@@ -74,82 +88,119 @@ const gewerbeServices = [
     title: "Betriebshaftpflicht",
     description: "Schützen Sie Ihr Unternehmen vor Haftungsansprüchen Dritter.",
     href: "/betriebshaftpflicht",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroBetriebshaftpflicht,
   },
   {
     icon: Building2,
     title: "Gewerbliche Gebäude",
     description: "Umfassender Schutz für Ihre Geschäftsimmobilien.",
     href: "/gewerbliche-gebaeude",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroGebaeude,
   },
   {
     icon: Truck,
     title: "Fuhrparkversicherung",
     description: "Optimale Absicherung für Ihren gesamten Fuhrpark.",
     href: "/fuhrparkversicherung",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroFuhrpark,
   },
   {
     icon: Flame,
     title: "Betriebsunterbrechung",
     description: "Sichern Sie sich gegen finanzielle Ausfälle ab.",
     href: "/betriebsunterbrechung",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroUnterbrechung,
   },
   {
     icon: HardHat,
     title: "Berufshaftpflicht",
     description: "Professioneller Schutz für Freiberufler und Selbstständige.",
     href: "/berufshaftpflicht",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroBerufshaftpflicht,
   },
   {
     icon: Scale,
     title: "D&O-Versicherung",
     description: "Absicherung für Geschäftsführer gegen Haftungsrisiken.",
     href: "/do-versicherung",
-    gradient: "from-slate-400 to-slate-300",
+    image: heroDNO,
   },
 ];
 
 export default function Services() {
   const [isGewerbe, setIsGewerbe] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const progressRef = useRef<NodeJS.Timeout | null>(null);
   
   const services = isGewerbe ? gewerbeServices : privatServices;
   const totalItems = services.length;
+  const AUTO_PLAY_DURATION = 5000; // 5 seconds per slide
+  const PROGRESS_INTERVAL = 50; // Update progress every 50ms
 
-  // Auto-play carousel
+  // Smooth auto-play with progress
   useEffect(() => {
-    if (isAutoPlaying) {
-      autoPlayRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % totalItems);
-      }, 4000);
-    }
+    setProgress(0);
+    
+    progressRef.current = setInterval(() => {
+      setProgress((prev) => {
+        const next = prev + (100 / (AUTO_PLAY_DURATION / PROGRESS_INTERVAL));
+        if (next >= 100) {
+          return 0;
+        }
+        return next;
+      });
+    }, PROGRESS_INTERVAL);
+
+    autoPlayRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalItems);
+      setProgress(0);
+    }, AUTO_PLAY_DURATION);
+
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+      if (progressRef.current) clearInterval(progressRef.current);
     };
-  }, [isAutoPlaying, totalItems]);
+  }, [totalItems, isGewerbe]);
 
   const handlePrev = () => {
-    setIsAutoPlaying(false);
     setActiveIndex((prev) => (prev - 1 + totalItems) % totalItems);
+    setProgress(0);
+    resetAutoPlay();
   };
 
   const handleNext = () => {
-    setIsAutoPlaying(false);
     setActiveIndex((prev) => (prev + 1) % totalItems);
+    setProgress(0);
+    resetAutoPlay();
   };
 
   const handleDotClick = (index: number) => {
-    setIsAutoPlaying(false);
     setActiveIndex(index);
+    setProgress(0);
+    resetAutoPlay();
   };
 
-  // Calculate position for each card in 3D space
+  const resetAutoPlay = () => {
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    if (progressRef.current) clearInterval(progressRef.current);
+    
+    progressRef.current = setInterval(() => {
+      setProgress((prev) => {
+        const next = prev + (100 / (AUTO_PLAY_DURATION / PROGRESS_INTERVAL));
+        if (next >= 100) return 0;
+        return next;
+      });
+    }, PROGRESS_INTERVAL);
+
+    autoPlayRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalItems);
+      setProgress(0);
+    }, AUTO_PLAY_DURATION);
+  };
+
+  // Calculate position for each card with smooth scaling
   const getCardStyle = (index: number) => {
     const diff = index - activeIndex;
     const normalizedDiff = ((diff + totalItems) % totalItems);
@@ -160,12 +211,16 @@ export default function Services() {
     const isAdjacent = absDistance === 1;
     const isVisible = absDistance <= 2;
     
+    // Smooth scale based on progress for active card
+    const progressScale = isActive ? 1 + (0.05 * (1 - progress / 100)) : 1;
+    
     // Calculate transforms
-    const translateX = adjustedDiff * 280;
-    const translateZ = isActive ? 100 : isAdjacent ? 0 : -100;
-    const scale = isActive ? 1.1 : isAdjacent ? 0.85 : 0.7;
-    const rotateY = adjustedDiff * -15;
-    const opacity = isActive ? 1 : isAdjacent ? 0.7 : 0.4;
+    const translateX = adjustedDiff * 300;
+    const translateZ = isActive ? 80 : isAdjacent ? -20 : -80;
+    const baseScale = isActive ? 1.05 : isAdjacent ? 0.88 : 0.72;
+    const scale = isActive ? baseScale * progressScale : baseScale;
+    const rotateY = adjustedDiff * -12;
+    const opacity = isActive ? 1 : isAdjacent ? 0.75 : 0.35;
     const zIndex = isActive ? 30 : isAdjacent ? 20 : 10;
 
     return {
@@ -226,6 +281,7 @@ export default function Services() {
             onChange={(id) => {
               setIsGewerbe(id === "gewerbe");
               setActiveIndex(0);
+              setProgress(0);
             }}
             variant={isGewerbe ? "dark" : "light"}
           />
@@ -243,8 +299,8 @@ export default function Services() {
           >
             {/* Carousel Container */}
             <div 
-              className="relative h-[420px] md:h-[480px] perspective-1000"
-              style={{ perspective: "1200px" }}
+              className="relative h-[420px] md:h-[480px]"
+              style={{ perspective: "1400px" }}
             >
               {/* Cards */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -258,7 +314,6 @@ export default function Services() {
                     <motion.div
                       key={service.title}
                       className="absolute"
-                      initial={false}
                       animate={{
                         x: style.translateX,
                         z: style.translateZ,
@@ -268,8 +323,9 @@ export default function Services() {
                       }}
                       transition={{ 
                         type: "spring", 
-                        stiffness: 300, 
-                        damping: 30 
+                        stiffness: 200, 
+                        damping: 25,
+                        mass: 0.8
                       }}
                       style={{ 
                         zIndex: style.zIndex,
@@ -283,74 +339,57 @@ export default function Services() {
                     >
                       <div 
                         className={cn(
-                          "w-[280px] md:w-[320px] rounded-3xl overflow-hidden transition-all duration-300",
+                          "w-[280px] md:w-[340px] rounded-2xl overflow-hidden transition-shadow duration-500",
                           style.isActive 
                             ? "shadow-2xl cursor-default" 
-                            : "cursor-pointer hover:scale-105",
+                            : "cursor-pointer",
                           isGewerbe
-                            ? "bg-white/10 backdrop-blur-sm border border-white/20"
-                            : "bg-card border border-border shadow-xl"
+                            ? "border border-white/10"
+                            : "border border-border"
                         )}
                       >
-                        {/* Gradient Header */}
-                        <div className={cn(
-                          "h-32 md:h-40 bg-gradient-to-br flex items-center justify-center relative overflow-hidden",
-                          service.gradient
-                        )}>
-                          {/* Animated background pattern */}
-                          <div className="absolute inset-0 opacity-30">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-white/20 blur-3xl" />
+                        {/* Image Header with Overlay */}
+                        <div className="h-40 md:h-48 relative overflow-hidden">
+                          <img 
+                            src={service.image} 
+                            alt={service.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          {/* Dark gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                          
+                          {/* Icon */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className={cn(
+                              "h-16 w-16 md:h-20 md:w-20 rounded-xl flex items-center justify-center transition-all duration-300",
+                              "bg-white/10 backdrop-blur-sm border border-white/20",
+                              style.isActive && "shadow-lg shadow-primary/20"
+                            )}>
+                              <Icon 
+                                className={cn(
+                                  "h-8 w-8 md:h-10 md:w-10 text-white transition-all duration-300",
+                                  style.isActive && "text-primary"
+                                )} 
+                                strokeWidth={1.5} 
+                              />
+                            </div>
                           </div>
                           
-                          {/* Floating particles for active card */}
-                          {style.isActive && (
-                            <>
-                              {[...Array(5)].map((_, i) => (
-                                <motion.div
-                                  key={i}
-                                  className="absolute w-2 h-2 rounded-full bg-white/40"
-                                  initial={{ 
-                                    x: Math.random() * 200 - 100, 
-                                    y: 100,
-                                    opacity: 0 
-                                  }}
-                                  animate={{ 
-                                    y: -50,
-                                    opacity: [0, 1, 0],
-                                  }}
-                                  transition={{ 
-                                    duration: 2 + Math.random(), 
-                                    delay: i * 0.3,
-                                    repeat: Infinity,
-                                    ease: "easeOut"
-                                  }}
-                                />
-                              ))}
-                            </>
-                          )}
-                          
-                          <motion.div
-                            animate={style.isActive ? { 
-                              scale: [1, 1.1, 1],
-                              rotate: [0, 5, -5, 0]
-                            } : {}}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="relative z-10"
-                          >
-                            <div className="h-20 w-20 md:h-24 md:w-24 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                              <Icon className="h-10 w-10 md:h-12 md:w-12 text-white" strokeWidth={1.5} />
-                            </div>
-                          </motion.div>
+                          {/* Title on image */}
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <h3 className="text-xl font-bold text-white">
+                              {service.title}
+                            </h3>
+                          </div>
                         </div>
                         
                         {/* Content */}
-                        <div className="p-6">
-                          <h3 className={cn(
-                            "text-xl font-bold mb-2",
-                            isGewerbe ? "text-white" : "text-foreground"
-                          )}>
-                            {service.title}
-                          </h3>
+                        <div className={cn(
+                          "p-5 transition-colors duration-300",
+                          isGewerbe 
+                            ? "bg-[hsl(178,45%,15%)]" 
+                            : "bg-card"
+                        )}>
                           <p className={cn(
                             "text-sm leading-relaxed mb-4",
                             isGewerbe ? "text-white/60" : "text-muted-foreground"
@@ -358,25 +397,19 @@ export default function Services() {
                             {service.description}
                           </p>
                           
-                          {style.isActive && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: 0.2 }}
+                          <Link to={service.href}>
+                            <Button 
+                              variant={style.isActive ? "default" : "outline"}
+                              className={cn(
+                                "w-full gap-2 transition-all duration-300",
+                                isGewerbe && style.isActive && "bg-primary text-primary-foreground hover:bg-primary/90",
+                                isGewerbe && !style.isActive && "border-white/20 text-white/70 hover:bg-white/10"
+                              )}
                             >
-                              <Link to={service.href}>
-                                <Button 
-                                  className={cn(
-                                    "w-full gap-2",
-                                    isGewerbe && "bg-white text-[hsl(178,45%,20%)] hover:bg-white/90"
-                                  )}
-                                >
-                                  Mehr erfahren
-                                  <ArrowRight className="h-4 w-4" />
-                                </Button>
-                              </Link>
-                            </motion.div>
-                          )}
+                              Mehr erfahren
+                              <ArrowRight className="h-4 w-4" />
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </motion.div>
@@ -409,25 +442,32 @@ export default function Services() {
               </button>
             </div>
             
-            {/* Dots Navigation */}
-            <div className="flex justify-center gap-2 mt-8">
+            {/* Progress Dots Navigation */}
+            <div className="flex justify-center gap-3 mt-8">
               {services.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={cn(
-                    "transition-all duration-300 rounded-full",
+                  className="relative group"
+                >
+                  <div className={cn(
+                    "w-10 h-1.5 rounded-full overflow-hidden transition-all duration-300",
                     index === activeIndex 
-                      ? cn(
-                          "w-8 h-3",
+                      ? isGewerbe ? "bg-white/20" : "bg-primary/20"
+                      : isGewerbe ? "bg-white/10 hover:bg-white/20" : "bg-primary/10 hover:bg-primary/20"
+                  )}>
+                    {index === activeIndex && (
+                      <motion.div 
+                        className={cn(
+                          "h-full rounded-full",
                           isGewerbe ? "bg-white" : "bg-primary"
-                        )
-                      : cn(
-                          "w-3 h-3 hover:scale-125",
-                          isGewerbe ? "bg-white/30 hover:bg-white/50" : "bg-primary/30 hover:bg-primary/50"
-                        )
-                  )}
-                />
+                        )}
+                        style={{ width: `${progress}%` }}
+                        transition={{ duration: 0.05 }}
+                      />
+                    )}
+                  </div>
+                </button>
               ))}
             </div>
           </motion.div>
