@@ -21,40 +21,9 @@ export default function AppSection() {
     <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/30 overflow-hidden">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: App Mockup */}
+          {/* Left: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center"
-          >
-            <div className="relative">
-              {/* Glow behind phone */}
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
-              <img
-                src={appMockup}
-                alt="Smits & Kollegen Versicherungsapp auf einem Smartphone"
-                className="relative z-10 w-72 md:w-80 drop-shadow-2xl"
-              />
-            </div>
-
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              viewport={{ once: true }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-5 py-2.5 rounded-full bg-card border border-border shadow-lg"
-            >
-              <Smartphone className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-foreground whitespace-nowrap">Deine Versicherungen – immer dabei</span>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
@@ -117,6 +86,37 @@ export default function AppSection() {
                 </Button>
               </form>
             )}
+          </motion.div>
+
+          {/* Right: App Mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative flex justify-center"
+          >
+            <div className="relative">
+              {/* Glow behind phone */}
+              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
+              <img
+                src={appMockup}
+                alt="Smits & Kollegen Versicherungsapp auf einem Smartphone"
+                className="relative z-10 w-72 md:w-80 drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-5 py-2.5 rounded-full bg-card border border-border shadow-lg"
+            >
+              <Smartphone className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-foreground whitespace-nowrap">Deine Versicherungen – immer dabei</span>
+            </motion.div>
           </motion.div>
         </div>
       </div>
