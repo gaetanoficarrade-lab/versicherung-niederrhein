@@ -278,7 +278,7 @@ export default function Services() {
               setActiveIndex(0);
               setProgress(0);
             }}
-            variant={isGewerbe ? "dark" : "light"}
+            variant="glass"
           />
         </motion.div>
 

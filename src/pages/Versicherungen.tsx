@@ -362,7 +362,7 @@ export default function Versicherungen() {
               ]}
               activeId={isGewerbe ? "gewerbe" : "privat"}
               onChange={handleToggleChange}
-              variant={isGewerbe ? "dark" : "glass"}
+              variant="glass"
               className="mb-8"
             />
 
