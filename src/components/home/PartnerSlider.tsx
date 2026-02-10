@@ -17,7 +17,7 @@ export default function PartnerSlider() {
     <section className="py-12 bg-muted/50 overflow-hidden">
       <div className="section-container mb-8">
         <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-wider">
-          Unsere Partner
+          Eine Auswahl unserer Partner
         </p>
       </div>
       
