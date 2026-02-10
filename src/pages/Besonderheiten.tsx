@@ -1,28 +1,46 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { ShieldCheck, UserCheck, MessageCircle, Settings, Handshake, BadgeCheck, GraduationCap, LifeBuoy, Banknote } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
 
-const benefits = [
+const vorteile = [
   {
-    title: "Unabhängige Beratung",
-    description: "Als Versicherungsmakler arbeiten wir im Gegensatz zum einfachen Versicherungsvertreter nicht im Auftrag einer Gesellschaft, sondern ausschließlich in deinem Auftrag.",
+    icon: ShieldCheck,
+    title: "Unabhängigkeit statt Verkaufszwang",
+    description: "Als Makler sind wir kein Vertreter einer Versicherung, sondern Ihr persönlicher Treuhänder. Wir scannen den Markt neutral und finden die Lösung, die wirklich zu Ihnen passt.",
   },
   {
-    title: "Marktübergreifende Suche",
-    description: "Als Sachwalter suchen wir für dich in den Bereichen Versicherungen, Finanzierungen und Geldanlagen die preiswertesten und leistungsstärksten Angebote ohne von einem Produktanbieter abhängig zu sein.",
+    icon: UserCheck,
+    title: "Sie geben den Takt vor",
+    description: "Ob Sie eine einzelne Absicherung benötigen oder eine ganzheitliche Beratung für die gesamte Familie wünschen – Sie allein bestimmen den Umfang unserer Zusammenarbeit.",
   },
   {
-    title: "Zugang zu allen Versicherern",
-    description: "Wir können uns bei jedem Versicherer in Deutschland um deinen Versicherungsschutz bemühen. Uns ist es ein besonderes Anliegen, immer ein optimales, individuelles und in Preis und Leistung ausgewogenes Angebot zu erarbeiten.",
+    icon: MessageCircle,
+    title: "Kommunikation auf Augenhöhe",
+    description: "Persönlich im Büro, per Telefon, via E-Mail oder ganz modern in einer Online-Beratung – wir sind da, wo Sie uns brauchen.",
   },
   {
-    title: "Praktische Erfahrung",
-    description: "Wir berücksichtigen auch unsere praktischen Erfahrungen innerhalb unserer langjährigen Tätigkeit wie z.B. Regulierungsverhalten, Kundenservice oder der Kompetenz der Ansprechpartner.",
+    icon: Settings,
+    title: "Service nach Maß",
+    description: 'Wir drängen uns nicht auf. Möchten Sie einen jährlichen Check-up? Gerne! Bevorzugen Sie Infos nur per Newsletter? Auch das ist okay. Wir sind Ihr Berater, kein \u201EStörenfried\u201C.',
+  },
+];
+
+const vemaVorteile = [
+  {
+    icon: Handshake,
+    title: "Sonderkonditionen",
+    description: "Durch den Zusammenschluss von über 5.000 Maklerbetrieben profitieren Sie von Tarifen, die es so am freien Markt oft gar nicht gibt.",
   },
   {
-    title: "Jahrzehntelange Erfahrung",
-    description: "Durch jahrzehntelange Erfahrung und strikte Wahrung der Unabhängigkeit können wir dir beste Qualität vermitteln und einen ausgezeichneten Service bieten.",
+    icon: BadgeCheck,
+    title: "Geprüfte Qualität",
+    description: "Als VEMA-Partner erfüllen wir strenge Kriterien an Berufserfahrung, wirtschaftliche Solidität und fachliche Kompetenz im Team.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Aktuelles Expertenwissen",
+    description: "Durch kontinuierliche Weiterbildung bleiben wir für Sie immer am Puls der Zeit.",
   },
 ];
 
@@ -79,73 +97,181 @@ export default function Besonderheiten() {
               Das Unternehmen
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Was uns besonders macht
+              Warum Sie bei uns in den besten Händen sind
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Wir sind als Versicherungsmakler Sachwalter unserer Kunden und bieten 
-              dir ein umfangreiches Dienstleistungspaket.
+              Versicherungen gibt es heute an jeder Ecke: bei der Bank, direkt beim Versicherer 
+              oder mit zwei Klicks im Internet. Warum sollten Sie sich trotzdem für einen 
+              Versicherungsmakler entscheiden – und warum genau für uns?
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full border border-primary/5" />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full border border-primary/5" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-primary/[0.02]" />
-        </div>
-
-        <div className="section-container relative">
+      {/* Intro */}
+      <section className="py-16 bg-background">
+        <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-3xl mx-auto mb-16"
+            className="max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-foreground leading-relaxed">
-              Dabei stehen Vertrauen, Individualität und Flexibilität immer im Vordergrund 
-              unserer Arbeit. Deine Anforderungen und Bedürfnisse sind der Maßstab für unsere 
-              Arbeit. <strong>Wir agieren ausschließlich im Interesse unserer Kunden und stehen 
-              dir zur Seite.</strong>
+              Die Antwort ist simpel: <strong>Wir stehen auf Ihrer Seite.</strong> Während andere 
+              oft nur ihre eigenen Interessen oder die ihrer Gesellschaft vertreten, sind wir 
+              ausschließlich Ihrem Auftrag verpflichtet.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-              Das heißt für dich:
-            </h2>
-            
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
+      {/* Ihre Vorteile */}
+      <section className="py-24 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full border border-primary/5" />
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full border border-primary/5" />
+        </div>
+
+        <div className="section-container relative">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl font-bold text-foreground mb-12 text-center"
+          >
+            Ihre Vorteile auf einen Blick
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {vorteile.map((item, index) => {
+              const Icon = item.icon;
+              return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex gap-4 p-6 rounded-2xl bg-muted/50 hover:bg-muted transition-colors relative overflow-hidden group"
+                  viewport={{ once: true }}
+                  className="flex gap-4 p-6 rounded-2xl bg-card border border-border/50 shadow-soft hover:shadow-md transition-shadow group"
                 >
-                  {/* Hover gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
-                  <div className="flex-shrink-0 relative">
-                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Check className="h-5 w-5 text-primary" />
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
                   </div>
-                  <div className="relative">
+                  <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {benefit.title}
+                      {item.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      {benefit.description}
+                      {item.description}
                     </p>
                   </div>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* VEMA Partnerschaften */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="section-container relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              VEMA eG
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Echte Mehrwerte durch starke Partnerschaften
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Um Ihnen maximale Qualität zu bieten, nutzen wir die Kraft der VEMA eG 
+              (Deutschlands führende Genossenschaft für Versicherungsmakler). Das bedeutet für Sie:
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {vemaVorteile.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-6 rounded-2xl bg-card border border-border/50 shadow-soft text-center group hover:shadow-md transition-shadow"
+                >
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/15 transition-colors">
+                    <Icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Schadensfall + Kosten */}
+      <section className="py-24 bg-muted/30">
+        <div className="section-container">
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Schadensfall */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-card border border-border/50 shadow-soft"
+            >
+              <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <LifeBuoy className="h-7 w-7 text-primary" />
+              </div>
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Wir lassen Sie nicht im Regen stehen
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Unsere Arbeit zeigt ihren wahren Wert, wenn es darauf ankommt: im Schadensfall. 
+                Wir begleiten die Regulierung von A bis Z und setzen uns dafür ein, dass Sie die 
+                Leistung erhalten, die Ihnen zusteht. Versprochen!
+              </p>
+            </motion.div>
+
+            {/* Kosten */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-card border border-border/50 shadow-soft"
+            >
+              <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <Banknote className="h-7 w-7 text-primary" />
+              </div>
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Was kostet Sie dieser Service?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Transparenz ist uns wichtig: Unsere Dienstleistung ist für Sie ohne zusätzliche 
+                Kosten. Da wir den Versicherern Verwaltungs- und Vertriebsarbeit abnehmen, erhalten 
+                wir eine branchenübliche Courtage, die bereits in den Versicherungsprämien enthalten 
+                ist. Sie zahlen also keinen Cent extra für unsere umfassende Beratung und Betreuung.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
