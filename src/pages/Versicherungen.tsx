@@ -494,7 +494,7 @@ export default function Versicherungen() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <section className="py-20 bg-[hsl(178,45%,20%)]">
+            <section className="py-20 bg-[hsl(178,45%,35%)]">
               <div className="section-container">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
