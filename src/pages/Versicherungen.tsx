@@ -349,8 +349,8 @@ export default function Versicherungen() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${bgGewerbe})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,40%)]/90 via-[hsl(178,45%,46%)]/65 to-[hsl(178,45%,50%)]/40" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,40%)] via-[hsl(178,45%,46%)]/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,40%)]/80 via-[hsl(178,45%,46%)]/55 to-[hsl(178,45%,50%)]/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,40%)]/90 via-[hsl(178,45%,46%)]/25 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
