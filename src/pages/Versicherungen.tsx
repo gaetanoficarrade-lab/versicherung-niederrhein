@@ -349,8 +349,8 @@ export default function Versicherungen() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${bgGewerbe})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)]/95 via-[hsl(178,45%,20%)]/75 to-[hsl(178,45%,25%)]/50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,15%)] via-[hsl(178,45%,20%)]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,32%)]/95 via-[hsl(178,45%,38%)]/75 to-[hsl(178,45%,42%)]/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,32%)] via-[hsl(178,45%,38%)]/40 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -494,7 +494,7 @@ export default function Versicherungen() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <section className="py-20 bg-[hsl(178,45%,20%)]">
+            <section className="py-20 bg-[hsl(178,45%,35%)]">
               <div className="section-container">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -524,7 +524,7 @@ export default function Versicherungen() {
       {/* CTA Section */}
       <section className={cn(
         "py-20 transition-colors duration-500",
-        isGewerbe ? "bg-[hsl(178,45%,15%)]" : "bg-background"
+        isGewerbe ? "bg-[hsl(178,45%,30%)]" : "bg-background"
       )}>
         <div className="section-container">
           <motion.div 
