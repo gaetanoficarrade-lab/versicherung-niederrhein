@@ -125,102 +125,90 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm lg:hidden"
+      {/* Mobile Menu - Simple overlay, no animation library */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-[9999] lg:hidden"
+          style={{ backgroundColor: '#3a8a8c' }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px', padding: '0 24px', borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
+            <span style={{ color: 'white', fontSize: '20px', fontWeight: 600 }}>Menü</span>
+            <button
               onClick={() => setMobileMenuOpen(false)}
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-0 z-50 lg:hidden flex flex-col"
-              style={{ backgroundColor: 'hsl(178, 45%, 35%)' }}
+              style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', padding: '8px' }}
             >
-              <div className="flex h-20 items-center justify-between px-6">
-                <span className="text-lg font-semibold" style={{ color: 'white' }}>Menü</span>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-lg"
-                  style={{ color: 'white' }}
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-              <div className="px-6 py-4 flex-1 overflow-y-auto">
-                {navigation.map((item) => (
-                  <div key={item.name} className="py-2">
-                    {item.children ? (
-                      <div>
-                        <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                          {item.name}
-                        </span>
-                        <div className="mt-2 ml-4 space-y-2">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.name}
-                              to={child.href}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="block py-2 text-lg"
-                              style={{
-                                color: isActive(child.href) ? 'white' : 'rgba(255,255,255,0.85)',
-                                fontWeight: isActive(child.href) ? 700 : 400,
-                              }}
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        to={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-3 text-lg"
-                        style={{
-                          color: isActive(item.href) ? 'white' : 'rgba(255,255,255,0.85)',
-                          fontWeight: isActive(item.href) ? 700 : 400,
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
+              <X className="h-7 w-7" />
+            </button>
+          </div>
+          <div style={{ padding: '24px' }}>
+            {navigation.map((item) => (
+              <div key={item.name} style={{ marginBottom: '8px' }}>
+                {item.children ? (
+                  <div>
+                    <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.05em' }}>
+                      {item.name}
+                    </span>
+                    <div style={{ marginTop: '8px', marginLeft: '16px' }}>
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          to={child.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          style={{
+                            display: 'block',
+                            padding: '12px 0',
+                            color: 'white',
+                            fontSize: '18px',
+                            fontWeight: isActive(child.href) ? 700 : 400,
+                            textDecoration: 'none',
+                          }}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                ))}
-                <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
-                  <a
-                    href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 py-2"
-                    style={{ color: 'rgba(255,255,255,0.7)' }}
+                ) : (
+                  <Link
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '14px 0',
+                      color: 'white',
+                      fontSize: '18px',
+                      fontWeight: isActive(item.href) ? 700 : 400,
+                      textDecoration: 'none',
+                    }}
                   >
-                    <Download className="h-4 w-4" />
-                    Impressum als PDF
-                  </a>
-                  <a
-                    href="https://smits.insurgo.cloud/auth/anmelden"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 py-2"
-                    style={{ color: 'rgba(255,255,255,0.7)' }}
-                  >
-                    <User className="h-4 w-4" />
-                    Kunden-Login
-                  </a>
-                </div>
+                    {item.name}
+                  </Link>
+                )}
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            ))}
+            <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.2)' }}>
+              <a
+                href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 0', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '16px' }}
+              >
+                <Download className="h-5 w-5" />
+                Impressum als PDF
+              </a>
+              <a
+                href="https://smits.insurgo.cloud/auth/anmelden"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 0', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '16px' }}
+              >
+                <User className="h-5 w-5" />
+                Kunden-Login
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
