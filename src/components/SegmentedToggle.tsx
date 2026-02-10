@@ -79,7 +79,7 @@ export default function SegmentedToggle({
         }}
       />
 
-      {options.map((option) => {
+      {options.map((option, index) => {
         const Icon = option.icon;
         const isActive = activeId === option.id;
         
@@ -89,10 +89,10 @@ export default function SegmentedToggle({
             onClick={() => onChange(option.id)}
             className={cn(
               "relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
+              index === 1 && "-ml-3",
+              index === 0 && "-mr-3",
               isActive 
-                ? variant === "dark"
-                  ? "text-slate-900"
-                  : "text-primary-foreground"
+                ? "text-primary-foreground"
                 : inactiveStyles[variant]
             )}
           >
@@ -102,7 +102,6 @@ export default function SegmentedToggle({
             )} />
             <span className="relative">
               {option.label}
-              {/* Underline hint for inactive state */}
               {!isActive && (
                 <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-current opacity-30 rounded-full" />
               )}
