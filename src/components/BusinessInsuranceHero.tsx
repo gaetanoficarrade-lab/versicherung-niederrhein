@@ -12,7 +12,7 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
   return (
     <section className="relative pt-16 pb-24 overflow-hidden">
       {/* Dark business background with hero image on right */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,15%)] to-[hsl(178,45%,20%)]">
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,30%)] to-[hsl(178,45%,35%)]">
         {heroImage && (
           <>
             {/* Desktop: Image on the right */}
@@ -28,8 +28,8 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
                   alt={title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)] via-[hsl(178,45%,15%)]/70 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,20%)]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,30%)] via-[hsl(178,45%,30%)]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,35%)]/80 via-transparent to-transparent" />
               </motion.div>
             </div>
             
@@ -40,7 +40,7 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
                 alt={title}
                 className="h-full w-full object-cover opacity-20"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,15%)]/90 via-[hsl(178,45%,17%)]/80 to-[hsl(178,45%,20%)]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,30%)]/90 via-[hsl(178,45%,32%)]/80 to-[hsl(178,45%,35%)]" />
             </div>
           </>
         )}

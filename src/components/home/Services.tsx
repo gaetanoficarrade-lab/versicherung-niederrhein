@@ -232,7 +232,7 @@ export default function Services() {
     <section className={cn(
       "py-24 overflow-hidden transition-colors duration-500",
       isGewerbe 
-        ? "bg-gradient-to-b from-[hsl(178,45%,12%)] to-[hsl(178,45%,18%)]" 
+        ? "bg-gradient-to-b from-[hsl(178,45%,28%)] to-[hsl(178,45%,35%)]" 
         : "bg-muted/30"
     )}>
       <div className="section-container">
@@ -370,7 +370,7 @@ export default function Services() {
                         <div className={cn(
                           "p-5 transition-colors duration-300",
                           isGewerbe 
-                            ? "bg-[hsl(178,45%,15%)]" 
+                            ? "bg-[hsl(178,45%,30%)]" 
                             : "bg-card"
                         )}>
                           <p className={cn(
@@ -468,7 +468,7 @@ export default function Services() {
               size="lg" 
               className={cn(
                 "gap-2",
-                isGewerbe && "bg-white text-[hsl(178,45%,20%)] hover:bg-white/90"
+                isGewerbe && "bg-white text-[hsl(178,45%,35%)] hover:bg-white/90"
               )}
             >
               Alle Versicherungen entdecken
