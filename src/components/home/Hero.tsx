@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-family.jpg";
 
 const stats = [
-  { icon: Shield, value: "30+", label: "Jahre Erfahrung" },
+  { icon: Shield, value: "27+", label: "Jahre Erfahrung" },
   { icon: Users, value: "6.000+", label: "Zufriedene Kunden" },
-  { icon: Award, value: "100%", label: "Unabhängig" },
+  { icon: Award, value: "100%", label: "Neutral" },
 ];
 
 export default function Hero() {
