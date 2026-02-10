@@ -345,8 +345,8 @@ export default function Versicherungen() {
                 }}
                 className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)]/95 via-[hsl(178,45%,20%)]/75 to-[hsl(178,45%,25%)]/50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,15%)] via-[hsl(178,45%,20%)]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,30%)]/95 via-[hsl(178,45%,33%)]/75 to-[hsl(178,45%,35%)]/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,30%)] via-[hsl(178,45%,33%)]/40 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
