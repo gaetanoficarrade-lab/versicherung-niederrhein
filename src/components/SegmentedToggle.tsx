@@ -57,8 +57,8 @@ export default function SegmentedToggle({
         )}
         initial={false}
         animate={{
-          left: isFirstActive ? "6px" : "50%",
-          right: isFirstActive ? "50%" : "6px",
+          left: isFirstActive ? "6px" : "calc(50% - 4px)",
+          right: isFirstActive ? "calc(50% - 4px)" : "6px",
         }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
       />
