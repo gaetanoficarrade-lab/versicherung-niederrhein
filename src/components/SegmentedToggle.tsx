@@ -88,7 +88,7 @@ export default function SegmentedToggle({
             key={option.id}
             onClick={() => onChange(option.id)}
             className={cn(
-              "relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
+              "relative z-10 flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300 -mx-1",
               isActive 
                 ? variant === "dark"
                   ? "text-slate-900"

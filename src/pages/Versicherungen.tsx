@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import bgPrivat from "@/assets/bg-privat-versicherungen.jpg";
+import bgGewerbe from "@/assets/bg-gewerbe-versicherungen.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Car, 
@@ -322,7 +324,8 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${bgPrivat})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -343,7 +346,8 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${bgGewerbe})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)]/95 via-[hsl(178,45%,20%)]/75 to-[hsl(178,45%,25%)]/50" />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,15%)] via-[hsl(178,45%,20%)]/40 to-transparent" />
