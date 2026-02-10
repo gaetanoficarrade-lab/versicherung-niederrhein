@@ -324,7 +324,8 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${bgPrivat})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
