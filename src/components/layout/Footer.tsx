@@ -165,6 +165,11 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* ProvenExpert Badge */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 flex items-start justify-end">
+            <div id="pe_footer_badge"></div>
+          </div>
         </div>
       </div>
 
