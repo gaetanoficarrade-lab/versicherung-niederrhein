@@ -141,26 +141,25 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm shadow-strong lg:hidden"
-              style={{ backgroundColor: 'hsl(178, 45%, 35%)', color: 'white' }}
+              className="fixed inset-0 z-50 lg:hidden flex flex-col"
+              style={{ backgroundColor: 'hsl(178, 45%, 35%)' }}
             >
               <div className="flex h-20 items-center justify-between px-6">
-                <span className="text-lg font-semibold text-primary-foreground">Menü</span>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-primary-foreground hover:bg-white/10"
+                <span className="text-lg font-semibold" style={{ color: 'white' }}>Menü</span>
+                <button
                   onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 rounded-lg"
+                  style={{ color: 'white' }}
                 >
                   <X className="h-6 w-6" />
-                </Button>
+                </button>
               </div>
-              <div className="px-6 py-4">
+              <div className="px-6 py-4 flex-1 overflow-y-auto">
                 {navigation.map((item) => (
                   <div key={item.name} className="py-2">
                     {item.children ? (
                       <div>
-                        <span className="text-sm font-medium text-primary-foreground/60">
+                        <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.6)' }}>
                           {item.name}
                         </span>
                         <div className="mt-2 ml-4 space-y-2">
@@ -169,11 +168,11 @@ export default function Header() {
                               key={child.name}
                               to={child.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className={`block py-2 text-base ${
-                                isActive(child.href)
-                                  ? "text-primary-foreground font-bold"
-                                  : "text-primary-foreground/80 hover:text-primary-foreground"
-                              }`}
+                              className="block py-2 text-lg"
+                              style={{
+                                color: isActive(child.href) ? 'white' : 'rgba(255,255,255,0.85)',
+                                fontWeight: isActive(child.href) ? 700 : 400,
+                              }}
                             >
                               {child.name}
                             </Link>
@@ -184,26 +183,37 @@ export default function Header() {
                       <Link
                         to={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`block py-2 text-base ${
-                          isActive(item.href)
-                            ? "text-primary-foreground font-bold"
-                            : "text-primary-foreground/80 hover:text-primary-foreground"
-                        }`}
+                        className="block py-3 text-lg"
+                        style={{
+                          color: isActive(item.href) ? 'white' : 'rgba(255,255,255,0.85)',
+                          fontWeight: isActive(item.href) ? 700 : 400,
+                        }}
                       >
                         {item.name}
                       </Link>
                     )}
                   </div>
                 ))}
-                <div className="mt-6 pt-6 border-t border-primary-foreground/20">
+                <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
                   <a
                     href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 py-2 text-primary-foreground/70 hover:text-primary-foreground"
+                    className="flex items-center gap-2 py-2"
+                    style={{ color: 'rgba(255,255,255,0.7)' }}
                   >
                     <Download className="h-4 w-4" />
                     Impressum als PDF
+                  </a>
+                  <a
+                    href="https://smits.insurgo.cloud/auth/anmelden"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-2"
+                    style={{ color: 'rgba(255,255,255,0.7)' }}
+                  >
+                    <User className="h-4 w-4" />
+                    Kunden-Login
                   </a>
                 </div>
               </div>

@@ -112,10 +112,11 @@ export default function AppSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
               viewport={{ once: true }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border shadow-lg max-w-[90vw]"
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-2 rounded-full bg-card border border-border shadow-lg"
+              style={{ maxWidth: 'calc(100vw - 2rem)' }}
             >
               <Smartphone className="h-4 w-4 text-primary flex-shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-foreground whitespace-nowrap">Deine Versicherungen – immer dabei</span>
+              <span className="text-xs font-medium text-foreground truncate">Deine Versicherungen – immer dabei</span>
             </motion.div>
           </motion.div>
         </div>
