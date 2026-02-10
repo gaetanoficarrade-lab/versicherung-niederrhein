@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, User, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
