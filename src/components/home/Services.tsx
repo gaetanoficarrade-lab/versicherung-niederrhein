@@ -468,7 +468,7 @@ export default function Services() {
               size="lg" 
               className={cn(
                 "gap-2",
-                isGewerbe && "bg-white text-[hsl(178,45%,20%)] hover:bg-white/90"
+                isGewerbe && "bg-white text-[hsl(178,45%,35%)] hover:bg-white/90"
               )}
             >
               Alle Versicherungen entdecken

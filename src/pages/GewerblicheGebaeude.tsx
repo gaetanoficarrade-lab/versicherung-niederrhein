@@ -140,7 +140,7 @@ export default function GewerblicheGebaeude() {
                 Lassen Sie sich beraten und finden Sie die optimale Absicherung für Ihre Gewerbeimmobilie.
               </p>
               <Link to="/kontakt">
-                <Button size="lg" className="gap-2 bg-white text-[hsl(178,45%,20%)] hover:bg-white/90">
+                <Button size="lg" className="gap-2 bg-white text-[hsl(178,45%,35%)] hover:bg-white/90">
                   Beratung anfordern
                   <ArrowRight className="h-5 w-5" />
                 </Button>

@@ -40,7 +40,7 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
                 alt={title}
                 className="h-full w-full object-cover opacity-20"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,15%)]/90 via-[hsl(178,45%,17%)]/80 to-[hsl(178,45%,20%)]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,30%)]/90 via-[hsl(178,45%,32%)]/80 to-[hsl(178,45%,35%)]" />
             </div>
           </>
         )}
