@@ -232,7 +232,7 @@ export default function Services() {
     <section className={cn(
       "py-24 overflow-hidden transition-colors duration-500",
       isGewerbe 
-        ? "bg-gradient-to-b from-[hsl(178,45%,12%)] to-[hsl(178,45%,18%)]" 
+        ? "bg-gradient-to-b from-[hsl(178,45%,30%)] to-[hsl(178,45%,35%)]" 
         : "bg-muted/30"
     )}>
       <div className="section-container">
