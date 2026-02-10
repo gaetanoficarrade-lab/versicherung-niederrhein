@@ -141,13 +141,14 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm bg-background shadow-strong lg:hidden"
+              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm bg-primary text-primary-foreground shadow-strong lg:hidden"
             >
               <div className="flex h-20 items-center justify-between px-6">
-                <span className="text-lg font-semibold">Menü</span>
+                <span className="text-lg font-semibold text-primary-foreground">Menü</span>
                 <Button
                   variant="ghost"
                   size="icon"
+                  className="text-primary-foreground hover:bg-white/10"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <X className="h-6 w-6" />
@@ -158,7 +159,7 @@ export default function Header() {
                   <div key={item.name} className="py-2">
                     {item.children ? (
                       <div>
-                        <span className="text-sm font-medium text-muted-foreground">
+                        <span className="text-sm font-medium text-primary-foreground/60">
                           {item.name}
                         </span>
                         <div className="mt-2 ml-4 space-y-2">
@@ -169,8 +170,8 @@ export default function Header() {
                               onClick={() => setMobileMenuOpen(false)}
                               className={`block py-2 text-base ${
                                 isActive(child.href)
-                                  ? "text-primary font-medium"
-                                  : "text-foreground"
+                                  ? "text-primary-foreground font-bold"
+                                  : "text-primary-foreground/80 hover:text-primary-foreground"
                               }`}
                             >
                               {child.name}
@@ -184,8 +185,8 @@ export default function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         className={`block py-2 text-base ${
                           isActive(item.href)
-                            ? "text-primary font-medium"
-                            : "text-foreground"
+                            ? "text-primary-foreground font-bold"
+                            : "text-primary-foreground/80 hover:text-primary-foreground"
                         }`}
                       >
                         {item.name}
@@ -193,12 +194,12 @@ export default function Header() {
                     )}
                   </div>
                 ))}
-                <div className="mt-6 pt-6 border-t">
+                <div className="mt-6 pt-6 border-t border-primary-foreground/20">
                   <a
                     href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 py-2 text-muted-foreground"
+                    className="flex items-center gap-2 py-2 text-primary-foreground/70 hover:text-primary-foreground"
                   >
                     <Download className="h-4 w-4" />
                     Impressum als PDF
