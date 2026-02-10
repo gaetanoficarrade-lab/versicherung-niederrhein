@@ -27,6 +27,8 @@ import Layout from "@/components/layout/Layout";
 import SegmentedToggle from "@/components/SegmentedToggle";
 import { cn } from "@/lib/utils";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import heroWohngebaeude from "@/assets/hero-wohngebaeude.jpg";
+import heroBetriebshaftpflicht from "@/assets/hero-business-betriebshaftpflicht.jpg";
 
 // Sachversicherungen (Property Insurance)
 const sachversicherungen = [
@@ -322,7 +324,8 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${heroWohngebaeude})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -343,7 +346,8 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${heroBetriebshaftpflicht})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,30%)]/95 via-[hsl(178,45%,33%)]/75 to-[hsl(178,45%,35%)]/50" />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,30%)] via-[hsl(178,45%,33%)]/40 to-transparent" />
