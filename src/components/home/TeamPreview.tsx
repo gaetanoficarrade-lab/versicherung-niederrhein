@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Mail, Phone } from "lucide-react";
 import teamMartin from "@/assets/team-martin.jpg";
 import teamMarc from "@/assets/team-marc.jpg";
 import teamNina from "@/assets/team-nina.jpg";
@@ -28,6 +26,13 @@ const teamMembers = [
     phone: "02824-809293-4",
     image: teamNina,
   },
+  {
+    name: "Petra Hüster",
+    role: "Büroassistenz",
+    email: "petra.huester@makler-kalkar.de",
+    phone: "02824-809293-0",
+    image: null,
+  },
 ];
 
 export default function TeamPreview() {
@@ -52,7 +57,7 @@ export default function TeamPreview() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -62,13 +67,23 @@ export default function TeamPreview() {
               viewport={{ once: true }}
               className="card-premium overflow-hidden group"
             >
-              {/* Image */}
+              {/* Image or initials */}
               <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center">
+                    <div className="h-20 w-20 rounded-full bg-primary/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">
+                        {member.name.split(" ").map(n => n[0]).join("")}
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
@@ -99,21 +114,6 @@ export default function TeamPreview() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link to="/team">
-            <Button variant="outline" size="lg" className="gap-2">
-              Alle Ansprechpartner
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
