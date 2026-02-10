@@ -28,8 +28,8 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
                   alt={title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)] via-[hsl(178,45%,15%)]/70 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,20%)]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,32%)] via-[hsl(178,45%,32%)]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,38%)]/80 via-transparent to-transparent" />
               </motion.div>
             </div>
             
