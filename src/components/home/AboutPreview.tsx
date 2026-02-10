@@ -94,7 +94,7 @@ export default function AboutPreview() {
               className="absolute -top-6 -right-6 bg-primary text-primary-foreground rounded-2xl p-6 shadow-strong"
             >
               <div className="text-center">
-                <span className="text-4xl font-bold">30+</span>
+                <span className="text-4xl font-bold">27+</span>
                 <p className="text-sm font-medium mt-1">Jahre Erfahrung</p>
               </div>
             </motion.div>
