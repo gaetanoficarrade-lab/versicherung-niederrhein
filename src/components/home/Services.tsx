@@ -370,7 +370,7 @@ export default function Services() {
                         <div className={cn(
                           "p-5 transition-colors duration-300",
                           isGewerbe 
-                            ? "bg-[hsl(178,45%,15%)]" 
+                            ? "bg-[hsl(178,45%,32%)]" 
                             : "bg-card"
                         )}>
                           <p className={cn(
