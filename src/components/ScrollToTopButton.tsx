@@ -39,7 +39,6 @@ export default function ScrollToTopButton() {
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="h-5 w-5" />
-          <span className="text-sm font-medium"></span>
         </motion.button>
       )}
     </AnimatePresence>
