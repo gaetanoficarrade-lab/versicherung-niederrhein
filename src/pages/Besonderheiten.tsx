@@ -22,7 +22,7 @@ const vorteile = [
   {
     icon: Settings,
     title: "Service nach Maß",
-    description: "Wir drängen uns nicht auf. Möchten Sie einen jährlichen Check-up? Gerne! Bevorzugen Sie Infos nur per Newsletter? Auch das ist okay. Wir sind Ihr Berater, kein „Störenfried".",
+    description: 'Wir drängen uns nicht auf. Möchten Sie einen jährlichen Check-up? Gerne! Bevorzugen Sie Infos nur per Newsletter? Auch das ist okay. Wir sind Ihr Berater, kein \u201EStörenfried\u201C.',
   },
 ];
 
