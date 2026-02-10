@@ -17,7 +17,6 @@ const navigation = [
     children: [
       { name: "Unsere Geschichte", href: "/geschichte" },
       { name: "Was uns besonders macht", href: "/besonderheiten" },
-      { name: "Deine Ansprechpartner", href: "/team" },
     ],
   },
   { name: "Versicherungen", href: "/versicherungen" },
