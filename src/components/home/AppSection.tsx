@@ -105,16 +105,17 @@ export default function AppSection() {
                 className="relative z-10 w-72 md:w-80 drop-shadow-2xl"
               />
 
-              {/* Badge - overlaid on the left side of the image */}
+              {/* Badge - overlaid on desktop, inline on mobile */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="absolute bottom-8 right-1/2 z-20 flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg"
+                className="md:absolute md:bottom-8 md:right-1/2 md:z-20 relative mt-4 md:mt-0 mx-4 md:mx-0 flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg"
+                style={{ maxWidth: 'calc(100vw - 32px)', boxSizing: 'border-box' }}
               >
                 <Smartphone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-foreground whitespace-nowrap">Deine Versicherungen – immer dabei</span>
+                <span className="text-xs sm:text-sm font-medium text-foreground whitespace-normal">Deine Versicherungen – immer dabei</span>
               </motion.div>
             </div>
           </motion.div>
