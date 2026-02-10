@@ -88,8 +88,6 @@ export default function Footer() {
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
-            {/* ProvenExpert Badge */}
-            <div className="mt-4" id="pe_footer_badge"></div>
           </div>
 
           {/* Unternehmen */}
