@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, User, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +26,18 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -128,8 +139,19 @@ export default function Header() {
       {/* Mobile Menu - Simple overlay, no animation library */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-[9999] lg:hidden"
-          style={{ backgroundColor: '#3a8a8c' }}
+          className="lg:hidden"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#2f7d73',
+            zIndex: 99999,
+            overflowY: 'auto',
+          }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px', padding: '0 24px', borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
             <span style={{ color: 'white', fontSize: '20px', fontWeight: 600 }}>Menü</span>
