@@ -57,7 +57,7 @@ export default function Footer() {
     <footer className="bg-foreground text-background">
       {/* Main footer content */}
       <div className="section-container py-10">
-        <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-7">
           {/* Company info */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
