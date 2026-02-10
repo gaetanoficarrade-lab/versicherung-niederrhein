@@ -83,38 +83,35 @@ export default function CTASection() {
               onClick={() => setIsOpen(false)}
             />
 
-            {/* Modal */}
+            {/* Modal – full iframe only, no header */}
             <motion.div
-              className="relative bg-background rounded-2xl shadow-2xl w-full max-w-[900px] h-[90vh] max-h-[750px] flex flex-col overflow-hidden"
+              className="relative bg-background rounded-2xl shadow-2xl w-[95vw] max-w-[1000px] h-[95vh] overflow-hidden"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-                <h3 className="text-lg font-semibold text-foreground">Termin vereinbaren</h3>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-full hover:bg-muted transition-colors text-foreground/70 hover:text-foreground"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
+              {/* Close button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-3 right-3 z-10 p-2 rounded-full bg-background/80 hover:bg-muted transition-colors text-foreground/70 hover:text-foreground shadow-md"
+              >
+                <X className="h-5 w-5" />
+              </button>
 
-              {/* Content */}
-              <div className="flex-1 relative">
-                {!iframeLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-background">
-                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                  </div>
-                )}
-                <iframe
-                  src={BOOKING_URL}
-                  className="w-full h-full border-none"
-                  title="Terminbuchung"
-                />
-              </div>
+              {/* Loading indicator */}
+              {!iframeLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-background">
+                  <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                </div>
+              )}
+
+              <iframe
+                src={BOOKING_URL}
+                className="w-full h-full border-none"
+                scrolling="no"
+                title="Terminbuchung"
+              />
             </motion.div>
           </motion.div>
         )}
