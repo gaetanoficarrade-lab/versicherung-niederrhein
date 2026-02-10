@@ -97,9 +97,9 @@ export default function SegmentedToggle({
             )}
           >
             <Icon className={cn(
-              "h-4 w-4 transition-transform duration-300",
+              "h-5 w-5 transition-transform duration-300",
               isActive && "scale-110"
-            )} />
+            )} strokeWidth={2.5} />
             <span className="relative">
               {option.label}
               {/* Underline hint for inactive state */}
