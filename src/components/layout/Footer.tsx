@@ -30,6 +30,29 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  useEffect(() => {
+    const container = document.getElementById("pe_footer_badge");
+    if (!container) return;
+
+    // Create the anchor the badge script targets
+    const anchor = document.createElement("a");
+    anchor.id = "pe_badge_ebpfnhkn";
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
+    container.appendChild(anchor);
+
+    // Load the badge script
+    const script = document.createElement("script");
+    script.src =
+      "https://www.provenexpert.com/badge/topservice.js?id=2HGAkZaphW3p282olRQBiAwZjLGAkVwo&w=180&key=ebpfnhkn&l=de-de";
+    script.async = true;
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, []);
+
   return (
     <footer className="bg-foreground text-background">
       {/* Main footer content */}
