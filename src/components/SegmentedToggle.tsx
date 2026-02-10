@@ -40,7 +40,7 @@ export default function SegmentedToggle({
   return (
     <motion.div 
       className={cn(
-        "relative inline-flex items-center gap-1 p-1.5 rounded-full",
+        "relative inline-flex items-center p-1.5 rounded-full",
         containerStyles[variant],
         className
       )}
