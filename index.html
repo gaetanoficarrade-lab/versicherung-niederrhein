@@ -135,7 +135,7 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- ProvenExpert Widget (optional: nach Consent laden, falls ihr Cookie/Consent nutzt) -->
+    <!-- ProvenExpert Widget – rendered inside #provenexpert-container in Testimonials section -->
     <script id="proSeal">
       window.loadProSeal = function () {
         if (window.provenExpert && window.provenExpert.proSeal) {
@@ -149,12 +149,10 @@
             hideDate: true,
             hideName: false,
             hideOnMobile: false,
-            bottom: "32px",
-            left: "32px",
-            stickyToSide: "left",
             googleStars: true,
             zIndex: "9999",
-            displayReviewerLastName: false
+            displayReviewerLastName: false,
+            container: "provenexpert-container"
           });
         }
       };
