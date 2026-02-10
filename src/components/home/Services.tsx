@@ -270,7 +270,7 @@ export default function Services() {
           <SegmentedToggle
             options={[
               { id: "privat", label: "Privatkunden", icon: Users },
-              { id: "gewerbe", label: "Gewerbekunden", icon: Briefcase },
+              { id: "gewerbe", label: "Gewerbekunden", icon: Building2 },
             ]}
             activeId={isGewerbe ? "gewerbe" : "privat"}
             onChange={(id) => {
