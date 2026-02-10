@@ -12,7 +12,7 @@ export default function BusinessInsuranceHero({ icon: Icon, title, description, 
   return (
     <section className="relative pt-16 pb-24 overflow-hidden">
       {/* Dark business background with hero image on right */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,15%)] to-[hsl(178,45%,20%)]">
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(178,45%,32%)] to-[hsl(178,45%,38%)]">
         {heroImage && (
           <>
             {/* Desktop: Image on the right */}
