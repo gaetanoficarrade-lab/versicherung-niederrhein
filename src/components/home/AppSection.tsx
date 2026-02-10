@@ -94,7 +94,7 @@ export default function AppSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative flex justify-center"
+            className="relative flex flex-col items-center"
           >
             <div className="relative">
               {/* Glow behind phone */}
@@ -106,17 +106,16 @@ export default function AppSection() {
               />
             </div>
 
-            {/* Badge */}
+            {/* Badge - centered below image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
               viewport={{ once: true }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-2 rounded-full bg-card border border-border shadow-lg"
-              style={{ maxWidth: 'calc(100vw - 2rem)' }}
+              className="mt-6 flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg"
             >
               <Smartphone className="h-4 w-4 text-primary flex-shrink-0" />
-              <span className="text-xs font-medium text-foreground truncate">Deine Versicherungen – immer dabei</span>
+              <span className="text-xs sm:text-sm font-medium text-foreground">Deine Versicherungen – immer dabei</span>
             </motion.div>
           </motion.div>
         </div>
