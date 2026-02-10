@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight,
   Users,
-  Building,
+  Briefcase,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
@@ -270,7 +270,7 @@ export default function Services() {
           <SegmentedToggle
             options={[
               { id: "privat", label: "Privatkunden", icon: Users },
-              { id: "gewerbe", label: "Gewerbekunden", icon: Building },
+              { id: "gewerbe", label: "Gewerbekunden", icon: Briefcase },
             ]}
             activeId={isGewerbe ? "gewerbe" : "privat"}
             onChange={(id) => {

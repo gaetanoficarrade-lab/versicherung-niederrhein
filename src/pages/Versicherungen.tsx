@@ -362,7 +362,7 @@ export default function Versicherungen() {
             <SegmentedToggle
               options={[
                 { id: "privat", label: "Privatkunden", icon: Users },
-                { id: "gewerbe", label: "Gewerbekunden", icon: Building },
+                { id: "gewerbe", label: "Gewerbekunden", icon: Briefcase },
               ]}
               activeId={isGewerbe ? "gewerbe" : "privat"}
               onChange={handleToggleChange}
