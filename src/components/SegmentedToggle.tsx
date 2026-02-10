@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 interface ToggleOption {
   id: string;
   label: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
 }
 
 interface SegmentedToggleProps {
