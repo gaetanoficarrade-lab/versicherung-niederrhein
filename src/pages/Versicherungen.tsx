@@ -361,8 +361,8 @@ export default function Versicherungen() {
             {/* Toggle Switch */}
             <SegmentedToggle
               options={[
-                { id: "privat", label: "Privatkunden", icon: Users },
-                { id: "gewerbe", label: "Gewerbekunden", icon: Building2 },
+                { id: "privat", label: "Privatkunden" },
+                { id: "gewerbe", label: "Gewerbekunden" },
               ]}
               activeId={isGewerbe ? "gewerbe" : "privat"}
               onChange={handleToggleChange}
