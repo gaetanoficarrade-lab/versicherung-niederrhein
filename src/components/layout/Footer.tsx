@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Download } from "lucide-react";
 import logo from "@/assets/logo-new.png";
