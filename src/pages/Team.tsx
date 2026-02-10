@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Calendar, Download } from "lucide-react";
+import { Mail, Phone, Calendar, Download, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const teamMembers = [
   {
@@ -43,7 +46,93 @@ const teamMembers = [
   },
 ];
 
+function TeamCard({ member }: { member: typeof teamMembers[0] }) {
+  return (
+    <div className="card-premium overflow-hidden h-full">
+      {/* Image placeholder */}
+      <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center">
+        <div className="h-24 w-24 rounded-full bg-primary/20 flex items-center justify-center">
+          <span className="text-3xl font-bold text-primary">
+            {member.name.split(" ").map(n => n[0]).join("")}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-6">
+        <h2 className="text-2xl font-semibold text-foreground mb-1">
+          {member.name}
+        </h2>
+        <p className="text-primary font-medium mb-6">
+          {member.role}
+        </p>
+
+        <div className="space-y-3 mb-6">
+          <a
+            href={`tel:${member.phone.replace(/-/g, "")}`}
+            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Phone className="h-5 w-5 flex-shrink-0" />
+            <span>Tel.: {member.phone}</span>
+          </a>
+          <p className="flex items-center gap-3 text-muted-foreground">
+            <span className="h-5 w-5 flex-shrink-0" />
+            <span>Fax: {member.fax}</span>
+          </p>
+          <a
+            href={`mailto:${member.email}`}
+            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors break-all"
+          >
+            <Mail className="h-5 w-5 flex-shrink-0" />
+            <span className="text-sm sm:text-base">{member.email}</span>
+          </a>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          {member.calendar && (
+            <a href={member.calendar} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="gap-2">
+                <Calendar className="h-4 w-4" />
+                Termin vereinbaren
+              </Button>
+            </a>
+          )}
+          {member.vcf && (
+            <a href={member.vcf} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Download className="h-4 w-4" />
+                VCF herunterladen
+              </Button>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Team() {
+  const isMobile = useIsMobile();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
+
+  // Auto-scroll on mobile
+  useEffect(() => {
+    if (!emblaApi || !isMobile) return;
+    const interval = setInterval(() => emblaApi.scrollNext(), 4000);
+    return () => clearInterval(interval);
+  }, [emblaApi, isMobile]);
+
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Startseite", url: "/" },
     { name: "Unser Team", url: "/team" }
@@ -79,84 +168,64 @@ export default function Team() {
       {/* Opening hours */}
       <section className="py-8 bg-primary/5">
         <div className="section-container">
-          <p className="text-center text-muted-foreground">
-            <strong>Bürozeiten:</strong> Montag-Freitag 9:00-12:30 Uhr | Montag-Donnerstag 15:00-17:30 Uhr | oder nach Vereinbarung
+          <p className="text-center text-muted-foreground text-sm sm:text-base">
+            <strong>Bürozeiten:</strong> Mo–Fr 9:00–12:30 Uhr | Mo–Do 15:00–17:30 Uhr | oder nach Vereinbarung
           </p>
         </div>
       </section>
 
-      {/* Team Grid */}
+      {/* Team Section */}
       <section className="py-24 bg-background">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-premium overflow-hidden"
-              >
-                {/* Image placeholder */}
-                <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center">
-                  <div className="h-24 w-24 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary">
-                      {member.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
+          {/* Mobile: Carousel */}
+          {isMobile ? (
+            <div className="relative">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex">
+                  {teamMembers.map((member) => (
+                    <div key={member.name} className="flex-[0_0_100%] min-w-0 px-2">
+                      <TeamCard member={member} />
+                    </div>
+                  ))}
                 </div>
-
-                <div className="p-6">
-                  <h2 className="text-2xl font-semibold text-foreground mb-1">
-                    {member.name}
-                  </h2>
-                  <p className="text-primary font-medium mb-6">
-                    {member.role}
-                  </p>
-
-                  <div className="space-y-3 mb-6">
-                    <a
-                      href={`tel:${member.phone.replace(/-/g, "")}`}
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Phone className="h-5 w-5" />
-                      <span>Tel.: {member.phone}</span>
-                    </a>
-                    <p className="flex items-center gap-3 text-muted-foreground">
-                      <span className="h-5 w-5" />
-                      <span>Fax: {member.fax}</span>
-                    </p>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Mail className="h-5 w-5" />
-                      <span>{member.email}</span>
-                    </a>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    {member.calendar && (
-                      <a href={member.calendar} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" className="gap-2">
-                          <Calendar className="h-4 w-4" />
-                          Termin vereinbaren
-                        </Button>
-                      </a>
-                    )}
-                    {member.vcf && (
-                      <a href={member.vcf} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" size="sm" className="gap-2">
-                          <Download className="h-4 w-4" />
-                          VCF herunterladen
-                        </Button>
-                      </a>
-                    )}
-                  </div>
+              </div>
+              {/* Navigation */}
+              <div className="flex items-center justify-center gap-4 mt-6">
+                <Button variant="outline" size="icon" onClick={scrollPrev} className="h-10 w-10 rounded-full">
+                  <ChevronLeft className="h-5 w-5" />
+                </Button>
+                <div className="flex gap-2">
+                  {teamMembers.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => emblaApi?.scrollTo(i)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-primary/30"
+                      }`}
+                      aria-label={`Zu Mitglied ${i + 1}`}
+                    />
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <Button variant="outline" size="icon" onClick={scrollNext} className="h-10 w-10 rounded-full">
+                  <ChevronRight className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          ) : (
+            /* Desktop: Grid */
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <TeamCard member={member} />
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </Layout>
