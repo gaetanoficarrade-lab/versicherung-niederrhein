@@ -110,73 +110,81 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonial Slider */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="min-h-[320px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-full"
-              >
-                <div className="relative bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border/50">
-                  {/* Quote icon */}
-                  <div className="absolute -top-6 left-8 md:left-12">
-                    <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                      <Quote className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                  </div>
-
-                  <div className="pt-4">
-                    {/* Stars */}
-                    <div className="mb-6">
-                      <StarRating rating={testimonials[currentIndex].rating} />
-                    </div>
-
-                    {/* Content */}
-                    <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-                      "{testimonials[currentIndex].content}"
-                    </blockquote>
-
-                    {/* Author */}
-                    <div className="flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-lg font-semibold text-primary">
-                          {testimonials[currentIndex].name.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">
-                          {testimonials[currentIndex].name}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonials[currentIndex].role}
-                        </p>
+        {/* Testimonial Slider + ProvenExpert */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+          {/* Slider */}
+          <div className="relative flex-1 w-full">
+            <div className="min-h-[320px] flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="w-full"
+                >
+                  <div className="relative bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border/50">
+                    {/* Quote icon */}
+                    <div className="absolute -top-6 left-8 md:left-12">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                        <Quote className="h-6 w-6 text-primary-foreground" />
                       </div>
                     </div>
+
+                    <div className="pt-4">
+                      {/* Stars */}
+                      <div className="mb-6">
+                        <StarRating rating={testimonials[currentIndex].rating} />
+                      </div>
+
+                      {/* Content */}
+                      <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
+                        "{testimonials[currentIndex].content}"
+                      </blockquote>
+
+                      {/* Author */}
+                      <div className="flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-lg font-semibold text-primary">
+                            {testimonials[currentIndex].name.charAt(0)}
+                          </span>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground">
+                            {testimonials[currentIndex].name}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {testimonials[currentIndex].role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Dots indicator */}
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "w-8 bg-primary"
+                      : "w-2 bg-primary/30 hover:bg-primary/50"
+                  }`}
+                  aria-label={`Zur Bewertung ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "w-8 bg-primary"
-                    : "w-2 bg-primary/30 hover:bg-primary/50"
-                }`}
-                aria-label={`Zur Bewertung ${index + 1}`}
-              />
-            ))}
+          {/* ProvenExpert Widget */}
+          <div className="flex-shrink-0">
+            <div id="provenexpert-container" className="min-w-[250px]" />
           </div>
         </div>
       </div>
