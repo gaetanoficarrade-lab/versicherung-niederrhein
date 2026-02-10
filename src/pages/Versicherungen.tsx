@@ -27,6 +27,8 @@ import Layout from "@/components/layout/Layout";
 import SegmentedToggle from "@/components/SegmentedToggle";
 import { cn } from "@/lib/utils";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
+import heroWohngebaeude from "@/assets/hero-wohngebaeude.jpg";
+import heroBetriebshaftpflicht from "@/assets/hero-business-betriebshaftpflicht.jpg";
 
 // Sachversicherungen (Property Insurance)
 const sachversicherungen = [
