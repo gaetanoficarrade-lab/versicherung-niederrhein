@@ -104,19 +104,19 @@ export default function AppSection() {
                 alt="Smits & Kollegen Versicherungsapp auf einem Smartphone"
                 className="relative z-10 w-72 md:w-80 drop-shadow-2xl"
               />
-            </div>
 
-            {/* Badge - centered below image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              viewport={{ once: true }}
-              className="mt-6 flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg"
-            >
-              <Smartphone className="h-4 w-4 text-primary flex-shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-foreground">Deine Versicherungen – immer dabei</span>
-            </motion.div>
+              {/* Badge - overlaid on the left side of the image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="absolute bottom-8 right-1/2 z-20 flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg"
+              >
+                <Smartphone className="h-4 w-4 text-primary flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-medium text-foreground whitespace-nowrap">Deine Versicherungen – immer dabei</span>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
