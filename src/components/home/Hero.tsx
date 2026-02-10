@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-family.jpg";
 
 const stats = [
-  { icon: Shield, value: "27+", label: "Jahre Erfahrung" },
+  { icon: Shield, value: "30+", label: "Jahre Erfahrung" },
   { icon: Users, value: "6.000+", label: "Zufriedene Kunden" },
-  { icon: Award, value: "100%", label: "Neutral" },
+  { icon: Award, value: "100%", label: "Unabhängig" },
 ];
 
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
               <Shield className="h-4 w-4" />
-              Dein Versicherungsmakler am Niederrhein.
+              Dein unabhängiger Versicherungsmakler
             </span>
           </motion.div>
 

@@ -12,6 +12,7 @@ import {
 import logo from "@/assets/logo-new.png";
 
 const navigation = [
+  { name: "Startseite", href: "/" },
   {
     name: "Das Unternehmen",
     children: [

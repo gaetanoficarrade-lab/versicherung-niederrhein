@@ -27,8 +27,6 @@ import Layout from "@/components/layout/Layout";
 import SegmentedToggle from "@/components/SegmentedToggle";
 import { cn } from "@/lib/utils";
 import SEO, { createBreadcrumbSchema } from "@/components/SEO";
-import heroWohngebaeude from "@/assets/hero-wohngebaeude.jpg";
-import heroBetriebshaftpflicht from "@/assets/hero-business-betriebshaftpflicht.jpg";
 
 // Sachversicherungen (Property Insurance)
 const sachversicherungen = [
@@ -324,8 +322,7 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${heroWohngebaeude})` }}
+                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')] bg-cover bg-center"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -346,11 +343,10 @@ export default function Versicherungen() {
                   repeat: Infinity,
                   ease: "linear" as const,
                 }}
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${heroBetriebshaftpflicht})` }}
+                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920')] bg-cover bg-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,30%)]/95 via-[hsl(178,45%,33%)]/75 to-[hsl(178,45%,35%)]/50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,30%)] via-[hsl(178,45%,33%)]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(178,45%,15%)]/95 via-[hsl(178,45%,20%)]/75 to-[hsl(178,45%,25%)]/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(178,45%,15%)] via-[hsl(178,45%,20%)]/40 to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -366,7 +362,7 @@ export default function Versicherungen() {
               ]}
               activeId={isGewerbe ? "gewerbe" : "privat"}
               onChange={handleToggleChange}
-              variant="glass"
+              variant={isGewerbe ? "dark" : "glass"}
               className="mb-8"
             />
 
@@ -494,7 +490,7 @@ export default function Versicherungen() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <section className="py-20 bg-[hsl(178,45%,35%)]">
+            <section className="py-20 bg-[hsl(178,45%,20%)]">
               <div className="section-container">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -524,7 +520,7 @@ export default function Versicherungen() {
       {/* CTA Section */}
       <section className={cn(
         "py-20 transition-colors duration-500",
-        isGewerbe ? "bg-[hsl(178,45%,30%)]" : "bg-background"
+        isGewerbe ? "bg-[hsl(178,45%,15%)]" : "bg-background"
       )}>
         <div className="section-container">
           <motion.div 

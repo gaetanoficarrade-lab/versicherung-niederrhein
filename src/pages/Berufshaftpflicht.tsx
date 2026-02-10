@@ -86,7 +86,7 @@ export default function Berufshaftpflicht() {
       />
 
       {/* Content - Dark business style */}
-      <section className="py-16 bg-[hsl(178,45%,33%)]">
+      <section className="py-16 bg-[hsl(178,45%,18%)]">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -169,7 +169,7 @@ export default function Berufshaftpflicht() {
                 Lassen Sie sich beraten und finden Sie die passende Absicherung für Ihre Berufsgruppe.
               </p>
               <Link to="/kontakt">
-                <Button size="lg" className="gap-2 bg-white text-[hsl(178,45%,35%)] hover:bg-white/90">
+                <Button size="lg" className="gap-2 bg-white text-[hsl(178,45%,20%)] hover:bg-white/90">
                   Beratung anfordern
                   <ArrowRight className="h-5 w-5" />
                 </Button>

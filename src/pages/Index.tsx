@@ -3,7 +3,6 @@ import Hero from "@/components/home/Hero";
 import PartnerSlider from "@/components/home/PartnerSlider";
 import Services from "@/components/home/Services";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
-import AppSection from "@/components/home/AppSection";
 import AboutPreview from "@/components/home/AboutPreview";
 import Testimonials from "@/components/home/Testimonials";
 import TeamPreview from "@/components/home/TeamPreview";
@@ -21,7 +20,6 @@ const Index = () => {
       <PartnerSlider />
       <Services />
       <ProcessTimeline />
-      <AppSection />
       <AboutPreview />
       <Testimonials />
       <TeamPreview />

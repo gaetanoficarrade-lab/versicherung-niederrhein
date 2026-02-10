@@ -40,7 +40,7 @@ export default function SegmentedToggle({
   return (
     <motion.div 
       className={cn(
-        "relative inline-flex items-center p-1.5 rounded-full",
+        "relative inline-flex items-center gap-1 p-1.5 rounded-full",
         containerStyles[variant],
         className
       )}
@@ -57,8 +57,8 @@ export default function SegmentedToggle({
         )}
         initial={false}
         animate={{
-          left: isFirstActive ? "6px" : "calc(50% - 4px)",
-          right: isFirstActive ? "calc(50% - 4px)" : "6px",
+          left: isFirstActive ? "6px" : "50%",
+          right: isFirstActive ? "50%" : "6px",
         }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
       />
@@ -79,7 +79,7 @@ export default function SegmentedToggle({
         }}
       />
 
-      {options.map((option, index) => {
+      {options.map((option) => {
         const Icon = option.icon;
         const isActive = activeId === option.id;
         
@@ -88,9 +88,11 @@ export default function SegmentedToggle({
             key={option.id}
             onClick={() => onChange(option.id)}
             className={cn(
-              "relative z-10 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300 flex-1 min-w-[140px]",
+              "relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
               isActive 
-                ? "text-primary-foreground"
+                ? variant === "dark"
+                  ? "text-slate-900"
+                  : "text-primary-foreground"
                 : inactiveStyles[variant]
             )}
           >
@@ -100,6 +102,7 @@ export default function SegmentedToggle({
             )} />
             <span className="relative">
               {option.label}
+              {/* Underline hint for inactive state */}
               {!isActive && (
                 <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-current opacity-30 rounded-full" />
               )}
