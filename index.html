@@ -135,29 +135,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- ProvenExpert Widget – rendered inside #provenexpert-container in Testimonials section -->
-    <script id="proSeal">
-      window.loadProSeal = function () {
-        if (window.provenExpert && window.provenExpert.proSeal) {
-          window.provenExpert.proSeal({
-            widgetId: "9dcc7b28-7d39-4156-a201-a87688acf47a",
-            language: "de-DE",
-            usePageLanguage: false,
-            bannerColor: "#097E92",
-            textColor: "#FFFFFF",
-            showReviews: true,
-            hideDate: true,
-            hideName: false,
-            hideOnMobile: false,
-            googleStars: true,
-            zIndex: "9999",
-            displayReviewerLastName: false,
-            container: "provenexpert-container"
-          });
-        }
-      };
-    </script>
-    <script src="https://s.provenexpert.net/seals/proseal-v2.js" onload="loadProSeal()"></script>
     <!-- ProvenExpert Top Service Badge loaded dynamically by Footer -->
   </body>
 </html>

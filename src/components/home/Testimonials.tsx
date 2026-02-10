@@ -110,10 +110,9 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonial Slider + ProvenExpert */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-          {/* Slider */}
-          <div className="relative flex-1 w-full">
+        {/* Testimonial Slider */}
+        <div className="max-w-4xl mx-auto">
+          <div className="relative w-full">
             <div className="min-h-[320px] flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -180,11 +179,6 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-          </div>
-
-          {/* ProvenExpert Widget */}
-          <div className="flex-shrink-0">
-            <div id="provenexpert-container" className="min-w-[250px]" />
           </div>
         </div>
       </div>
