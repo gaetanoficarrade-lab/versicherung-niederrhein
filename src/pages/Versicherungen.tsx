@@ -524,7 +524,7 @@ export default function Versicherungen() {
       {/* CTA Section */}
       <section className={cn(
         "py-20 transition-colors duration-500",
-        isGewerbe ? "bg-[hsl(178,45%,15%)]" : "bg-background"
+        isGewerbe ? "bg-[hsl(178,45%,30%)]" : "bg-background"
       )}>
         <div className="section-container">
           <motion.div 

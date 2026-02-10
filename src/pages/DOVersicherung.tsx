@@ -90,7 +90,7 @@ export default function DOVersicherung() {
       />
 
       {/* Content - Dark business style */}
-      <section className="py-16 bg-[hsl(178,45%,18%)]">
+      <section className="py-16 bg-[hsl(178,45%,35%)]">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <motion.div
