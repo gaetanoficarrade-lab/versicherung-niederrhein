@@ -33,7 +33,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
               <Shield className="h-4 w-4" />
-              Dein unabhängiger Versicherungsmakler
+              Dein Versicherungsmakler am Niederrhein
             </span>
           </motion.div>
 
