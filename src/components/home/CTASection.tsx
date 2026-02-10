@@ -85,23 +85,23 @@ export default function CTASection() {
 
             {/* Modal – full iframe only, no header */}
             <motion.div
-              className="relative bg-background rounded-2xl shadow-2xl w-[95vw] max-w-[1000px] h-[95vh] overflow-hidden"
+              className="relative w-[95vw] max-w-[1000px] h-[95vh] overflow-hidden"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              {/* Close button */}
+              {/* Close button – positioned just above the iframe content */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-3 right-3 z-10 p-2 rounded-full bg-background/80 hover:bg-muted transition-colors text-foreground/70 hover:text-foreground shadow-md"
+                className="absolute top-[60px] right-[10px] z-10 p-2 rounded-full bg-white/90 hover:bg-white transition-colors text-foreground/70 hover:text-foreground shadow-md"
               >
                 <X className="h-5 w-5" />
               </button>
 
               {/* Loading indicator */}
               {!iframeLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-background">
+                <div className="absolute inset-0 flex items-center justify-center">
                   <Loader2 className="h-8 w-8 animate-spin text-primary" />
                 </div>
               )}
