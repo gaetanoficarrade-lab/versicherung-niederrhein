@@ -88,9 +88,7 @@ export default function SegmentedToggle({
             key={option.id}
             onClick={() => onChange(option.id)}
             className={cn(
-              "relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300",
-              index === 1 && "-ml-3",
-              index === 0 && "-mr-3",
+              "relative z-10 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300 flex-1 min-w-[140px]",
               isActive 
                 ? "text-primary-foreground"
                 : inactiveStyles[variant]
