@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight,
   Users,
-  Briefcase,
+  Building2,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
