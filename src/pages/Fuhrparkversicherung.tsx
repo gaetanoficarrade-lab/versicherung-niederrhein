@@ -141,7 +141,7 @@ export default function Fuhrparkversicherung() {
                 Lassen Sie sich ein individuelles Angebot erstellen – abgestimmt auf Ihre Flotte.
               </p>
               <Link to="/kontakt">
-                <Button size="lg" className="gap-2 bg-white text-[hsl(178,45%,20%)] hover:bg-white/90">
+                <Button size="lg" className="gap-2 bg-white text-primary hover:bg-white/90">
                   Angebot anfordern
                   <ArrowRight className="h-5 w-5" />
                 </Button>
