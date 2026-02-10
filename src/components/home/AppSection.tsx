@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
-import appMockup from "@/assets/vema-app-mockup-enhanced.png";
+import appMockup from "@/assets/vema-app-mockup.png";
 
 const AppSection = () => {
   const [submitted, setSubmitted] = useState(false);

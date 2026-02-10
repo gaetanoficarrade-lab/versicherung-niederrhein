@@ -21,6 +21,7 @@ const Index = () => {
       <PartnerSlider />
       <Services />
       <ProcessTimeline />
+      <AppSection />
       <AboutPreview />
       <Testimonials />
       <TeamPreview />
