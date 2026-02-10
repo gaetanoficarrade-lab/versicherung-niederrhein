@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import teamMartin from "@/assets/team-martin.jpg";
 import teamMarc from "@/assets/team-marc.jpg";
 import teamNina from "@/assets/team-nina.jpg";
@@ -49,7 +53,77 @@ const teamMembers = [
   },
 ];
 
+function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
+  return (
+    <div className="card-premium overflow-hidden group h-full">
+      <div className="aspect-[4/5] overflow-hidden">
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center">
+            <div className="h-20 w-20 rounded-full bg-primary/20 flex items-center justify-center">
+              <span className="text-2xl font-bold text-primary">
+                {member.name.split(" ").map(n => n[0]).join("")}
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-foreground mb-1">
+          {member.name}
+        </h3>
+        <p className="text-primary text-sm font-medium mb-4">
+          {member.role}
+        </p>
+        <div className="space-y-2">
+          <a
+            href={`tel:${member.phone.replace(/-/g, "")}`}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Phone className="h-4 w-4 flex-shrink-0" />
+            {member.phone}
+          </a>
+          <a
+            href={`mailto:${member.email}`}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors break-all"
+          >
+            <Mail className="h-4 w-4 flex-shrink-0" />
+            <span className="text-xs sm:text-sm">{member.email}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function TeamPreview() {
+  const isMobile = useIsMobile();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
+
+  // Auto-scroll on mobile
+  useEffect(() => {
+    if (!emblaApi || !isMobile) return;
+    const interval = setInterval(() => emblaApi.scrollNext(), 4000);
+    return () => clearInterval(interval);
+  }, [emblaApi, isMobile]);
+
   return (
     <section className="py-24 bg-background">
       <div className="section-container">
@@ -71,63 +145,53 @@ export default function TeamPreview() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="card-premium overflow-hidden group"
-            >
-              {/* Image or initials */}
-              <div className="aspect-[4/5] overflow-hidden">
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary/10 via-secondary to-accent/10 flex items-center justify-center">
-                    <div className="h-20 w-20 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-primary">
-                        {member.name.split(" ").map(n => n[0]).join("")}
-                      </span>
-                    </div>
+        {isMobile ? (
+          <div className="relative">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {teamMembers.map((member) => (
+                  <div key={member.name} className="flex-[0_0_100%] min-w-0 px-2">
+                    <TeamMemberCard member={member} />
                   </div>
-                )}
+                ))}
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-primary text-sm font-medium mb-4">
-                  {member.role}
-                </p>
-                
-                <div className="space-y-2">
-                  <a
-                    href={`tel:${member.phone.replace(/-/g, "")}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Phone className="h-4 w-4" />
-                    {member.phone}
-                  </a>
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Mail className="h-4 w-4" />
-                    {member.email}
-                  </a>
-                </div>
+            </div>
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button variant="outline" size="icon" onClick={scrollPrev} className="h-10 w-10 rounded-full">
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <div className="flex gap-2">
+                {teamMembers.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => emblaApi?.scrollTo(i)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-primary/30"
+                    }`}
+                    aria-label={`Zu Mitglied ${i + 1}`}
+                  />
+                ))}
               </div>
-            </motion.div>
-          ))}
-        </div>
+              <Button variant="outline" size="icon" onClick={scrollNext} className="h-10 w-10 rounded-full">
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <TeamMemberCard member={member} />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

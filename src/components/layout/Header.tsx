@@ -141,7 +141,8 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm bg-primary text-primary-foreground shadow-strong lg:hidden"
+              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm shadow-strong lg:hidden"
+              style={{ backgroundColor: 'hsl(178, 45%, 35%)', color: 'white' }}
             >
               <div className="flex h-20 items-center justify-between px-6">
                 <span className="text-lg font-semibold text-primary-foreground">Menü</span>
