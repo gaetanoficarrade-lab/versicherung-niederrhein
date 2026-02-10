@@ -66,9 +66,7 @@ export default function Footer() {
               </a>
             </div>
             {/* ProvenExpert Badge */}
-            <div className="mt-4">
-              <a id="pe_badge_ebpfnhkn" target="_blank" rel="noopener noreferrer"></a>
-            </div>
+            <div className="mt-4" id="pe_footer_badge"></div>
           </div>
 
           {/* Unternehmen */}
