@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import bgPrivat from "@/assets/bg-privat-versicherungen.jpg";
+import bgGewerbe from "@/assets/bg-gewerbe-versicherungen.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Car, 
