@@ -33,6 +33,20 @@ const teamMembers = [
     phone: "02824-809293-0",
     image: null,
   },
+  {
+    name: "Platzhalter 5",
+    role: "Rolle folgt",
+    email: "info@makler-kalkar.de",
+    phone: "02824-809293",
+    image: null,
+  },
+  {
+    name: "Platzhalter 6",
+    role: "Rolle folgt",
+    email: "info@makler-kalkar.de",
+    phone: "02824-809293",
+    image: null,
+  },
 ];
 
 export default function TeamPreview() {
