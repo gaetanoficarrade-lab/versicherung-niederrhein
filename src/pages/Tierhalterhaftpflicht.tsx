@@ -97,8 +97,7 @@ export default function Tierhalterhaftpflicht() {
       {/* Content */}
       <section className="py-16 bg-background">
         <div className="section-container">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-            <div>
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -237,7 +236,6 @@ export default function Tierhalterhaftpflicht() {
                 ))}
               </Accordion>
             </motion.div>
-            </div>
           </div>
         </div>
       </section>
