@@ -9,6 +9,8 @@ import partnerVhv from "@/assets/partner-vhv.png";
 import partnerTk from "@/assets/partner-tk.png";
 import partnerDbv from "@/assets/partner-dbv.png";
 import partnerStuttgarter from "@/assets/partner-stuttgarter.png";
+import partnerNuernberger from "@/assets/partner-nuernberger.png";
+import partnerBarmenia from "@/assets/partner-barmenia.png";
 
 const partners = [
   { name: "KRAVAG", logo: partnerKravag },
@@ -20,6 +22,8 @@ const partners = [
   { name: "Die Techniker", logo: partnerTk },
   { name: "DBV", logo: partnerDbv },
   { name: "Die Stuttgarter", logo: partnerStuttgarter },
+  { name: "Nürnberger", logo: partnerNuernberger },
+  { name: "Barmenia", logo: partnerBarmenia },
 ];
 
 export default function PartnerSlider() {
@@ -39,12 +43,12 @@ export default function PartnerSlider() {
         {/* Scrolling container */}
         <motion.div
           className="flex gap-16 items-center"
-          animate={{ x: [0, -1200] }}
+          animate={{ x: [0, -1600] }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30,
+              duration: 35,
               ease: "linear",
             },
           }}
@@ -53,12 +57,12 @@ export default function PartnerSlider() {
           {[...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center h-16 w-40 px-4"
+              className="flex-shrink-0 flex items-center justify-center h-20 w-44 px-4"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-12 w-auto object-contain"
+                className="max-h-16 w-auto object-contain"
               />
             </div>
           ))}
