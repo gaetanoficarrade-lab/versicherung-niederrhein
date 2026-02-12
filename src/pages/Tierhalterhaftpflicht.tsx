@@ -4,16 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
-import NachlesenSidebar from "@/components/NachlesenSidebar";
+
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import heroImage from "@/assets/hero-tierhalterhaftpflicht.jpg";
 
-const nachlesenLinks = [
-  { title: "Tierhalterhaftpflicht", url: "https://landingpage.vema-eg.de/maklerkalkar/tierhalterhaftpflicht/tierhalterhaftpflicht" },
-  { title: "Leistungsbeispiele", url: "https://landingpage.vema-eg.de/maklerkalkar/tierhalterhaftpflicht/leistungsbeispiele" },
-  { title: "Weitere wichtige Absicherungen", url: "https://landingpage.vema-eg.de/maklerkalkar/tierhalterhaftpflicht/weitereabsicherungen" },
-];
 
 const versichert = [
   "Personen-, Sach- und Vermögensschäden von Dritten durch das versicherte Tier",
@@ -183,9 +178,6 @@ export default function Tierhalterhaftpflicht() {
               </div>
             </motion.div>
 
-            {/* Mobile Nachlesen - vor dem CTA */}
-            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
-
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -246,8 +238,6 @@ export default function Tierhalterhaftpflicht() {
               </Accordion>
             </motion.div>
             </div>
-
-            <NachlesenSidebar links={nachlesenLinks} mode="desktop" />
           </div>
         </div>
       </section>
