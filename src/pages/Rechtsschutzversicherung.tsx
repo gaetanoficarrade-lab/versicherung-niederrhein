@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Scale, Check, ArrowRight, FileText, Briefcase, Car, Home } from "lucide-react";
+import { Scale, Check, ArrowRight, FileText, Briefcase, Car, Home, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
@@ -8,44 +8,48 @@ import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import heroImage from "@/assets/hero-rechtsschutz.jpg";
 
-const benefits = [
-  "Absicherung bei Rechtsstreitigkeiten",
-  "Kostenübernahme für Anwalt und Gericht",
-  "Weltweiter Schutz möglich",
-  "Verschiedene Bausteine kombinierbar",
+const kostenuebernahme = [
+  "Kosten des Anwaltes nach dem Rechtsanwaltsvergütungsgesetz (RVG)",
+  "Gerichtskosten einschließlich der Entschädigung für Zeugen und Sachverständige",
+  "Kosten des Gegners, soweit du sie zu tragen hast",
+  "Kosten eines Mediationsverfahrens",
 ];
 
-const coverageAreas = [
+const bausteine = [
+  {
+    icon: Home,
+    title: "Privatrechtsschutz",
+    description: "Schutz bei privatrechtlichen Streitigkeiten – von Kaufverträgen bis Nachbarschaftskonflikten. Der Grundbaustein für jeden Haushalt.",
+  },
   {
     icon: Briefcase,
     title: "Berufsrechtsschutz",
-    description: "Schutz bei arbeitsrechtlichen Streitigkeiten mit dem Arbeitgeber",
+    description: "Absicherung bei arbeitsrechtlichen Auseinandersetzungen mit dem Arbeitgeber – Kündigung, Abfindung, Zeugnis und mehr.",
   },
   {
     icon: Car,
     title: "Verkehrsrechtsschutz",
-    description: "Absicherung bei Unfällen und Streitigkeiten im Straßenverkehr",
-  },
-  {
-    icon: Home,
-    title: "Wohnrechtsschutz",
-    description: "Unterstützung bei Mietstreitigkeiten und Nachbarschaftskonflikten",
+    description: "Schutz bei Unfällen und Streitigkeiten im Straßenverkehr. In der Regel ohne Wartezeit sofort aktiv.",
   },
   {
     icon: FileText,
-    title: "Vertragsrechtsschutz",
-    description: "Hilfe bei Problemen mit Verträgen und Kaufangelegenheiten",
+    title: "Wohnungs-/Grundstücksrechtsschutz",
+    description: "Unterstützung bei Mietstreitigkeiten, Nebenkostenabrechnungen und Konflikten mit dem Vermieter oder Nachbarn.",
   },
 ];
 
 const faqs = [
   {
-    question: "Was ist versichert?",
-    answer: "Alle rechtlichen Belange können grundsätzlich versichert werden. Je nach Bedarf können für verschiedene juristische Bereiche spezielle Versicherungen abgeschlossen werden – vom Arbeitsrecht über Verkehrsrecht bis hin zum Mietrecht.",
+    question: "Warum brauche ich eine Rechtsschutzversicherung?",
+    answer: "Auch im privaten Bereich kann der Weg zum Anwalt schneller notwendig werden, als einem lieb ist. Die meisten Bereiche des täglichen Lebens unterliegen gesetzlichen Regelungen. Da man im Zweifel auch die Kosten des Prozessgegners tragen muss, kann ein Rechtsstreit sehr teuer werden.",
   },
   {
     question: "Welche Kosten werden übernommen?",
-    answer: "Die Rechtsschutzversicherung übernimmt in der Regel die Kosten für Anwälte, Gerichtsgebühren, Zeugengelder und Sachverständige. Auch die Kosten der Gegenseite werden übernommen, falls du den Prozess verlierst.",
+    answer: "Der Versicherer zahlt Anwaltskosten nach RVG, Gerichtskosten, Zeugen- und Sachverständigenentschädigungen, Kosten der Gegenseite (wenn du sie tragen musst) und Mediationskosten – abzüglich der vereinbarten Selbstbeteiligung.",
+  },
+  {
+    question: "Kann ich einzelne Bausteine wählen?",
+    answer: "Ja, während einige Versicherer Kompletttarife anbieten, bieten andere ein Baukastenprinzip. Du kannst deinen Tarif aus einzelnen Bereichen zusammenstellen. Manche Bausteine können nur in Verbindung mit einem anderen abgeschlossen werden.",
   },
   {
     question: "Gibt es Wartezeiten?",
@@ -53,7 +57,7 @@ const faqs = [
   },
   {
     question: "Wer ist mitversichert?",
-    answer: "In Familientarifen sind in der Regel der Ehepartner/Lebenspartner und alle minderjährigen Kinder mitversichert. Volljährige Kinder können unter bestimmten Voraussetzungen (z.B. Ausbildung) weiter mitversichert sein.",
+    answer: "In Familientarifen sind Ehepartner/Lebenspartner und minderjährige Kinder mitversichert. Volljährige Kinder können unter bestimmten Voraussetzungen (z.B. Ausbildung) weiter mitversichert sein.",
   },
 ];
 
@@ -85,7 +89,7 @@ export default function Rechtsschutzversicherung() {
         heroImage={heroImage}
       />
 
-      {/* Benefits & Content */}
+      {/* Content */}
       <section className="py-16 bg-background">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
@@ -94,44 +98,51 @@ export default function Rechtsschutzversicherung() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
+              <p className="text-lg text-foreground leading-relaxed mb-4">
+                Auch im privaten Bereich kann der Weg zum Anwalt schneller notwendig
+                werden, als es einem vielleicht lieb ist. Die meisten Bereiche des täglichen
+                Lebens unterliegen heutzutage gesetzlichen Regelungen. Aus einer
+                Meinungsverschiedenheit kann so schnell ein Rechtsstreit werden.
+              </p>
               <p className="text-lg text-foreground leading-relaxed mb-8">
-                Dein Gegner muss Kosten nur übernehmen, wenn er vor Gericht verliert. 
-                Daher scheuen viele solch eine Auseinandersetzung aus Angst vor den 
-                entstehenden Kosten – und das selbst wenn sie im Recht sind. Eine 
-                Rechtsschutzversicherung kann sämtliche Kosten für alle Rechtsstreitigkeiten 
-                abdecken, die du führen musst.
+                Da man im Zweifel auch die Kosten des Prozessgegners zu tragen hat,
+                kann es sehr teuer werden. Eine Rechtsschutzversicherung kann sämtliche
+                Kosten für alle Rechtsstreitigkeiten abdecken, die du führen musst.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mb-6">Deine Vorteile:</h2>
-              
-              <div className="grid sm:grid-cols-2 gap-4 mb-12">
-                {benefits.map((benefit, index) => (
+              {/* Kostenübernahme */}
+              <h2 className="text-2xl font-bold text-foreground mb-6">Welche Kosten werden übernommen?</h2>
+              <div className="space-y-3 mb-12">
+                {kostenuebernahme.map((item, index) => (
                   <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10">
                     <div className="flex-shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
                       <Check className="h-4 w-4 text-primary" />
                     </div>
-                    <span className="font-medium text-foreground">{benefit}</span>
+                    <span className="font-medium text-foreground">{item}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Coverage Areas */}
+            {/* Bausteine */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-12"
             >
-              <h2 className="text-2xl font-bold text-foreground mb-6">Absicherungsbereiche:</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Bausteine der Rechtsschutzversicherung:</h2>
+              <p className="text-muted-foreground mb-6">
+                Während einige Versicherer Kompletttarife anbieten, bieten andere ein Baukastenprinzip – so kannst du deinen Tarif individuell zusammenstellen.
+              </p>
               <div className="grid sm:grid-cols-2 gap-6">
-                {coverageAreas.map((area, index) => (
+                {bausteine.map((baustein, index) => (
                   <div key={index} className="p-6 rounded-2xl bg-muted/50 border border-border">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
-                      <area.icon className="h-6 w-6" />
+                      <baustein.icon className="h-6 w-6" />
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2">{area.title}</h3>
-                    <p className="text-sm text-muted-foreground">{area.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2">{baustein.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{baustein.description}</p>
                   </div>
                 ))}
               </div>
@@ -178,7 +189,7 @@ export default function Rechtsschutzversicherung() {
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 Häufige Fragen zur Rechtsschutzversicherung
               </h2>
-              
+
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem
