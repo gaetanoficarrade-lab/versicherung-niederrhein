@@ -268,6 +268,9 @@ export default function PrivatHaftpflicht() {
               </div>
             </motion.div>
 
+            {/* Mobile Nachlesen - vor den FAQs */}
+            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
+
             {/* FAQ */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -297,7 +300,7 @@ export default function PrivatHaftpflicht() {
             </motion.div>
             </div>
 
-            <NachlesenSidebar links={nachlesenLinks} />
+            <NachlesenSidebar links={nachlesenLinks} mode="desktop" />
           </div>
         </div>
       </section>
