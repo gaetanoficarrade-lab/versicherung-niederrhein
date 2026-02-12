@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 
 export default function Impressum() {
@@ -13,21 +11,10 @@ export default function Impressum() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               Impressum
             </h1>
-            <a
-              href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="gap-2">
-                <Download className="h-4 w-4" />
-                Als PDF herunterladen
-              </Button>
-            </a>
           </motion.div>
         </div>
       </section>
@@ -41,109 +28,181 @@ export default function Impressum() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="max-w-3xl mx-auto prose prose-lg"
           >
-            <p className="text-muted-foreground mb-8">
-              Für diese Website verantwortlicher Anbieter gemäß § 5 DDG sowie 
-              Informationspflichten gemäß § 15 VersVermV und § 18 Abs. 2 MStV:
-            </p>
-
             <div className="p-6 rounded-xl bg-muted mb-8">
               <h2 className="text-xl font-bold text-foreground mt-0 mb-4">
-                Smits Versicherungsmakler GmbH & Co. KG
+                Smits Versicherungsmakler GmbH &amp; Co. KG
               </h2>
               <p className="text-foreground mb-0">
-                Markt 3<br />
-                47546 Kalkar
+                Markt 3, 47546 Kalkar<br />
+                Telefon: 02824 / 809293<br />
+                Internet:{" "}
+                <a href="https://www.makler-kalkar.de" target="_blank" rel="noopener noreferrer" className="text-primary">
+                  www.makler-kalkar.de
+                </a><br />
+                E-Mail:{" "}
+                <a href="mailto:martin.smits@makler-kalkar.de" className="text-primary">
+                  martin.smits(at)makler-kalkar.de
+                </a>
               </p>
             </div>
 
-            <p className="text-foreground">
-              <strong>vertreten durch den Geschäftsführer:</strong> Martin Smits
-            </p>
-
-            <p className="text-foreground">
-              <strong>Telefon:</strong> 02824-809293<br />
-              <strong>Telefax:</strong> 02824-809294<br />
-              <strong>E-Mail:</strong>{" "}
-              <a href="mailto:info@makler-kalkar.de" className="text-primary">
-                info@makler-kalkar.de
-              </a>
-            </p>
-
-            <p className="text-foreground">
-              <strong>Registriert beim Amtsgericht in:</strong> Kleve<br />
-              <strong>Handelsregisternummer:</strong> HRA 3101
-            </p>
-
-            <hr className="my-8" />
-
             <h3 className="text-lg font-bold text-foreground">
-              Die Smits Versicherungsmakler GmbH & Co. KG wird vertreten durch die 
-              persönlich haftende Gesellschafterin:
+              Persönlich haftender Gesellschafter (Komplementär):
             </h3>
-
             <p className="text-foreground">
               <strong>Smits Verwaltungs-GmbH</strong><br />
-              Markt 3<br />
-              47546 Kalkar
+              (Anschrift siehe oben)<br />
+              Amtsgericht Kleve HRB 8384
             </p>
 
             <p className="text-foreground">
-              <strong>Telefon:</strong> 02824-809293<br />
-              <strong>Telefax:</strong> 02824-809294<br />
-              <strong>Registriert beim Amtsgericht in:</strong> Kleve<br />
-              <strong>Handelsregisternummer:</strong> HRB 8384<br />
-              <strong>vertreten durch den Geschäftsführer:</strong> Martin Smits<br />
-              <strong>Steuernummer:</strong> 116/5768/1134
+              vertreten durch den Geschäftsführer Herrn Martin Smits
             </p>
 
             <p className="text-foreground">
-              <strong>Branche / Tätigkeit:</strong> Versicherungs- und Finanzmakler<br />
-              <strong>Staat, der die Berufsbezeichnung verliehen hat:</strong> Deutschland
-            </p>
-
-            <p className="text-foreground">
-              <strong>Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV:</strong> Martin Smits
+              <strong>Handelsregisternummer:</strong> HRA 3101, Amtsgericht Kleve
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Zuständiges Finanzamt:</h3>
+            <h3 className="text-lg font-bold text-foreground">§34d GewO</h3>
+
             <p className="text-foreground">
-              Finanzamt Kleve<br />
-              Emmericher Str. 182<br />
-              47533 Kleve<br />
-              Telefon: 02821-803-1020<br />
-              Fax: 02821-803-1201
+              <strong>Berufsbezeichnung:</strong><br />
+              Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 Gewerbeordnung, Bundesrepublik Deutschland
+            </p>
+
+            <p className="text-foreground">
+              <strong>Registernummer:</strong> D-78KN-J9ZHF-72
+            </p>
+
+            <h3 className="text-lg font-bold text-foreground">
+              Aufsichtsbehörde und zuständige Behörde für die Erlaubnis:
+            </h3>
+            <p className="text-foreground">
+              Niederrheinische IHK<br />
+              Mercatorstr. 22-24<br />
+              47051 Duisburg<br />
+              Deutschland<br />
+              <a href="https://www.ihk-niederrhein.de/" target="_blank" rel="noopener noreferrer" className="text-primary">
+                https://www.ihk-niederrhein.de/
+              </a>
+            </p>
+
+            <h3 className="text-lg font-bold text-foreground">
+              Die Eintragung kann wie folgt überprüft werden:
+            </h3>
+            <p className="text-foreground">
+              DIHK | Deutsche Industrie- und Handelskammer<br />
+              Breite Straße 29, 10178 Berlin<br />
+              Telefon 0180-600-585-0 *<br />
+              <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener noreferrer" className="text-primary">
+                www.vermittlerregister.info
+              </a><br />
+              <span className="text-sm text-muted-foreground">* 0,20 €/Anruf</span>
+            </p>
+
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">Schlichtungsstellen</h3>
+            <p className="text-foreground">
+              Gemäß § 36 VSBG und § 17 Abs. 4 VersVermV teilen wir mit, dass wir verpflichtet und bereit sind an einem Streitbeilegungsverfahren teilzunehmen. Folgende Schlichtungsstellen können angerufen werden:
+            </p>
+
+            <p className="text-foreground">
+              <strong>Versicherungsombudsmann e.V.</strong><br />
+              Postfach 08 06 32, 10006 Berlin<br />
+              <a href="https://www.versicherungsombudsmann.de" target="_blank" rel="noopener noreferrer" className="text-primary">
+                www.versicherungsombudsmann.de
+              </a>
+            </p>
+
+            <p className="text-foreground">
+              <strong>Ombudsmann Private Kranken- und Pflegeversicherung</strong><br />
+              Postfach 06 02 22, 10052 Berlin<br />
+              <a href="https://www.pkv-ombudsmann.de" target="_blank" rel="noopener noreferrer" className="text-primary">
+                www.pkv-ombudsmann.de
+              </a>
             </p>
 
             <hr className="my-8" />
 
             <h3 className="text-lg font-bold text-foreground">
-              Behörde für die Erlaubnis nach § 34d Abs. 1 Z. 2 GewO:
+              Berufsrechtliche Regelungen sind insbesondere:
+            </h3>
+            <ul className="text-foreground">
+              <li>§ 34 d Gewerbeordnung</li>
+              <li>§§ 59 - 68 VVG</li>
+              <li>VersVermV</li>
+            </ul>
+
+            <p className="text-foreground">
+              Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebenen Homepage{" "}
+              <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener noreferrer" className="text-primary">
+                www.gesetze-im-internet.de
+              </a>{" "}
+              eingesehen und abgerufen werden.
+            </p>
+
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">Beschwerdemanagement</h3>
+            <p className="text-foreground">
+              Beschwerden sind in Textform an die Geschäftsleitung zu richten und werden im Rahmen unseres Beschwerdemanagements unverzüglich bearbeitet.
+            </p>
+
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">
+              Information zur Einbeziehung von Nachhaltigkeitsrisiken bei der Beratungstätigkeit (Art. 3 TVO)
             </h3>
             <p className="text-foreground">
-              IHK Duisburg<br />
-              Mercatorstr. 22-24<br />
-              47051 Duisburg<br />
-              Telefon: 0203-2821-0<br />
-              Fax: 0203-26533
+              Um Nachhaltigkeitsrisiken bei der Beratung einzubeziehen, werden im Rahmen der Auswahl von Anbietern (Finanzmarktteilnehmern) und deren Finanzprodukten deren zur Verfügung gestellte Informationen berücksichtigt.
+            </p>
+            <p className="text-foreground">
+              Anbieter, die erkennbar keine Strategie zur Einbeziehung von Nachhaltigkeitsrisiken in ihre Investitionsentscheidungen haben, werden ggf. nicht angeboten.
+            </p>
+            <p className="text-foreground">
+              Im Rahmen der Beratung wird ggf. gesondert dargestellt, wenn die Berücksichtigung der Nachhaltigkeitsrisiken bei der Investmententscheidung erkennbare Vor- bzw. Nachteile für den Kunden bedeuten.
+            </p>
+            <p className="text-foreground">
+              Über die Berücksichtigung von Nachhaltigkeitsrisiken bei Investitionsentscheidungen des jeweiligen Anbieters informiert dieser mit seinen vorvertraglichen Informationen. Fragen dazu kann der Kunde im Vorfeld eines möglichen Abschlusses ansprechen.
             </p>
 
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">
+              Information zur Berücksichtigung nachteiliger Auswirkungen auf Nachhaltigkeitsfaktoren (Art. 4 TVO in Verbindung mit Art. 11 der Ergänzung zur TVO vom 01. Januar 2023)
+            </h3>
+            <p className="text-foreground font-semibold">
+              Erklärung über die Berücksichtigung der wichtigsten nachteiligen Auswirkungen auf Nachhaltigkeitsfaktoren bei der Anlage- und Versicherungsberatung
+            </p>
             <p className="text-foreground">
-              <strong>Registernummer:</strong> D-8OKW-XT3P1-49
+              Bei der Beratung ist es unser Ziel, Ihnen ein geeignetes Anlage-/Versicherungsanlageprodukt empfehlen zu können. Dabei berücksichtigen wir auch Ihre Nachhaltigkeitspräferenzen, sofern Sie dies wünschen. Hierbei können Sie festlegen, ob bei Ihrer Anlage ökologische und/oder soziale Werte sowie Grundsätze guter Unternehmensführung und/oder die wichtigsten nachteiligen Auswirkungen von Investitionsentscheidungen auf Nachhaltigkeitsfaktoren berücksichtigt werden sollen. Der Gesetzgeber hat je nach Art des Anlageziels (Investition in Unternehmen, Staaten, Immobilien etc.) in folgenden Bereichen „Indikatoren" für die wichtigsten nachteiligen Auswirkungen ihrer Investitionsentscheidungen auf Nachhaltigkeitsfaktoren bestimmt:
+            </p>
+            <ul className="text-foreground">
+              <li>Umwelt-, Sozial- und Arbeitnehmerbelange</li>
+              <li>Die Achtung der Menschenrechte</li>
+              <li>Die Bekämpfung von Korruption und Bestechung.</li>
+            </ul>
+            <p className="text-foreground">
+              Die Produktanbieter sind gesetzlich verpflichtet, eine Erklärung zu veröffentlichen, welche Strategie sie in Bezug auf die Berücksichtigung der wichtigsten nachteiligen Auswirkungen und den Umgang damit verfolgen. Dies bezieht sich insbesondere auf Treibhausgasemissionen, Wasserverbrauch, Biodiversität, Abfall, Soziales und Arbeitnehmerbelange (einschließlich Menschenrechte und Korruption). Wenn Sie sich dazu entscheiden, dass die wichtigsten nachteiligen Auswirkungen Ihrer Investitionsentscheidungen auf Nachhaltigkeitsfaktoren bei der Produktauswahl berücksichtigt werden sollen, beachten wir im Rahmen des Auswahlprozesses die von den Produktanbietern bereitgestellten Informationen sowie die von den Produktanbietern dargelegten Strategien.
+            </p>
+            <p className="text-foreground">
+              Eigene Einstufungs- und Auswahlmethoden zu den Informationen der Produktanbieter wenden wir nicht an. Es erfolgt keine gesonderte Prüfung der Angaben der Produktanbieter in Hinblick auf ihre Plausibilität.
             </p>
 
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">
+              Informationen zur Vergütungspolitik bei der Berücksichtigung von Nachhaltigkeitsrisiken (Art. 5 TVO)
+            </h3>
             <p className="text-foreground">
-              Ob der Gewerbetreibende bei der zuständigen IHK gemeldet und eingetragen 
-              ist, können Sie über folgenden Link überprüfen:{" "}
-              <a
-                href="https://www.vermittlerregister.info"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary"
-              >
-                www.vermittlerregister.info
-              </a>
+              Die Vergütung für die Vermittlung von Finanzprodukten wird nicht von den jeweiligen Nachhaltigkeitsrisiken beeinflusst.
+            </p>
+
+            <p className="text-sm text-muted-foreground mt-8">
+              Revisions-Stand 25-07
             </p>
           </motion.div>
         </div>
