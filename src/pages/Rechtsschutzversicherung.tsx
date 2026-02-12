@@ -97,11 +97,12 @@ export default function Rechtsschutzversicherung() {
         heroImage={heroImage}
       />
 
+      <NachlesenSidebar links={nachlesenLinks} mode="inline" />
+
       {/* Content */}
       <section className="py-16 bg-background">
         <div className="section-container">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-            <div>
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -157,8 +158,6 @@ export default function Rechtsschutzversicherung() {
               </div>
             </motion.div>
 
-            {/* Mobile Nachlesen - vor dem CTA */}
-            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
 
             {/* CTA */}
             <motion.div
@@ -219,9 +218,6 @@ export default function Rechtsschutzversicherung() {
                 ))}
               </Accordion>
             </motion.div>
-            </div>
-
-            <NachlesenSidebar links={nachlesenLinks} mode="desktop" />
           </div>
         </div>
       </section>
