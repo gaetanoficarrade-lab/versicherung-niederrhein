@@ -243,6 +243,9 @@ export default function Hausratversicherung() {
       <section className="py-16 bg-background">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
+            {/* Mobile Nachlesen - vor dem CTA */}
+            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -274,9 +277,6 @@ export default function Hausratversicherung() {
                 </Link>
               </div>
             </motion.div>
-
-            {/* Mobile Nachlesen - vor den FAQs */}
-            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
 
             {/* FAQ */}
             <motion.div

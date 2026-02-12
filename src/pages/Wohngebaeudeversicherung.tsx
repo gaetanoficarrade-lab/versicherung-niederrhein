@@ -210,6 +210,9 @@ export default function Wohngebaeudeversicherung() {
               </div>
             </motion.div>
 
+            {/* Mobile Nachlesen - vor dem CTA */}
+            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
+
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -241,9 +244,6 @@ export default function Wohngebaeudeversicherung() {
                 </Link>
               </div>
             </motion.div>
-
-            {/* Mobile Nachlesen - vor den FAQs */}
-            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
 
             {/* FAQ */}
             <motion.div
