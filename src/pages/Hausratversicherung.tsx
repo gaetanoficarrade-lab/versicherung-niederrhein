@@ -11,10 +11,10 @@ import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } fro
 import heroImage from "@/assets/hero-hausrat.jpg";
 
 const nachlesenLinks = [
-  { title: "Hausratversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/hausrat/information" },
-  { title: "Versicherte Gefahren", url: "https://landingpage.vema-eg.de/maklerkalkar/hausrat/gefahren" },
-  { title: "Versicherungssumme", url: "https://landingpage.vema-eg.de/maklerkalkar/hausrat/versicherungssumme" },
-  { title: "Leistungserweiterungen", url: "https://landingpage.vema-eg.de/maklerkalkar/hausrat/leistungserweiterungen" },
+  { title: "Hausratversicherung", url: "https://landingpage.vema-eg.de/download/pb/21/maklerkalkar/Hausratversicherung.pdf" },
+  { title: "Hochwertiger Hausrat & Kunst", url: "https://landingpage.vema-eg.de/download/pb/123/maklerkalkar/Hochwertiger-Hausrat-Kunst.pdf" },
+  { title: "Ferienhäuser", url: "https://landingpage.vema-eg.de/download/pb/136/maklerkalkar/Ferienhaeuser.pdf" },
+  { title: "Glasversicherung privat", url: "https://landingpage.vema-eg.de/download/pb/25/maklerkalkar/Glasversicherung-privat.pdf" },
 ];
 
 const gefahren = [
