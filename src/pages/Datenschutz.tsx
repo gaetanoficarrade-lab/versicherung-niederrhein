@@ -30,12 +30,14 @@ export default function Datenschutz() {
           >
             <p className="text-sm text-muted-foreground">Revisions-Stand 2025-01</p>
 
+            <h2 className="text-2xl font-bold text-foreground">1. Datenschutz-Richtlinie</h2>
+
             <div className="p-6 rounded-xl bg-muted mb-8">
               <p className="text-foreground mb-0">
                 <strong>Smits Versicherungsmakler GmbH &amp; Co. KG</strong><br />
                 Markt 3<br />
                 47546 Kalkar<br />
-                Telefon: 02824 / 809293<br />
+                Telefon: <a href="tel:+492824809293" className="text-primary">02824 / 809293</a><br />
                 E-Mail:{" "}
                 <a href="mailto:martin.smits@makler-kalkar.de" className="text-primary">
                   martin.smits(at)makler-kalkar.de
@@ -44,10 +46,10 @@ export default function Datenschutz() {
             </div>
 
             <p className="text-foreground">
-              Nach Maßgabe der Art. 37 - 39 DS-GVO/ § 38 BDSGneu erreichen Sie unseren Datenschutzbeauftragten wie folgt:
+              Nach Maßgabe der Art. 37 - 39 DS-GVO/ § 38 BDSGneu erreichen Sie unseren <strong>Datenschutzbeauftragten</strong> wie folgt:
             </p>
             <p className="text-foreground">
-              <strong>Martin Smits</strong>, Markt 3, 47546 Kalkar,{" "}
+              Martin Smits, Markt 3, 47546 Kalkar,{" "}
               <a href="mailto:martin.smits@makler-kalkar.de" className="text-primary">
                 martin.smits(at)makler-kalkar.de
               </a>
@@ -62,13 +64,13 @@ export default function Datenschutz() {
               Jeder Mitarbeiter unseres Unternehmens kann sich unmittelbar mit Hinweisen, Anregungen oder Beschwerden an den DSB wenden, auf Wunsch wird absolute Vertraulichkeit gewahrt.
             </p>
             <p className="text-foreground">
-              Sie haben Beschwerderecht bei der Aufsichtsbehörde, in deren Bundesland das Unternehmen seinen Sitz hat. Für unser Unternehmen ist dies:
+              Sie haben <strong>Beschwerderecht</strong> bei der Aufsichtsbehörde, in deren Bundesland das Unternehmen seinen Sitz hat. Für unser Unternehmen ist dies:
             </p>
             <div className="p-6 rounded-xl bg-muted mb-8">
               <p className="text-foreground mb-0">
-                <strong>Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</strong><br />
+                Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br />
                 Kavalleriestraße 2-4, 40213 Düsseldorf<br />
-                Tel. 0211 38424-0<br />
+                Tel. <a href="tel:+49211384240" className="text-primary">0211 38424-0</a><br />
                 Fax 0211 38424-10<br />
                 <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer" className="text-primary">
                   https://www.ldi.nrw.de
@@ -82,7 +84,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Geltungsbereich</h3>
+            <h3 className="text-lg font-bold text-foreground">01. Geltungsbereich</h3>
             <p className="text-foreground">
               Diese Richtlinie regelt die datenschutzkonforme Informationsverarbeitung und die entsprechenden Verantwortlichkeiten beim obengenannten Unternehmen (und seiner/n Niederlassung/en) auf Basis der gesetzlichen Regelungen der Europäischen Datenschutz-Grundverordnung (DS-GVO) und Bundesdatenschutzgesetz (BDSGneu). Alle Mitarbeiter sind zur Einhaltung dieser Richtlinie verpflichtet.
             </p>
@@ -104,20 +106,20 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Begriffsdefinitionen (Art. 4 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">02. Begriffsdefinitionen (Art. 4 DS-GVO)</h3>
             <p className="text-foreground">
-              <strong>Personenbezogene Daten</strong> sind Einzelangaben über persönliche oder sachliche Verhältnisse einer natürlichen Person (Betroffener). Beispiele: Name, Vorname, Geburtstag, Adressdaten, Vertragsdaten, E-Mail-Inhalte.
+              Personenbezogene Daten sind Einzelangaben über persönliche oder sachliche Verhältnisse einer natürlichen Person (Betroffener). Beispiele: Name, Vorname, Geburtstag, Adressdaten, Vertragsdaten, E-Mail-Inhalte.
             </p>
             <p className="text-foreground">
-              <strong>Besondere personenbezogene Daten</strong> sind Angaben über rassische, ethnische Herkunft, politische Meinungen, religiöse oder philosophische Überzeugungen, Gewerkschaftszugehörigkeit, Gesundheit oder Sexualleben, sowie wirtschaftliche Verhältnisse.
+              Besondere personenbezogene Daten sind Angaben über rassische, ethnische Herkunft, politische Meinungen, religiöse oder philosophische Überzeugungen, Gewerkschaftszugehörigkeit, Gesundheit oder Sexualleben, sowie wirtschaftliche Verhältnisse.
             </p>
             <p className="text-foreground">
-              <strong>Verantwortliche Stelle</strong> ist jede Person oder Stelle, die personenbezogene Daten für sich selbst erhebt, verarbeitet oder nutzt oder dies durch andere im Auftrag vornehmen lässt.
+              Verantwortliche Stelle ist jede Person oder Stelle, die personenbezogene Daten für sich selbst erhebt, verarbeitet oder nutzt oder dies durch andere im Auftrag vornehmen lässt.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Erheben, Verarbeiten und Speichern personenbezogener Daten (Art. 5 + 6 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">03. Erheben, Verarbeiten und Speichern personenbezogener Daten (Art. 5 + 6 DS-GVO)</h3>
             <p className="text-foreground">
               Das Erheben, Verarbeiten und Speichern personenbezogener Daten in unserem Unternehmen geschieht auf Basis des von uns verwendeten Maklerauftrages und den mitgeltenden Dokumenten (wie z.B. Maklervollmacht, Einwilligung zur Datenverarbeitung, die separat unterzeichnet werden).
             </p>
@@ -133,35 +135,35 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Verpflichtung auf Vertraulichkeit</h3>
+            <h3 className="text-lg font-bold text-foreground">04. Verpflichtung auf Vertraulichkeit</h3>
             <p className="text-foreground">
               Alle Mitarbeiter werden bei der Aufnahme ihrer Tätigkeit zur Verschwiegenheit und der Einhaltung der Arbeitsanweisungen sowie dieser Richtlinie verpflichtet. Die Verpflichtung wird jährlich erneuert.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Verarbeitungsübersichten (Art. 30 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">05. Verarbeitungsübersichten (Art. 30 DS-GVO)</h3>
             <p className="text-foreground">
               Mittels interner Verfahrensübersichten (Verzeichnis der Verarbeitungstätigkeiten) schaffen wir Transparenz innerhalb des Unternehmens und überprüfen, ob unsere Verfahren besondere Risiken für die Rechte und Freiheiten der Betroffenen aufweisen und damit einer Vorabkontrolle/ Datenschutz-Folgeabschätzung unterliegen. Es besteht die Verpflichtung, diese Übersichten vorzuhalten für eine Einsichtnahme durch die Behörden.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Beschaffung von Hard- und Software</h3>
+            <h3 className="text-lg font-bold text-foreground">06. Beschaffung von Hard- und Software</h3>
             <p className="text-foreground">
               Sämtliche für unsere Arbeitsabläufe notwendige Hardware (Rechner, Bildschirme, Tastatur, Maus und Peripheriegeräte wie Scanner oder Drucker) wird nach internen Richtlinien gesteuert. Die Rechner werden für die Mitarbeiter bereits konfiguriert und mit den entsprechenden Programmen, die wir im Standard nutzen, ausgestattet. Weitere Software darf nur in Absprache mit der Geschäftsführung installiert werden.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Passwortrichtlinien</h3>
+            <h3 className="text-lg font-bold text-foreground">07. Passwortrichtlinien</h3>
             <p className="text-foreground">
               Um die Zugriffe zu unseren Systemen sicher zu gestalten, ist eine individuelle Authentifizierung notwendig. Für diese wurden interne Regelungen getroffen, an die sich alle Beteiligten halten müssen.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Technische und organisatorische Maßnahmen</h3>
+            <h3 className="text-lg font-bold text-foreground">08. Technische und organisatorische Maßnahmen</h3>
             <p className="text-foreground">
               Wir ergreifen alle uns möglichen Maßnahmen, die nach dem aktuellen Stand der Technik, sowie organisatorisch dazu geeignet sind, um Unbefugten keinen Zugriff auf die bei uns gespeicherten personenbezogenen Daten zu gewähren. Dazu führen wir separate Aufzeichnungen, um die Anforderungen an die Sicherheit der Datenverarbeitung zu dokumentieren.
             </p>
@@ -171,35 +173,21 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Rechte von Betroffenen (Art. 12 -23 DS-GVO)</h3>
-            <p className="text-foreground">
-              Der Betroffene kann Auskunft darüber verlangen, welche personenbezogenen Daten welcher Herkunft über ihn zu welchem Zweck gespeichert sind. Falls im Arbeitsverhältnis nach dem jeweils anzuwendenden Arbeitsrecht weitergehende Einsichtsrechte in Unterlagen des Arbeitgebers (z.B. Personalakte) vorgesehen sind, so bleiben diese unberührt.
-            </p>
-            <p className="text-foreground">
-              Werden personenbezogene Daten an Dritte übermittelt, muss auch über die Identität des Empfängers oder über die Kategorien von Empfängern Auskunft gegeben werden.
-            </p>
-            <p className="text-foreground">
-              Sollten personenbezogene Daten unrichtig oder unvollständig sein, kann der Betroffene ihre Berichtigung oder Ergänzung verlangen.
-            </p>
-            <p className="text-foreground">
-              Der Betroffene kann der Verarbeitung seiner personenbezogenen Daten zu Zwecken der Werbung oder der Markt- und Meinungsforschung widersprechen. Für diese Zwecke müssen die Daten für die Verarbeitung eingeschränkt (gesperrt) werden.
-            </p>
-            <p className="text-foreground">
-              Der Betroffene ist berechtigt, die Löschung seiner Daten zu verlangen, wenn die Rechtsgrundlage für die Verarbeitung der Daten fehlt oder weggefallen ist. Gleiches gilt für den Fall, dass der Zweck der Datenverarbeitung durch Zeitablauf oder aus anderen Gründen entfallen ist. Bestehende Aufbewahrungspflichten und einer Löschung entgegenstehende schutzwürdige Interessen müssen beachtet werden.
-            </p>
-            <p className="text-foreground">
-              Der Betroffene hat ein grundsätzliches Widerspruchsrecht gegen die Verarbeitung seiner Daten mit Wirkung auf die Zukunft, das zu berücksichtigen ist, wenn sein schutzwürdiges Interesse aufgrund einer besonderen persönlichen Situation das Interesse an der Verarbeitung überwiegt. Dies gilt nicht, wenn eine Rechtsvorschrift zur Durchführung der Verarbeitung verpflichtet.
-            </p>
-            <p className="text-foreground">
-              Der Betroffene hat ein Recht auf Datenübertragbarkeit. Das bedeutet das Recht, die personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Freiheiten und Rechte anderer Personen dürfen hierdurch nicht beeinträchtigt werden.
-            </p>
-            <p className="text-foreground">
-              Der Betroffene hat ein Beschwerderecht bei der Aufsichtsbehörde, in deren Bundesland das Unternehmen seinen Sitz hat. Die Kontaktdaten finden Sie zu Beginn der Beschreibung unserer Datenschutzorganisation.
-            </p>
+            <h3 className="text-lg font-bold text-foreground">09. Rechte von Betroffenen (Art. 12 -23 DS-GVO)</h3>
+            <ol className="text-foreground list-decimal pl-6">
+              <li>Der Betroffene kann Auskunft darüber verlangen, welche personenbezogenen Daten welcher Herkunft über ihn zu welchem Zweck gespeichert sind. Falls im Arbeitsverhältnis nach dem jeweils anzuwendenden Arbeitsrecht weitergehende Einsichtsrechte in Unterlagen des Arbeitgebers (z.B. Personalakte) vorgesehen sind, so bleiben diese unberührt.</li>
+              <li>Werden personenbezogene Daten an Dritte übermittelt, muss auch über die Identität des Empfängers oder über die Kategorien von Empfängern Auskunft gegeben werden.</li>
+              <li>Sollten personenbezogene Daten unrichtig oder unvollständig sein, kann der Betroffene ihre Berichtigung oder Ergänzung verlangen.</li>
+              <li>Der Betroffene kann der Verarbeitung seiner personenbezogenen Daten zu Zwecken der Werbung oder der Markt- und Meinungsforschung widersprechen. Für diese Zwecke müssen die Daten für die Verarbeitung eingeschränkt (gesperrt) werden.</li>
+              <li>Der Betroffene ist berechtigt, die Löschung seiner Daten zu verlangen, wenn die Rechtsgrundlage für die Verarbeitung der Daten fehlt oder weggefallen ist. Gleiches gilt für den Fall, dass der Zweck der Datenverarbeitung durch Zeitablauf oder aus anderen Gründen entfallen ist. Bestehende Aufbewahrungspflichten und einer Löschung entgegenstehende schutzwürdige Interessen müssen beachtet werden.</li>
+              <li>Der Betroffene hat ein grundsätzliches Widerspruchsrecht gegen die Verarbeitung seiner Daten mit Wirkung auf die Zukunft, das zu berücksichtigen ist, wenn sein schutzwürdiges Interesse aufgrund einer besonderen persönlichen Situation das Interesse an der Verarbeitung überwiegt. Dies gilt nicht, wenn eine Rechtsvorschrift zur Durchführung der Verarbeitung verpflichtet.</li>
+              <li>Der Betroffene hat ein Recht auf Datenübertragbarkeit. Das bedeutet das Recht, die personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Freiheiten und Rechte anderer Personen dürfen hierdurch nicht beeinträchtigt werden.</li>
+              <li>Der Betroffene hat ein Beschwerderecht bei der Aufsichtsbehörde, in deren Bundesland das Unternehmen seinen Sitz hat. Die Kontaktdaten finden Sie zu Beginn der Beschreibung unserer Datenschutzorganisation.</li>
+            </ol>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Verfahren bei &quot;Datenpannen&quot; (Art. 33 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">10. Verfahren bei &quot;Datenpannen&quot; (Art. 33 DS-GVO)</h3>
             <p className="text-foreground">
               Jeder Mitarbeiter soll seinem jeweiligen Vorgesetzten, der Geschäftsführung oder dem DSB unverzüglich Fälle von Verstößen gegen diese Datenschutzrichtlinie oder andere Vorschriften zum Schutz personenbezogener Daten (Datenschutzvorfälle) melden. Die verantwortliche Führungskraft ist verpflichtet, den DSB umgehend über Datenschutzvorfälle zu unterrichten.
             </p>
@@ -209,9 +197,9 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Erklärung zum Schutz Ihrer Daten beim Besuch unserer Homepage</h3>
+            <h2 className="text-2xl font-bold text-foreground">2. Erklärung zum Schutz Ihrer Daten beim Besuch unserer Homepage</h2>
 
-            <h4 className="text-base font-bold text-foreground">Formulare</h4>
+            <h3 className="text-lg font-bold text-foreground">1. Formulare</h3>
             <p className="text-foreground">
               Auf unserer Internetseite können Sie für die elektronische Kontaktaufnahme das Kontaktformular nutzen. Geben Sie Ihre persönlichen Daten wie beispielsweise Name, Geburtsdatum, Anschrift, Bankverbindung oder sonstige Daten z.B. zur Erstellung eines Angebots oder Meldung eines Schaden in ein Formular ein, werden diese von uns gespeichert und ausschließlich zu diesen Zwecken verarbeitet.
             </p>
@@ -219,7 +207,9 @@ export default function Datenschutz() {
               Persönliche Daten über Minderjährige erheben wir wissentlich nur bei Erziehungsberechtigten und nur, wenn und soweit die personenbezogene Verarbeitung und Nutzung zur Erfüllung eines Vertragsverhältnisses erforderlich ist.
             </p>
 
-            <h4 className="text-base font-bold text-foreground">Einbindung und Verwendung von Inhalten Dritter</h4>
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">2. Einbindung und Verwendung von Inhalten Dritter</h3>
             <p className="text-foreground">
               In unserer Webseite können Inhalte von Dritten, insbesondere Angebotsprogramme, Vergleichsrechner und Produktangebote z. B. von Versicherern eingebunden sein. Diese Inhalte können im Design unseres Internetauftritts sein.
             </p>
@@ -227,7 +217,9 @@ export default function Datenschutz() {
               Für diese Inhalte gelten die Datenschutzerklärungen des Dritten, welche an der entsprechenden Stelle verlinkt sind, bzw. im Internetauftritt des Dritten ersichtlich sind.
             </p>
 
-            <h4 className="text-base font-bold text-foreground">Cookies</h4>
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">3. Cookies</h3>
             <p className="text-foreground">
               Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.
             </p>
@@ -241,7 +233,9 @@ export default function Datenschutz() {
               Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs oder zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z.B. Warenkorbfunktion) erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Soweit andere Cookies (z.B. Cookies zur Analyse Ihres Surfverhaltens) gespeichert werden, werden diese in dieser Datenschutzerklärung gesondert behandelt.
             </p>
 
-            <h4 className="text-base font-bold text-foreground">Server-Log-Dateien</h4>
+            <hr className="my-8" />
+
+            <h3 className="text-lg font-bold text-foreground">4. Server-Log-Dateien</h3>
             <p className="text-foreground">
               Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
             </p>
@@ -262,7 +256,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Hinweise zur Nutzung von Tarifrechnern</h3>
+            <h3 className="text-lg font-bold text-foreground">5. Hinweise zur Nutzung von Tarifrechnern</h3>
 
             <h4 className="text-base font-bold text-foreground">Beratung</h4>
             <p className="text-foreground">
@@ -275,9 +269,9 @@ export default function Datenschutz() {
             <h4 className="text-base font-bold text-foreground">Datenschutz</h4>
             <p className="text-foreground">
               Ihre eingegebenen Daten werden im Rahmen der Auftragsverarbeitung für die für uns tätigen Unternehmen VEMA eG (
-              <a href="https://www.vema-eg.de" target="_blank" rel="noopener noreferrer" className="text-primary">www.vema-eg.de</a>
+              <a href="http://www.vema-eg.de" target="_blank" rel="noopener noreferrer" className="text-primary">www.vema-eg.de</a>
               ) und Innosystems (
-              <a href="https://www.innosystems.de" target="_blank" rel="noopener noreferrer" className="text-primary">www.innosystems.de</a>
+              <a href="http://www.innosystems.de" target="_blank" rel="noopener noreferrer" className="text-primary">www.innosystems.de</a>
               ) gespeichert und verarbeitet.
             </p>
 
@@ -288,7 +282,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Verwendung von Cookies / Matomo (vorher Piwik)</h3>
+            <h3 className="text-lg font-bold text-foreground">6. Verwendung von Cookies / Matomo (vorher Piwik)</h3>
             <p className="text-foreground">
               Unsere Website verwendet Matomo, dabei handelt es sich um einen sogenannten Webanalysedienst. Matomo verwendet sog. „Cookies", das sind Textdateien, die auf Ihrem Computer gespeichert werden und die unsererseits eine Analyse der Benutzung der Webseite ermöglichen. Zu diesem Zweck werden die durch das Cookie erzeugten Nutzungsinformationen (einschließlich Ihrer gekürzten IP-Adresse) an unseren Server übertragen und zu Nutzungsanalysezwecken gespeichert, was der Webseitenoptimierung unsererseits dient. Ihre IP-Adresse wird bei diesem Vorgang umgehend anonymisiert, so dass Sie als Nutzer für uns anonym bleiben. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden nicht an Dritte weitergegeben. Sie können die Verwendung der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern, es kann jedoch sein, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können.
             </p>
@@ -298,7 +292,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Google Web Fonts</h3>
+            <h3 className="text-lg font-bold text-foreground">7. Google Web Fonts</h3>
             <p className="text-foreground">
               Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.
             </p>
@@ -321,7 +315,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Einwilligungserklärung zur Datenverarbeitung und Kontaktaufnahme</h3>
+            <h2 className="text-2xl font-bold text-foreground">3. Einwilligungserklärung zur Datenverarbeitung und Kontaktaufnahme</h2>
             <p className="text-foreground">
               Um für Sie tätig werden zu können, müssen wir Daten von Ihnen erfassen, speichern und an Dritte weitergeben. Dies tun wir beispielsweise, wenn wir Ihre Risikosituation erfassen und diese Daten an verschiedene Versicherer weitergeben, um für Sie passende Angebote zu erhalten. Hierzu nutzen wir auch sogenannte Maklerdienstleister.
             </p>
@@ -332,13 +326,13 @@ export default function Datenschutz() {
               Gesundheitsdaten werden ausschließlich erhoben, soweit es für die Vermittlung von Lebens-, Kranken- oder Unfallversicherungen (Personenversicherungen) erforderlich ist, bzw. bei der Abwicklung von Leistungs- und Schadenfällen.
             </p>
             <p className="text-foreground">
-              Sie können diese Einwilligungen jeweils einzeln erteilen und jederzeit mit Wirkung für die Zukunft widerrufen.
+              Sie können diese Einwilligungen jeweils einzeln erteilen und <strong><em>jederzeit mit Wirkung für die Zukunft widerrufen.</em></strong>
             </p>
             <p className="text-foreground">
               Beachten Sie bitte, dass wir dann ggfs. nicht mehr für Sie tätig sein können.
             </p>
             <p className="text-foreground">
-              Weiterreichende Informationen entnehmen Sie bitte unserer Datenschutzrichtlinie mit Geschäftspartnerliste.
+              <strong>Weiterreichende Informationen entnehmen Sie bitte unserer Datenschutzrichtlinie mit Geschäftspartnerliste.</strong>
             </p>
 
             <h4 className="text-base font-bold text-foreground">Einwilligung zur Erfassung und Anforderung von Daten</h4>
@@ -363,16 +357,36 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Änderungen innerhalb der Datenschutz-Richtlinie</h3>
+            <h2 className="text-2xl font-bold text-foreground">4. Änderungen innerhalb der Datenschutz-Richtlinie</h2>
             <p className="text-foreground">
               Wir behalten uns vor, die Datenschutz-Richtlinie bei Bedarf anzupassen, damit diese den aktuellen rechtlichen und technischen Anforderungen entspricht. Diese gelten dann bei einem erneuten Besuch. Auf eine Änderung weisen wir durch den Revisionsstand hin.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">Anhang</h3>
-            <p className="text-foreground">Geschäftspartnerliste</p>
-            <p className="text-foreground">Versichererliste</p>
+            <h2 className="text-2xl font-bold text-foreground">5. Anhang</h2>
+            <ul className="text-foreground list-disc pl-6">
+              <li>
+                <a
+                  href="https://landingpage.vema-eg.de/download/document/geschaeftspartnerliste/MWUxN3w%3D/geschaeftspartnerliste.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary"
+                >
+                  Geschäftspartnerliste
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://landingpage.vema-eg.de/download/indi/1152/MWUxN3w%3D/versichererliste.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary"
+                >
+                  Versichererliste
+                </a>
+              </li>
+            </ul>
 
             <hr className="my-8" />
 
@@ -386,7 +400,6 @@ export default function Datenschutz() {
                 </a>
               </p>
             </div>
-
           </motion.div>
         </div>
       </section>
