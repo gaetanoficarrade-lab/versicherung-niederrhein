@@ -1,15 +1,25 @@
 import { motion } from "framer-motion";
 
-// Partner logos - placeholders for now
+import partnerKravag from "@/assets/partner-kravag.png";
+import partnerAig from "@/assets/partner-aig.png";
+import partnerAxa from "@/assets/partner-axa.png";
+import partnerRv from "@/assets/partner-rv.png";
+import partnerAlteLeipziger from "@/assets/partner-alte-leipziger.png";
+import partnerVhv from "@/assets/partner-vhv.png";
+import partnerTk from "@/assets/partner-tk.png";
+import partnerDbv from "@/assets/partner-dbv.png";
+import partnerStuttgarter from "@/assets/partner-stuttgarter.png";
+
 const partners = [
-  { name: "Allianz", id: 1 },
-  { name: "AXA", id: 2 },
-  { name: "ERGO", id: 3 },
-  { name: "Generali", id: 4 },
-  { name: "HDI", id: 5 },
-  { name: "Zurich", id: 6 },
-  { name: "VHV", id: 7 },
-  { name: "R+V", id: 8 },
+  { name: "KRAVAG", logo: partnerKravag },
+  { name: "AIG", logo: partnerAig },
+  { name: "AXA", logo: partnerAxa },
+  { name: "R+V", logo: partnerRv },
+  { name: "Alte Leipziger", logo: partnerAlteLeipziger },
+  { name: "VHV", logo: partnerVhv },
+  { name: "Die Techniker", logo: partnerTk },
+  { name: "DBV", logo: partnerDbv },
+  { name: "Die Stuttgarter", logo: partnerStuttgarter },
 ];
 
 export default function PartnerSlider() {
@@ -42,12 +52,14 @@ export default function PartnerSlider() {
           {/* Double the items for seamless loop */}
           {[...partners, ...partners].map((partner, index) => (
             <div
-              key={`${partner.id}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center h-16 w-32 rounded-lg bg-background shadow-soft px-4"
+              key={`${partner.name}-${index}`}
+              className="flex-shrink-0 flex items-center justify-center h-16 w-40 px-4"
             >
-              <span className="text-lg font-semibold text-muted-foreground/60">
-                {partner.name}
-              </span>
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-12 w-auto object-contain"
+              />
             </div>
           ))}
         </motion.div>
