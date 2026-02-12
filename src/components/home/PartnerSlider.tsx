@@ -25,7 +25,7 @@ const partners = [
   { name: "Die Stuttgarter", logo: partnerStuttgarter },
   { name: "Nürnberger", logo: partnerNuernberger },
   { name: "Barmenia", logo: partnerBarmenia },
-  { name: "HDI", logo: partnerHdi },
+  { name: "HDI", logo: partnerHdi, smaller: true },
 ];
 
 export default function PartnerSlider() {
@@ -64,7 +64,7 @@ export default function PartnerSlider() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-16 w-auto object-contain"
+                className={`w-auto object-contain ${partner.smaller ? "max-h-10" : "max-h-16"}`}
               />
             </div>
           ))}
