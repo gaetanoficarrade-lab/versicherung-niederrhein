@@ -42,7 +42,7 @@ export default function PartnerSlider() {
         
         {/* Scrolling container */}
         <motion.div
-          className="flex gap-16 items-center"
+          className="flex gap-8 items-center"
           animate={{ x: [0, -1600] }}
           transition={{
             x: {
