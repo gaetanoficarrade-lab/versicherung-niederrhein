@@ -11,6 +11,7 @@ import partnerDbv from "@/assets/partner-dbv.png";
 import partnerStuttgarter from "@/assets/partner-stuttgarter.png";
 import partnerNuernberger from "@/assets/partner-nuernberger.png";
 import partnerBarmenia from "@/assets/partner-barmenia.png";
+import partnerHdi from "@/assets/partner-hdi.png";
 
 const partners = [
   { name: "KRAVAG", logo: partnerKravag },
@@ -24,6 +25,7 @@ const partners = [
   { name: "Die Stuttgarter", logo: partnerStuttgarter },
   { name: "Nürnberger", logo: partnerNuernberger },
   { name: "Barmenia", logo: partnerBarmenia },
+  { name: "HDI", logo: partnerHdi },
 ];
 
 export default function PartnerSlider() {
