@@ -150,7 +150,7 @@ export default function Erstinformation() {
             <h3 className="text-lg font-bold text-foreground">
               Berufsrechtliche Regelungen sind insbesondere:
             </h3>
-            <ul className="text-foreground">
+            <ul className="text-foreground list-disc pl-6">
               <li>§ 34 d Gewerbeordnung</li>
               <li>§§ 59 - 68 VVG</li>
               <li>VersVermV</li>
@@ -177,7 +177,7 @@ export default function Erstinformation() {
             <p className="text-foreground">
               Die Vergütung unserer Tätigkeit erfolgt als:
             </p>
-            <ul className="text-foreground">
+            <ul className="text-foreground list-disc pl-6">
               <li>in der Versicherungsprämie enthaltene Courtage, die vom jeweiligen Versicherungsunternehmen ausgezahlt wird oder als</li>
               <li>konkret vereinbarte Zahlung durch den Kunden oder als</li>
               <li>Kombination aus beidem.</li>
