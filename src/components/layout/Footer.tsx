@@ -7,7 +7,6 @@ const footerLinks = {
   unternehmen: [
     { name: "Geschichte", href: "/geschichte" },
     { name: "Besonderheiten", href: "/besonderheiten" },
-    { name: "Team", href: "/team" },
   ],
   privatversicherungen: [
     { name: "KFZ", href: "/kfz-versicherung" },
@@ -189,6 +188,9 @@ export default function Footer() {
               </Link>
               <Link to="/kontakt" className="opacity-40 hover:opacity-100 transition-opacity">
                 Kontakt
+              </Link>
+              <Link to="/erstinformation" className="opacity-40 hover:opacity-100 transition-opacity">
+                Erstinformation
               </Link>
               <a
                 href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"

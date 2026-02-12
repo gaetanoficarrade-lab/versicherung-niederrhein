@@ -8,7 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Geschichte from "./pages/Geschichte";
 import Besonderheiten from "./pages/Besonderheiten";
-import Team from "./pages/Team";
+
 import Versicherungen from "./pages/Versicherungen";
 import KfzVersicherung from "./pages/KfzVersicherung";
 import Tierhalterhaftpflicht from "./pages/Tierhalterhaftpflicht";
@@ -55,7 +55,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/geschichte" element={<Geschichte />} />
             <Route path="/besonderheiten" element={<Besonderheiten />} />
-            <Route path="/team" element={<Team />} />
+            
             <Route path="/versicherungen" element={<Versicherungen />} />
             {/* Sachversicherungen */}
             <Route path="/kfz-versicherung" element={<KfzVersicherung />} />
