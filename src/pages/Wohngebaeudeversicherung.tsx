@@ -10,10 +10,8 @@ import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } fro
 import heroImage from "@/assets/hero-wohngebaeude.jpg";
 
 const nachlesenLinks = [
-  { title: "Wohngebäudeversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/information" },
-  { title: "Versicherte Gefahren", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/gefahren" },
-  { title: "Leistungserweiterungen", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/leistungserweiterungen" },
-  { title: "Versicherungssumme", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/versicherungssumme" },
+  { title: "Wohngebäudeversicherung", url: "https://landingpage.vema-eg.de/download/pb/17/maklerkalkar/Wohngebaeudeversicherung.pdf" },
+  { title: "Ferienhäuser", url: "https://landingpage.vema-eg.de/download/pb/136/maklerkalkar/Ferienhaeuser.pdf" },
 ];
 
 const gefahren = [
