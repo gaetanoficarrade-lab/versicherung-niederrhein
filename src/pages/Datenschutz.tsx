@@ -387,17 +387,6 @@ export default function Datenschutz() {
               </p>
             </div>
 
-            <p className="text-foreground mt-8">
-              Link zur Seite:{" "}
-              <a
-                href="https://landingpage.vema-eg.de/maklerkalkar/newsletter/datenschutz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary"
-              >
-                https://landingpage.vema-eg.de/maklerkalkar/newsletter/datenschutz
-              </a>
-            </p>
           </motion.div>
         </div>
       </section>
