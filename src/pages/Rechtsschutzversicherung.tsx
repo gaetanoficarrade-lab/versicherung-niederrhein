@@ -10,10 +10,10 @@ import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } fro
 import heroImage from "@/assets/hero-rechtsschutz.jpg";
 
 const nachlesenLinks = [
-  { title: "Rechtsschutzversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/info" },
-  { title: "Bausteine der Rechtsschutzversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/bausteine" },
-  { title: "Welche Kosten werden übernommen?", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/kostenuebernahme" },
-  { title: "Was kostet ein Rechtsstreit?", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/kostenrechtsstreit" },
+  { title: "Rechtsschutz Privat", url: "https://landingpage.vema-eg.de/download/pb/32/maklerkalkar/Rechtsschutz-Privat.pdf" },
+  { title: "Erweiterter Straf-Rechtsschutz Privat", url: "https://landingpage.vema-eg.de/download/pb/109/maklerkalkar/Erweiterter-Straf-Rechtsschutz-Privat.pdf" },
+  { title: "Verkehrsrechtsschutzversicherung", url: "https://landingpage.vema-eg.de/download/pb/37/maklerkalkar/Verkehrsrechtsschutzversicherung.pdf" },
+  { title: "Wohnungs- und Grundstücks-Rechtsschutz", url: "https://landingpage.vema-eg.de/download/pb/112/maklerkalkar/Wohnungs-+und+Grundstuecks-RS.pdf" },
 ];
 
 const kostenuebernahme = [
