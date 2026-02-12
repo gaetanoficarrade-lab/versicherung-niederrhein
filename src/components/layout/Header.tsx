@@ -106,7 +106,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button size="sm" className="gap-2 bg-primary hover:bg-accent text-primary-foreground">
                 <User className="h-4 w-4" />
                 Kunden-Login
               </Button>
