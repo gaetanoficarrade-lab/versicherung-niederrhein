@@ -62,7 +62,7 @@ export default function PartnerSlider() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-16 w-auto object-contain"
+                className={`w-auto object-contain ${partner.name === "DBV" ? "max-h-32" : "max-h-16"}`}
               />
             </div>
           ))}
