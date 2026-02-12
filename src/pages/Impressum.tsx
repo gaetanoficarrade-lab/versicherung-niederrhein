@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 
 export default function Impressum() {
@@ -11,10 +13,21 @@ export default function Impressum() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               Impressum
             </h1>
+            <a
+              href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" className="gap-2">
+                <Download className="h-4 w-4" />
+                Als PDF downloaden
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -130,7 +143,7 @@ export default function Impressum() {
             <h3 className="text-lg font-bold text-foreground">
               Berufsrechtliche Regelungen sind insbesondere:
             </h3>
-            <ul className="text-foreground">
+            <ul className="text-foreground list-disc pl-6">
               <li>§ 34 d Gewerbeordnung</li>
               <li>§§ 59 - 68 VVG</li>
               <li>VersVermV</li>
@@ -180,7 +193,7 @@ export default function Impressum() {
             <p className="text-foreground">
               Bei der Beratung ist es unser Ziel, Ihnen ein geeignetes Anlage-/Versicherungsanlageprodukt empfehlen zu können. Dabei berücksichtigen wir auch Ihre Nachhaltigkeitspräferenzen, sofern Sie dies wünschen. Hierbei können Sie festlegen, ob bei Ihrer Anlage ökologische und/oder soziale Werte sowie Grundsätze guter Unternehmensführung und/oder die wichtigsten nachteiligen Auswirkungen von Investitionsentscheidungen auf Nachhaltigkeitsfaktoren berücksichtigt werden sollen. Der Gesetzgeber hat je nach Art des Anlageziels (Investition in Unternehmen, Staaten, Immobilien etc.) in folgenden Bereichen „Indikatoren" für die wichtigsten nachteiligen Auswirkungen ihrer Investitionsentscheidungen auf Nachhaltigkeitsfaktoren bestimmt:
             </p>
-            <ul className="text-foreground">
+            <ul className="text-foreground list-disc pl-6">
               <li>Umwelt-, Sozial- und Arbeitnehmerbelange</li>
               <li>Die Achtung der Menschenrechte</li>
               <li>Die Bekämpfung von Korruption und Bestechung.</li>

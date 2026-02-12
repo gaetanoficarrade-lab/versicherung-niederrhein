@@ -102,17 +102,6 @@ export default function Header() {
           {/* Right side actions */}
           <div className="flex items-center gap-3">
             <a
-              href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex"
-            >
-              <Button size="sm" className="gap-2 bg-primary hover:bg-accent text-primary-foreground">
-                <Download className="h-4 w-4" />
-                Impressum PDF
-              </Button>
-            </a>
-            <a
               href="https://smits.insurgo.cloud/auth/anmelden"
               target="_blank"
               rel="noopener noreferrer"
