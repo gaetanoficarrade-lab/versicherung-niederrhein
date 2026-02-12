@@ -84,7 +84,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">01. Geltungsbereich</h3>
+            <h3 className="text-lg font-bold text-foreground">1. Geltungsbereich</h3>
             <p className="text-foreground">
               Diese Richtlinie regelt die datenschutzkonforme Informationsverarbeitung und die entsprechenden Verantwortlichkeiten beim obengenannten Unternehmen (und seiner/n Niederlassung/en) auf Basis der gesetzlichen Regelungen der Europäischen Datenschutz-Grundverordnung (DS-GVO) und Bundesdatenschutzgesetz (BDSGneu). Alle Mitarbeiter sind zur Einhaltung dieser Richtlinie verpflichtet.
             </p>
@@ -106,7 +106,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">02. Begriffsdefinitionen (Art. 4 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">2. Begriffsdefinitionen (Art. 4 DS-GVO)</h3>
             <p className="text-foreground">
               Personenbezogene Daten sind Einzelangaben über persönliche oder sachliche Verhältnisse einer natürlichen Person (Betroffener). Beispiele: Name, Vorname, Geburtstag, Adressdaten, Vertragsdaten, E-Mail-Inhalte.
             </p>
@@ -119,7 +119,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">03. Erheben, Verarbeiten und Speichern personenbezogener Daten (Art. 5 + 6 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">3. Erheben, Verarbeiten und Speichern personenbezogener Daten (Art. 5 + 6 DS-GVO)</h3>
             <p className="text-foreground">
               Das Erheben, Verarbeiten und Speichern personenbezogener Daten in unserem Unternehmen geschieht auf Basis des von uns verwendeten Maklerauftrages und den mitgeltenden Dokumenten (wie z.B. Maklervollmacht, Einwilligung zur Datenverarbeitung, die separat unterzeichnet werden).
             </p>
@@ -135,35 +135,35 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">04. Verpflichtung auf Vertraulichkeit</h3>
+            <h3 className="text-lg font-bold text-foreground">4. Verpflichtung auf Vertraulichkeit</h3>
             <p className="text-foreground">
               Alle Mitarbeiter werden bei der Aufnahme ihrer Tätigkeit zur Verschwiegenheit und der Einhaltung der Arbeitsanweisungen sowie dieser Richtlinie verpflichtet. Die Verpflichtung wird jährlich erneuert.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">05. Verarbeitungsübersichten (Art. 30 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">5. Verarbeitungsübersichten (Art. 30 DS-GVO)</h3>
             <p className="text-foreground">
               Mittels interner Verfahrensübersichten (Verzeichnis der Verarbeitungstätigkeiten) schaffen wir Transparenz innerhalb des Unternehmens und überprüfen, ob unsere Verfahren besondere Risiken für die Rechte und Freiheiten der Betroffenen aufweisen und damit einer Vorabkontrolle/ Datenschutz-Folgeabschätzung unterliegen. Es besteht die Verpflichtung, diese Übersichten vorzuhalten für eine Einsichtnahme durch die Behörden.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">06. Beschaffung von Hard- und Software</h3>
+            <h3 className="text-lg font-bold text-foreground">6. Beschaffung von Hard- und Software</h3>
             <p className="text-foreground">
               Sämtliche für unsere Arbeitsabläufe notwendige Hardware (Rechner, Bildschirme, Tastatur, Maus und Peripheriegeräte wie Scanner oder Drucker) wird nach internen Richtlinien gesteuert. Die Rechner werden für die Mitarbeiter bereits konfiguriert und mit den entsprechenden Programmen, die wir im Standard nutzen, ausgestattet. Weitere Software darf nur in Absprache mit der Geschäftsführung installiert werden.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">07. Passwortrichtlinien</h3>
+            <h3 className="text-lg font-bold text-foreground">7. Passwortrichtlinien</h3>
             <p className="text-foreground">
               Um die Zugriffe zu unseren Systemen sicher zu gestalten, ist eine individuelle Authentifizierung notwendig. Für diese wurden interne Regelungen getroffen, an die sich alle Beteiligten halten müssen.
             </p>
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">08. Technische und organisatorische Maßnahmen</h3>
+            <h3 className="text-lg font-bold text-foreground">8. Technische und organisatorische Maßnahmen</h3>
             <p className="text-foreground">
               Wir ergreifen alle uns möglichen Maßnahmen, die nach dem aktuellen Stand der Technik, sowie organisatorisch dazu geeignet sind, um Unbefugten keinen Zugriff auf die bei uns gespeicherten personenbezogenen Daten zu gewähren. Dazu führen wir separate Aufzeichnungen, um die Anforderungen an die Sicherheit der Datenverarbeitung zu dokumentieren.
             </p>
@@ -173,7 +173,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h3 className="text-lg font-bold text-foreground">09. Rechte von Betroffenen (Art. 12 -23 DS-GVO)</h3>
+            <h3 className="text-lg font-bold text-foreground">9. Rechte von Betroffenen (Art. 12 -23 DS-GVO)</h3>
             <ol className="text-foreground list-decimal pl-6">
               <li>Der Betroffene kann Auskunft darüber verlangen, welche personenbezogenen Daten welcher Herkunft über ihn zu welchem Zweck gespeichert sind. Falls im Arbeitsverhältnis nach dem jeweils anzuwendenden Arbeitsrecht weitergehende Einsichtsrechte in Unterlagen des Arbeitgebers (z.B. Personalakte) vorgesehen sind, so bleiben diese unberührt.</li>
               <li>Werden personenbezogene Daten an Dritte übermittelt, muss auch über die Identität des Empfängers oder über die Kategorien von Empfängern Auskunft gegeben werden.</li>
