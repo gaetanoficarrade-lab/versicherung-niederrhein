@@ -30,7 +30,7 @@ export default function Datenschutz() {
           >
             <p className="text-sm text-muted-foreground">Revisions-Stand 2025-01</p>
 
-            <h2 className="text-2xl font-bold text-foreground">1. Datenschutz-Richtlinie</h2>
+            <h2 className="text-2xl font-bold text-foreground">A. Datenschutz-Richtlinie</h2>
 
             <div className="p-6 rounded-xl bg-muted mb-8">
               <p className="text-foreground mb-0">
@@ -197,7 +197,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h2 className="text-2xl font-bold text-foreground">2. Erklärung zum Schutz Ihrer Daten beim Besuch unserer Homepage</h2>
+            <h2 className="text-2xl font-bold text-foreground">B. Erklärung zum Schutz Ihrer Daten beim Besuch unserer Homepage</h2>
 
             <h3 className="text-lg font-bold text-foreground">1. Formulare</h3>
             <p className="text-foreground">
@@ -315,7 +315,7 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h2 className="text-2xl font-bold text-foreground">3. Einwilligungserklärung zur Datenverarbeitung und Kontaktaufnahme</h2>
+            <h2 className="text-2xl font-bold text-foreground">C. Einwilligungserklärung zur Datenverarbeitung und Kontaktaufnahme</h2>
             <p className="text-foreground">
               Um für Sie tätig werden zu können, müssen wir Daten von Ihnen erfassen, speichern und an Dritte weitergeben. Dies tun wir beispielsweise, wenn wir Ihre Risikosituation erfassen und diese Daten an verschiedene Versicherer weitergeben, um für Sie passende Angebote zu erhalten. Hierzu nutzen wir auch sogenannte Maklerdienstleister.
             </p>
@@ -357,14 +357,14 @@ export default function Datenschutz() {
 
             <hr className="my-8" />
 
-            <h2 className="text-2xl font-bold text-foreground">4. Änderungen innerhalb der Datenschutz-Richtlinie</h2>
+            <h2 className="text-2xl font-bold text-foreground">D. Änderungen innerhalb der Datenschutz-Richtlinie</h2>
             <p className="text-foreground">
               Wir behalten uns vor, die Datenschutz-Richtlinie bei Bedarf anzupassen, damit diese den aktuellen rechtlichen und technischen Anforderungen entspricht. Diese gelten dann bei einem erneuten Besuch. Auf eine Änderung weisen wir durch den Revisionsstand hin.
             </p>
 
             <hr className="my-8" />
 
-            <h2 className="text-2xl font-bold text-foreground">5. Anhang</h2>
+            <h2 className="text-2xl font-bold text-foreground">E. Anhang</h2>
             <ul className="text-foreground list-disc pl-6">
               <li>
                 <a
