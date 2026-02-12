@@ -10,9 +10,9 @@ import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } fro
 
 const nachlesenLinks = [
   { title: "Privathaftpflichtversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/privathaftpflicht/information" },
-  { title: "Tierhalterhaftpflichtversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/tierhalterhaftpflicht/tierhalterhaftpflicht" },
+  { title: "Tierhalterhaftpflichtversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/tierhalterhaftpflicht" },
   { title: "Haus- und Grundbesitzerhaftpflicht", url: "https://landingpage.vema-eg.de/maklerkalkar/privathaftpflicht/haftpflichtrisiken" },
-  { title: "Bauherrenhaftpflichtversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/privathaftpflicht/haftpflichtrisiken" },
+  { title: "Bauherrenhaftpflichtversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/bauherrenhaftpflicht" },
 ];
 import heroImage from "@/assets/hero-privathaftpflicht.jpg";
 
