@@ -32,6 +32,7 @@ import Kontakt from "./pages/Kontakt";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Erstinformation from "./pages/Erstinformation";
+import Barrierefreiheit from "./pages/Barrierefreiheit";
 import NotFound from "./pages/NotFound";
 // Gewerbeversicherungen
 import Betriebshaftpflicht from "./pages/Betriebshaftpflicht";
@@ -90,6 +91,7 @@ const App = () => (
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/erstinformation" element={<Erstinformation />} />
+            <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

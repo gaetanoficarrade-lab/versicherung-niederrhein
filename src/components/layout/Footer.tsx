@@ -192,6 +192,9 @@ export default function Footer() {
               <Link to="/erstinformation" className="opacity-40 hover:opacity-100 transition-opacity">
                 Erstinformation
               </Link>
+              <Link to="/barrierefreiheit" className="opacity-40 hover:opacity-100 transition-opacity">
+                Barrierefreiheit
+              </Link>
               <a
                 href="https://www.versicherungen-niederrhein.de/kontakt/anbieterkennung/?page_as_pdf=1"
                 target="_blank"
