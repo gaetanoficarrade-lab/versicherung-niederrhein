@@ -4,9 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
+import NachlesenSidebar from "@/components/NachlesenSidebar";
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import heroImage from "@/assets/hero-rechtsschutz.jpg";
+
+const nachlesenLinks = [
+  { title: "Rechtsschutzversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/info" },
+  { title: "Bausteine der Rechtsschutzversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/bausteine" },
+  { title: "Welche Kosten werden übernommen?", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/kostenuebernahme" },
+  { title: "Was kostet ein Rechtsstreit?", url: "https://landingpage.vema-eg.de/maklerkalkar/rechtsschutz/kostenrechtsstreit" },
+];
 
 const kostenuebernahme = [
   "Kosten des Anwaltes nach dem Rechtsanwaltsvergütungsgesetz (RVG)",
@@ -92,7 +100,8 @@ export default function Rechtsschutzversicherung() {
       {/* Content */}
       <section className="py-16 bg-background">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+            <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -207,6 +216,9 @@ export default function Rechtsschutzversicherung() {
                 ))}
               </Accordion>
             </motion.div>
+            </div>
+
+            <NachlesenSidebar links={nachlesenLinks} />
           </div>
         </div>
       </section>

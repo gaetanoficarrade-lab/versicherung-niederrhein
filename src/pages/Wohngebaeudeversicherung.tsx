@@ -4,9 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import InsuranceHero from "@/components/InsuranceHero";
+import NachlesenSidebar from "@/components/NachlesenSidebar";
 import { Link } from "react-router-dom";
 import SEO, { createFAQSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import heroImage from "@/assets/hero-wohngebaeude.jpg";
+
+const nachlesenLinks = [
+  { title: "Wohngebäudeversicherung", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/information" },
+  { title: "Versicherte Gefahren", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/gefahren" },
+  { title: "Leistungserweiterungen", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/leistungserweiterungen" },
+  { title: "Versicherungssumme", url: "https://landingpage.vema-eg.de/maklerkalkar/wohngebaeude/versicherungssumme" },
+];
 
 const gefahren = [
   {
@@ -126,7 +134,8 @@ export default function Wohngebaeudeversicherung() {
       {/* Content */}
       <section className="py-16 bg-background">
         <div className="section-container">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+            <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -260,6 +269,9 @@ export default function Wohngebaeudeversicherung() {
                 ))}
               </Accordion>
             </motion.div>
+            </div>
+
+            <NachlesenSidebar links={nachlesenLinks} />
           </div>
         </div>
       </section>
