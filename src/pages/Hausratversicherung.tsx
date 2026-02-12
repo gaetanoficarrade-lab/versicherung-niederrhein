@@ -209,7 +209,7 @@ export default function Hausratversicherung() {
             </motion.div>
             </div>
 
-            <NachlesenSidebar links={nachlesenLinks} />
+            <NachlesenSidebar links={nachlesenLinks} mode="desktop" />
           </div>
         </div>
       </section>
@@ -274,6 +274,9 @@ export default function Hausratversicherung() {
                 </Link>
               </div>
             </motion.div>
+
+            {/* Mobile Nachlesen - vor den FAQs */}
+            <NachlesenSidebar links={nachlesenLinks} mode="mobile" />
 
             {/* FAQ */}
             <motion.div
