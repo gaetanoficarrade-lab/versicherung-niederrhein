@@ -26,7 +26,7 @@ function NachlesenContent({ links }: { links: NachlesenLink[] }) {
           <div className="flex-shrink-0 mt-0.5">
             <FileText className="h-4 w-4 text-primary/70 group-hover:text-primary transition-colors" />
           </div>
-          <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors leading-snug">
+          <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors leading-snug break-words hyphens-auto" lang="de">
             {link.title}
           </span>
         </a>
