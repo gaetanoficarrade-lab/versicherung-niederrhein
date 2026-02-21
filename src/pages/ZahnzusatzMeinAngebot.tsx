@@ -39,7 +39,7 @@ export default function ZahnzusatzMeinAngebot() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -52,10 +52,10 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to webhook (Zapier/Make → GHL)
+    // Send data to webhook (Zapier/Make → GHL) and wait before navigating
     if (WEBHOOK_URL) {
       try {
-        fetch(WEBHOOK_URL, {
+        await fetch(WEBHOOK_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           mode: "no-cors",
