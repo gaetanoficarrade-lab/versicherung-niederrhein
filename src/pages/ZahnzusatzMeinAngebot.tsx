@@ -75,6 +75,16 @@ export default function ZahnzusatzMeinAngebot() {
 
     navigate("/zahnzusatzversicherung/angebote");
   };
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <SEO />
+
+      {/* Simple Header with Logo */}
+      <header className="py-6 border-b border-border">
+        <div className="section-container flex justify-center">
+          <img src={logoImg} alt="Smits Versicherungsmakler" className="h-10" />
+        </div>
+      </header>
 
       {/* Main Content */}
       <main className="flex-1 flex items-center py-16">
