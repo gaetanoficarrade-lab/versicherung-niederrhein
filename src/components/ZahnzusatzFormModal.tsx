@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
 import { CalendarIcon, ArrowRight, Shield, Hourglass } from "lucide-react";
+import { Link } from "react-router-dom";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Popover,
   PopoverContent,
@@ -27,6 +29,7 @@ const formSchema = z.object({
   nachname: z.string().trim().min(1, "Bitte Nachname eingeben").max(100),
   email: z.string().trim().email("Bitte gültige E-Mail eingeben").max(255),
   geburtsdatum: z.date({ required_error: "Bitte Geburtsdatum wählen" }),
+  datenschutz: z.literal(true, { errorMap: () => ({ message: "Bitte Datenschutzerklärung akzeptieren" }) }),
 });
 
 interface ZahnzusatzFormModalProps {
@@ -42,13 +45,14 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
   const [geburtsdatum, setGeburtsdatum] = useState<Date>();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [datenschutz, setDatenschutz] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
 
-    const result = formSchema.safeParse({ vorname, nachname, email, geburtsdatum });
+    const result = formSchema.safeParse({ vorname, nachname, email, geburtsdatum, datenschutz: datenschutz ? true : undefined });
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -206,6 +210,23 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
             </Popover>
             {errors.geburtsdatum && <p className="text-sm text-destructive mt-1">{errors.geburtsdatum}</p>}
           </div>
+
+          <div className="flex items-start gap-3">
+            <Checkbox
+              id="datenschutz"
+              checked={datenschutz}
+              onCheckedChange={(checked) => setDatenschutz(checked === true)}
+              className={errors.datenschutz ? "border-destructive" : ""}
+            />
+            <label htmlFor="datenschutz" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+              Ich habe die{" "}
+              <Link to="/datenschutz" target="_blank" className="text-primary underline hover:text-primary/80">
+                Datenschutzerklärung
+              </Link>{" "}
+              gelesen und stimme der Verarbeitung meiner Daten zur Angebotserstellung zu. *
+            </label>
+          </div>
+          {errors.datenschutz && <p className="text-sm text-destructive">{errors.datenschutz}</p>}
 
           <Button type="submit" size="lg" className="w-full gap-2 bg-accent hover:bg-accent/90 text-accent-foreground mt-6">
             Angebote anzeigen
