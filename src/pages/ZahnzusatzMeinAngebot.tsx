@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Lock, ArrowRight, Gift } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,6 +22,7 @@ export default function ZahnzusatzMeinAngebot() {
   const [email, setEmail] = useState("");
   const [geburtsdatum, setGeburtsdatum] = useState<Date | undefined>();
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [datenschutz, setDatenschutz] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = () => {
@@ -29,6 +31,7 @@ export default function ZahnzusatzMeinAngebot() {
     if (!nachname.trim()) e.nachname = "Bitte Nachname eingeben";
     if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) e.email = "Bitte gültige E-Mail eingeben";
     if (!geburtsdatum) e.geburtsdatum = "Bitte Geburtsdatum angeben";
+    if (!datenschutz) e.datenschutz = "Bitte Datenschutzbestimmungen akzeptieren";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -185,6 +188,25 @@ export default function ZahnzusatzMeinAngebot() {
                     </PopoverContent>
                   </Popover>
                   {errors.geburtsdatum && <p className="text-xs text-destructive">{errors.geburtsdatum}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="datenschutz"
+                      checked={datenschutz}
+                      onCheckedChange={(checked) => setDatenschutz(checked === true)}
+                      className={errors.datenschutz ? "border-destructive" : ""}
+                    />
+                    <Label htmlFor="datenschutz" className="text-sm font-normal leading-snug cursor-pointer">
+                      Ich habe die{" "}
+                      <Link to="/datenschutz" target="_blank" className="text-primary underline hover:no-underline">
+                        Datenschutzbestimmungen
+                      </Link>{" "}
+                      gelesen und bin mit der Verarbeitung meiner Daten einverstanden.
+                    </Label>
+                  </div>
+                  {errors.datenschutz && <p className="text-xs text-destructive">{errors.datenschutz}</p>}
                 </div>
 
                 <Button type="submit" size="lg" className="w-full gap-2 mt-2">
