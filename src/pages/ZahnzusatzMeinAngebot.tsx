@@ -166,10 +166,21 @@ export default function ZahnzusatzMeinAngebot() {
                         }}
                         locale={de}
                         captionLayout="dropdown-buttons"
-                        fromYear={1930}
-                        toYear={new Date().getFullYear() - 1}
-                        defaultMonth={geburtsdatum || new Date(1990, 0, 1)}
-                        disabled={(date) => date > new Date()}
+                        fromYear={1920}
+                        toYear={new Date().getFullYear()}
+                        defaultMonth={geburtsdatum || new Date(1990, 0)}
+                        disabled={(date) => date > new Date() || date < new Date("1920-01-01")}
+                        initialFocus
+                        className={cn("p-3 pointer-events-auto")}
+                        classNames={{
+                          caption: "flex justify-center pt-1 relative items-center gap-1",
+                          caption_label: "hidden",
+                          caption_dropdowns: "flex items-center gap-2",
+                          dropdown_month: "relative",
+                          dropdown_year: "relative",
+                          dropdown: "appearance-none bg-background border border-border rounded-md px-2 py-1 text-sm font-medium text-foreground cursor-pointer hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30",
+                          vhidden: "sr-only",
+                        }}
                       />
                     </PopoverContent>
                   </Popover>
