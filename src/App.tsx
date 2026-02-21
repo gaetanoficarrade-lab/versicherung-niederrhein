@@ -42,6 +42,7 @@ import Betriebsunterbrechung from "./pages/Betriebsunterbrechung";
 import Berufshaftpflicht from "./pages/Berufshaftpflicht";
 import DOVersicherung from "./pages/DOVersicherung";
 import Zahnzusatzversicherung from "./pages/Zahnzusatzversicherung";
+import ZahnzusatzAngebote from "./pages/ZahnzusatzAngebote";
 
 const queryClient = new QueryClient();
 
@@ -95,6 +96,7 @@ const App = () => (
             <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
             {/* Landingpages */}
             <Route path="/zahnzusatzversicherung" element={<Zahnzusatzversicherung />} />
+            <Route path="/zahnzusatzversicherung/angebote" element={<ZahnzusatzAngebote />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

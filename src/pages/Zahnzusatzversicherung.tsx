@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, CheckCircle2, AlertTriangle, Heart, Smile, Baby, TrendingUp, Clock, Sparkles, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import ZahnzusatzFormModal from "@/components/ZahnzusatzFormModal";
 import heroImage from "@/assets/hero-zahnzusatz.jpg";
 
 const costComparison = [
@@ -86,9 +87,12 @@ const fadeUp = {
 };
 
 export default function Zahnzusatzversicherung() {
+  const [formOpen, setFormOpen] = useState(false);
+
   return (
     <Layout>
       <SEO />
+      <ZahnzusatzFormModal open={formOpen} onOpenChange={setFormOpen} />
 
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
@@ -150,12 +154,10 @@ export default function Zahnzusatzversicherung() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/kontakt">
-                <Button size="lg" className="gap-2 px-8 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
-                  Kostenlose Beratung anfordern
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </Link>
+              <Button size="lg" onClick={() => setFormOpen(true)} className="gap-2 px-8 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
+                Jetzt Angebot berechnen
+                <ArrowRight className="h-5 w-5" />
+              </Button>
             </motion.div>
           </div>
         </div>
@@ -246,12 +248,10 @@ export default function Zahnzusatzversicherung() {
                 Warte nicht, bis der Zahnarzt eine Behandlung anrät – dann ist es oft zu spät für den Abschluss.
               </p>
             </div>
-            <Link to="/kontakt" className="flex-shrink-0">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 gap-2">
-                Jetzt beraten lassen
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-            </Link>
+            <Button size="lg" onClick={() => setFormOpen(true)} className="bg-background text-foreground hover:bg-background/90 gap-2 flex-shrink-0">
+              Jetzt Angebot berechnen
+              <ArrowRight className="h-5 w-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -360,12 +360,10 @@ export default function Zahnzusatzversicherung() {
               Dann melde dich bei uns – die Beratung ist kostenlos und unverbindlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/kontakt">
-                <Button size="lg" className="gap-2 px-10 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
-                  Kostenlose Beratung anfordern
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </Link>
+              <Button size="lg" onClick={() => setFormOpen(true)} className="gap-2 px-10 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
+                Jetzt Angebot berechnen
+                <ArrowRight className="h-5 w-5" />
+              </Button>
               <a href="tel:02824809293">
                 <Button size="lg" variant="outline" className="gap-2 px-8 text-base">
                   02824-809293 anrufen
