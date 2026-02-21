@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, CheckCircle2, AlertTriangle, Heart, Smile, Baby, TrendingUp, Clock, Sparkles, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ZahnzusatzFormModal from "@/components/ZahnzusatzFormModal";
 import heroImage from "@/assets/hero-zahnzusatz.jpg";
@@ -90,7 +89,7 @@ export default function Zahnzusatzversicherung() {
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <Layout>
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <SEO />
       <ZahnzusatzFormModal open={formOpen} onOpenChange={setFormOpen} />
 
@@ -373,6 +372,6 @@ export default function Zahnzusatzversicherung() {
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }

@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
-import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 
 interface LeadData {
@@ -94,7 +93,7 @@ export default function ZahnzusatzAngebote() {
   const age = Math.floor((Date.now() - birthDate.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
 
   return (
-    <Layout>
+    <div className="min-h-screen flex flex-col overflow-x-hidden bg-background">
       <SEO />
 
       {/* Header */}
@@ -251,6 +250,6 @@ export default function ZahnzusatzAngebote() {
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }
