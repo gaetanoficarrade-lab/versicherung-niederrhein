@@ -145,6 +145,10 @@ export const seoDataByPath: Record<string, SEOPageData> = {
     title: "Datenschutz | DSGVO Informationen",
     description: "Datenschutzerklärung von Smits & Kollegen. Informationen zum Umgang mit Ihren personenbezogenen Daten gemäß DSGVO.",
   },
+  "/zahnzusatzversicherung": {
+    title: "Zahnzusatzversicherung | Kosten sparen beim Zahnarzt",
+    description: "Zahnzusatzversicherung abschließen ✓ Implantate bezahlbar ✓ Zahnreinigung inklusive ✓ Bis zu 100% Erstattung ✓ Kostenlose Beratung in Kalkar. Jetzt vergleichen!",
+  },
   "/versicherungen": {
     title: "Alle Versicherungen im Überblick | Privat & Gewerbe",
     description: "Alle Versicherungsprodukte von Smits & Kollegen ✓ Privatversicherungen ✓ Gewerbeversicherungen ✓ Vorsorge. Finden Sie die passende Absicherung!",
