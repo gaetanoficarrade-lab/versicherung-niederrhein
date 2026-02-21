@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Lock, ArrowRight, Gift } from "lucide-react";
@@ -15,6 +15,8 @@ import { cn } from "@/lib/utils";
 import SEO from "@/components/SEO";
 import logoImg from "@/assets/logo-new.png";
 
+const GHL_FORM_ID = "RmY8nLicgsKFnHpu7LSz";
+
 export default function ZahnzusatzMeinAngebot() {
   const navigate = useNavigate();
   const [vorname, setVorname] = useState("");
@@ -24,6 +26,19 @@ export default function ZahnzusatzMeinAngebot() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [datenschutz, setDatenschutz] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const ghlIframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Load GHL form embed script
+  useEffect(() => {
+    const scriptId = "ghl-form-embed-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://link.msgsndr.com/js/form_embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -34,46 +49,6 @@ export default function ZahnzusatzMeinAngebot() {
     if (!datenschutz) e.datenschutz = "Bitte Datenschutzbestimmungen akzeptieren";
     setErrors(e);
     return Object.keys(e).length === 0;
-  };
-
-  const submitToGHL = (data: { vorname: string; nachname: string; email: string; geburtsdatum: Date }) => {
-    // Create a hidden iframe and form to submit to GHL (bypasses CORS)
-    const iframeName = "ghl_submit_frame";
-    let iframe = document.querySelector<HTMLIFrameElement>(`iframe[name="${iframeName}"]`);
-    if (!iframe) {
-      iframe = document.createElement("iframe");
-      iframe.name = iframeName;
-      iframe.style.display = "none";
-      document.body.appendChild(iframe);
-    }
-
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = "https://backend.leadconnectorhq.com/forms/submit";
-    form.target = iframeName;
-    form.style.display = "none";
-
-    const formDataPayload = {
-      first_name: data.vorname,
-      last_name: data.nachname,
-      email: data.email,
-      date_of_birth: format(data.geburtsdatum, "yyyy-MM-dd"),
-      formId: "RmY8nLicgsKFnHpu7LSz",
-    };
-
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = "formData";
-    input.value = JSON.stringify(formDataPayload);
-    form.appendChild(input);
-
-    document.body.appendChild(form);
-    form.submit();
-
-    // Cleanup after submission
-    setTimeout(() => {
-      form.remove();
-    }, 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -89,15 +64,25 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Submit to GHL in hidden iframe
-    submitToGHL({
-      vorname: leadData.vorname,
-      nachname: leadData.nachname,
-      email: leadData.email,
-      geburtsdatum: geburtsdatum!,
-    });
+    // Try to submit data to the GHL form iframe via postMessage
+    if (ghlIframeRef.current?.contentWindow) {
+      const ghlPayload = {
+        type: "formSubmit",
+        formId: GHL_FORM_ID,
+        data: {
+          first_name: leadData.vorname,
+          last_name: leadData.nachname,
+          email: leadData.email,
+          date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+        },
+      };
+      ghlIframeRef.current.contentWindow.postMessage(ghlPayload, "*");
+    }
 
-    navigate("/zahnzusatzversicherung/angebote");
+    // Small delay to allow GHL submission to process, then navigate
+    setTimeout(() => {
+      navigate("/zahnzusatzversicherung/angebote");
+    }, 500);
   };
 
   return (
@@ -110,6 +95,23 @@ export default function ZahnzusatzMeinAngebot() {
           <img src={logoImg} alt="Smits Versicherungsmakler" className="h-10" />
         </div>
       </header>
+
+      {/* Hidden GHL Form Iframe */}
+      <iframe
+        ref={ghlIframeRef}
+        src={`https://api.leadconnectorhq.com/widget/form/${GHL_FORM_ID}`}
+        style={{ width: 0, height: 0, border: "none", position: "absolute", left: "-9999px" }}
+        id={`inline-${GHL_FORM_ID}`}
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-activation-type="alwaysActivated"
+        data-deactivation-type="neverDeactivate"
+        data-form-name="Test zahn"
+        data-height="489"
+        data-layout-iframe-id={`inline-${GHL_FORM_ID}`}
+        data-form-id={GHL_FORM_ID}
+        title="GHL Form"
+      />
 
       {/* Main Content */}
       <main className="flex-1 flex items-center py-16">
