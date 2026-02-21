@@ -358,17 +358,10 @@ export default function Zahnzusatzversicherung() {
             <p className="text-lg font-medium text-foreground mb-8">
               Dann melde dich bei uns – die Beratung ist kostenlos und unverbindlich.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={() => setFormOpen(true)} className="gap-2 px-10 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
-                Jetzt Angebot berechnen
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <a href="tel:02824809293">
-                <Button size="lg" variant="outline" className="gap-2 px-8 text-base">
-                  02824-809293 anrufen
-                </Button>
-              </a>
-            </div>
+            <Button size="lg" onClick={() => setFormOpen(true)} className="gap-2 px-10 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
+              Jetzt Angebot berechnen
+              <ArrowRight className="h-5 w-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
