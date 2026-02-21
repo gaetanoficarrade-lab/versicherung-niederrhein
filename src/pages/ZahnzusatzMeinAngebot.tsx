@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Lock, ArrowRight, Gift } from "lucide-react";
@@ -15,7 +15,8 @@ import { cn } from "@/lib/utils";
 import SEO from "@/components/SEO";
 import logoImg from "@/assets/logo-new.png";
 
-const GHL_FORM_ID = "RmY8nLicgsKFnHpu7LSz";
+// Webhook URL for Zapier/Make – replace with your actual webhook URL
+const WEBHOOK_URL = "";
 
 export default function ZahnzusatzMeinAngebot() {
   const navigate = useNavigate();
@@ -26,19 +27,6 @@ export default function ZahnzusatzMeinAngebot() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [datenschutz, setDatenschutz] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const ghlIframeRef = useRef<HTMLIFrameElement>(null);
-
-  // Load GHL form embed script
-  useEffect(() => {
-    const scriptId = "ghl-form-embed-script";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src = "https://link.msgsndr.com/js/form_embed.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -64,54 +52,29 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Try to submit data to the GHL form iframe via postMessage
-    if (ghlIframeRef.current?.contentWindow) {
-      const ghlPayload = {
-        type: "formSubmit",
-        formId: GHL_FORM_ID,
-        data: {
-          first_name: leadData.vorname,
-          last_name: leadData.nachname,
-          email: leadData.email,
-          date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
-        },
-      };
-      ghlIframeRef.current.contentWindow.postMessage(ghlPayload, "*");
+    // Send data to webhook (Zapier/Make → GHL)
+    if (WEBHOOK_URL) {
+      try {
+        fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          mode: "no-cors",
+          body: JSON.stringify({
+            first_name: leadData.vorname,
+            last_name: leadData.nachname,
+            email: leadData.email,
+            date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+            source: "zahnzusatz-angebot",
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (err) {
+        console.error("Webhook submission error:", err);
+      }
     }
 
-    // Small delay to allow GHL submission to process, then navigate
-    setTimeout(() => {
-      navigate("/zahnzusatzversicherung/angebote");
-    }, 500);
+    navigate("/zahnzusatzversicherung/angebote");
   };
-
-  return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <SEO />
-
-      {/* Simple Header with Logo */}
-      <header className="py-6 border-b border-border">
-        <div className="section-container flex justify-center">
-          <img src={logoImg} alt="Smits Versicherungsmakler" className="h-10" />
-        </div>
-      </header>
-
-      {/* Hidden GHL Form Iframe */}
-      <iframe
-        ref={ghlIframeRef}
-        src={`https://api.leadconnectorhq.com/widget/form/${GHL_FORM_ID}`}
-        style={{ width: 0, height: 0, border: "none", position: "absolute", left: "-9999px" }}
-        id={`inline-${GHL_FORM_ID}`}
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-activation-type="alwaysActivated"
-        data-deactivation-type="neverDeactivate"
-        data-form-name="Test zahn"
-        data-height="489"
-        data-layout-iframe-id={`inline-${GHL_FORM_ID}`}
-        data-form-id={GHL_FORM_ID}
-        title="GHL Form"
-      />
 
       {/* Main Content */}
       <main className="flex-1 flex items-center py-16">
