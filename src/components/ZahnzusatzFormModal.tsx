@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
-import { CalendarIcon, ArrowRight, Shield } from "lucide-react";
+import { CalendarIcon, ArrowRight, Shield, Hourglass } from "lucide-react";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Dialog,
   DialogContent,
@@ -41,6 +42,7 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
   const [geburtsdatum, setGeburtsdatum] = useState<Date>();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,13 +68,51 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
     };
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(formData));
 
-    onOpenChange(false);
-    navigate("/zahnzusatzversicherung/angebote");
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      onOpenChange(false);
+      navigate("/zahnzusatzversicherung/angebote");
+    }, 5000);
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+    <Dialog open={open} onOpenChange={loading ? undefined : onOpenChange}>
+      <DialogContent className="sm:max-w-md" onInteractOutside={loading ? (e) => e.preventDefault() : undefined}>
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <motion.div
+              key="loading"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="flex flex-col items-center justify-center py-16 gap-6"
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                <Hourglass className="h-16 w-16 text-primary" />
+              </motion.div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-foreground mb-2">Einen Moment bitte...</h3>
+                <p className="text-muted-foreground">
+                  Wir suchen das passende Angebot für dich raus.
+                </p>
+              </div>
+              <div className="flex gap-1.5">
+                {[0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="h-2.5 w-2.5 rounded-full bg-primary"
+                    animate={{ opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.3 }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div key="form" initial={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -166,6 +206,9 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
             Kostenlos und unverbindlich. Deine Daten werden vertraulich behandelt.
           </p>
         </form>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </DialogContent>
     </Dialog>
   );
