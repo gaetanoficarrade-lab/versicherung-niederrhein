@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, CheckCircle2, ArrowRight, Phone, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -242,7 +242,7 @@ export default function ZahnzusatzAngebote() {
                 </Button>
               </a>
               <a href={`https://wa.me/4928248092930?text=${encodeURIComponent(`Hallo, ich bin ${lead.vorname} ${lead.nachname} und interessiere mich für eine Zahnzusatzversicherung. Können Sie mich beraten?`)}`} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 gap-2">
+                <Button size="lg" className="bg-background text-foreground hover:bg-background/90 gap-2">
                   Per WhatsApp anfragen
                 </Button>
               </a>
@@ -250,6 +250,38 @@ export default function ZahnzusatzAngebote() {
           </motion.div>
         </div>
       </section>
+
+      {/* Minimal Landing Page Footer */}
+      <footer className="bg-foreground text-background">
+        <div className="section-container py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs opacity-40">
+              © {new Date().getFullYear()} Smits Versicherungsmakler GmbH & Co. KG
+            </p>
+            <div className="flex items-center gap-4 text-xs">
+              <Link to="/impressum" className="opacity-40 hover:opacity-100 transition-opacity">Impressum</Link>
+              <Link to="/datenschutz" className="opacity-40 hover:opacity-100 transition-opacity">Datenschutz</Link>
+              <Link to="/erstinformation" className="opacity-40 hover:opacity-100 transition-opacity">Erstinformation</Link>
+            </div>
+          </div>
+          {/* 
+            =====================================================================
+            WICHTIG / IMPORTANT - NICHT ENTFERNEN / DO NOT REMOVE
+            =====================================================================
+          */}
+          <p className="text-[10px] opacity-30 text-center mt-3">
+            Created by{" "}
+            <a 
+              href="https://gaetanoficarra.de" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity underline"
+            >
+              Gaetano Ficarra
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
