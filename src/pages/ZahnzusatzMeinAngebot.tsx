@@ -39,7 +39,7 @@ export default function ZahnzusatzMeinAngebot() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -52,26 +52,18 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to webhook (Zapier/Make → GHL) and wait before navigating
+    // Send data to webhook using sendBeacon (reliable even during navigation)
     if (WEBHOOK_URL) {
-      try {
-        await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          mode: "no-cors",
-          body: JSON.stringify({
-            first_name: leadData.vorname,
-            last_name: leadData.nachname,
-            email: leadData.email,
-            date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
-            datenschutz_akzeptiert: true,
-            source: "zahnzusatz-angebot",
-            timestamp: new Date().toISOString(),
-          }),
-        });
-      } catch (err) {
-        console.error("Webhook submission error:", err);
-      }
+      const payload = JSON.stringify({
+        first_name: leadData.vorname,
+        last_name: leadData.nachname,
+        email: leadData.email,
+        date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+        datenschutz_akzeptiert: true,
+        source: "zahnzusatz-angebot",
+        timestamp: new Date().toISOString(),
+      });
+      navigator.sendBeacon(WEBHOOK_URL, new Blob([payload], { type: "application/json" }));
     }
 
     navigate("/zahnzusatzversicherung/angebote");
