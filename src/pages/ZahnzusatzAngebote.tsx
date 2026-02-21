@@ -206,7 +206,7 @@ export default function ZahnzusatzAngebote() {
                       : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
                   )}
                 >
-                  Jetzt abschließen
+                  Tarif unverbindlich anfragen
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </motion.div>
