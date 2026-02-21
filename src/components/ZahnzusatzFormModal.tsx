@@ -178,6 +178,7 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
+                  locale={de}
                   mode="single"
                   selected={geburtsdatum}
                   onSelect={(date) => {
@@ -191,6 +192,15 @@ export default function ZahnzusatzFormModal({ open, onOpenChange }: ZahnzusatzFo
                   toYear={new Date().getFullYear()}
                   initialFocus
                   className={cn("p-3 pointer-events-auto")}
+                  classNames={{
+                    caption: "flex justify-center pt-1 relative items-center gap-1",
+                    caption_label: "hidden",
+                    caption_dropdowns: "flex items-center gap-2",
+                    dropdown_month: "relative",
+                    dropdown_year: "relative",
+                    dropdown: "appearance-none bg-background border border-border rounded-md px-2 py-1 text-sm font-medium text-foreground cursor-pointer hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30",
+                    vhidden: "sr-only",
+                  }}
                 />
               </PopoverContent>
             </Popover>
