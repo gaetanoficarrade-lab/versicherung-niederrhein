@@ -36,7 +36,47 @@ export default function ZahnzusatzMeinAngebot() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const submitToGHL = (data: { vorname: string; nachname: string; email: string; geburtsdatum: Date }) => {
+    // Create a hidden iframe and form to submit to GHL (bypasses CORS)
+    const iframeName = "ghl_submit_frame";
+    let iframe = document.querySelector<HTMLIFrameElement>(`iframe[name="${iframeName}"]`);
+    if (!iframe) {
+      iframe = document.createElement("iframe");
+      iframe.name = iframeName;
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+    }
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://backend.leadconnectorhq.com/forms/submit";
+    form.target = iframeName;
+    form.style.display = "none";
+
+    const formDataPayload = {
+      first_name: data.vorname,
+      last_name: data.nachname,
+      email: data.email,
+      date_of_birth: format(data.geburtsdatum, "yyyy-MM-dd"),
+      formId: "RmY8nLicgsKFnHpu7LSz",
+    };
+
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "formData";
+    input.value = JSON.stringify(formDataPayload);
+    form.appendChild(input);
+
+    document.body.appendChild(form);
+    form.submit();
+
+    // Cleanup after submission
+    setTimeout(() => {
+      form.remove();
+    }, 2000);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -49,27 +89,13 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to GHL form in the background
-    try {
-      const ghlData = {
-        first_name: leadData.vorname,
-        last_name: leadData.nachname,
-        email: leadData.email,
-        date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
-        formId: "RmY8nLicgsKFnHpu7LSz",
-      };
-
-      const body = new FormData();
-      body.append("formData", JSON.stringify(ghlData));
-
-      fetch("https://backend.leadconnectorhq.com/forms/submit", {
-        method: "POST",
-        body,
-        mode: "no-cors",
-      });
-    } catch (err) {
-      console.error("GHL form submission error:", err);
-    }
+    // Submit to GHL in hidden iframe
+    submitToGHL({
+      vorname: leadData.vorname,
+      nachname: leadData.nachname,
+      email: leadData.email,
+      geburtsdatum: geburtsdatum!,
+    });
 
     navigate("/zahnzusatzversicherung/angebote");
   };
