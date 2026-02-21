@@ -52,27 +52,48 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to webhook using XHR (avoids CORS credentials issue with sendBeacon)
+    // Send data to webhook using hidden form + iframe (bypasses CORS completely)
     if (WEBHOOK_URL) {
-      const payload = JSON.stringify({
+      const iframeName = "ghl_webhook_frame";
+      let iframe = document.querySelector(`iframe[name="${iframeName}"]`) as HTMLIFrameElement;
+      if (!iframe) {
+        iframe = document.createElement("iframe");
+        iframe.name = iframeName;
+        iframe.style.display = "none";
+        document.body.appendChild(iframe);
+      }
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = WEBHOOK_URL;
+      form.target = iframeName;
+      form.style.display = "none";
+
+      const fields: Record<string, string> = {
         first_name: leadData.vorname,
         last_name: leadData.nachname,
         email: leadData.email,
         date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
-        datenschutz_akzeptiert: true,
+        datenschutz_akzeptiert: "true",
         source: "zahnzusatz-angebot",
         timestamp: new Date().toISOString(),
+      };
+
+      Object.entries(fields).forEach(([key, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
       });
 
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", WEBHOOK_URL, true);
-      xhr.setRequestHeader("Content-Type", "text/plain");
-      xhr.withCredentials = false;
-      xhr.send(payload);
+      document.body.appendChild(form);
+      form.submit();
+      form.remove();
     }
 
-    // Small delay to ensure XHR is sent before navigation
-    setTimeout(() => navigate("/zahnzusatzversicherung/angebote"), 300);
+    // Small delay to let the iframe form submit before navigating
+    setTimeout(() => navigate("/zahnzusatzversicherung/angebote"), 500);
   };
   return (
     <div className="min-h-screen flex flex-col bg-background">
