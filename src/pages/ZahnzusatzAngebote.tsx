@@ -193,20 +193,22 @@ export default function ZahnzusatzAngebote() {
                   ))}
                 </ul>
 
-                <a href="tel:02824809293">
-                  <Button
-                    size="lg"
-                    className={cn(
-                      "w-full gap-2",
-                      i === 1
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                        : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
-                    )}
-                  >
-                    Jetzt beraten lassen
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </a>
+                <Button
+                  size="lg"
+                  onClick={() => {
+                    sessionStorage.setItem("zahnzusatz_tarif", offer.name);
+                    navigate("/zahnzusatzversicherung/abschluss");
+                  }}
+                  className={cn(
+                    "w-full gap-2",
+                    i === 1
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                      : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
+                  )}
+                >
+                  Jetzt abschließen
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
               </motion.div>
             ))}
           </div>
