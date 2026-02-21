@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, CheckCircle2, AlertTriangle, Heart, Smile, Baby, TrendingUp, Clock, Sparkles, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -346,17 +347,10 @@ export default function Zahnzusatzversicherung() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Lass dich jetzt <span className="gradient-text">kostenlos beraten</span>
+              In 30 Sekunden zu deinem <span className="gradient-text">persönlichen Angebot</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              Du willst wissen, was ein kaputter Zahn dich kosten würde?
-              <br />
-              Was du ohne Versicherung selbst zahlst?
-              <br />
-              Und wie du das vermeidest?
-            </p>
-            <p className="text-lg font-medium text-foreground mb-8">
-              Dann melde dich bei uns – die Beratung ist kostenlos und unverbindlich.
+            <p className="text-lg text-muted-foreground mb-8">
+              Gib deine Daten ein und erhalte sofort einen Tarifvergleich – kostenlos, unverbindlich und auf dich zugeschnitten.
             </p>
             <Button size="lg" onClick={() => setFormOpen(true)} className="gap-2 px-10 bg-accent hover:bg-accent/90 text-accent-foreground text-base">
               Jetzt Angebot berechnen
@@ -365,6 +359,38 @@ export default function Zahnzusatzversicherung() {
           </motion.div>
         </div>
       </section>
+
+      {/* Minimal Landing Page Footer */}
+      <footer className="bg-foreground text-background">
+        <div className="section-container py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs opacity-40">
+              © {new Date().getFullYear()} Smits Versicherungsmakler GmbH & Co. KG
+            </p>
+            <div className="flex items-center gap-4 text-xs">
+              <Link to="/impressum" className="opacity-40 hover:opacity-100 transition-opacity">Impressum</Link>
+              <Link to="/datenschutz" className="opacity-40 hover:opacity-100 transition-opacity">Datenschutz</Link>
+              <Link to="/erstinformation" className="opacity-40 hover:opacity-100 transition-opacity">Erstinformation</Link>
+            </div>
+          </div>
+          {/* 
+            =====================================================================
+            WICHTIG / IMPORTANT - NICHT ENTFERNEN / DO NOT REMOVE
+            =====================================================================
+          */}
+          <p className="text-[10px] opacity-30 text-center mt-3">
+            Created by{" "}
+            <a 
+              href="https://gaetanoficarra.de" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity underline"
+            >
+              Gaetano Ficarra
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
