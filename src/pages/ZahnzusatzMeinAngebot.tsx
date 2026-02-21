@@ -64,6 +64,7 @@ export default function ZahnzusatzMeinAngebot() {
             last_name: leadData.nachname,
             email: leadData.email,
             date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+            datenschutz_akzeptiert: true,
             source: "zahnzusatz-angebot",
             timestamp: new Date().toISOString(),
           }),
