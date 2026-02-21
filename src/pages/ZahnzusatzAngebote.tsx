@@ -114,10 +114,6 @@ export default function ZahnzusatzAngebote() {
             </h1>
             <p className="text-lg text-muted-foreground">
               Basierend auf deinem Alter ({age} Jahre) haben wir 3 passende Tarife für dich zusammengestellt.
-              <br />
-              <span className="text-sm">
-                Geburtsdatum: {format(birthDate, "dd.MM.yyyy", { locale: de })}
-              </span>
             </p>
           </motion.div>
         </div>
