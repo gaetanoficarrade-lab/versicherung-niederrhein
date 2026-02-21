@@ -43,6 +43,7 @@ import Berufshaftpflicht from "./pages/Berufshaftpflicht";
 import DOVersicherung from "./pages/DOVersicherung";
 import Zahnzusatzversicherung from "./pages/Zahnzusatzversicherung";
 import ZahnzusatzAngebote from "./pages/ZahnzusatzAngebote";
+import ZahnzusatzMeinAngebot from "./pages/ZahnzusatzMeinAngebot";
 
 const queryClient = new QueryClient();
 
@@ -97,6 +98,7 @@ const App = () => (
             {/* Landingpages */}
             <Route path="/zahnzusatzversicherung" element={<Zahnzusatzversicherung />} />
             <Route path="/zahnzusatzversicherung/angebote" element={<ZahnzusatzAngebote />} />
+            <Route path="/zahnzusatzversicherung/mein-angebot" element={<ZahnzusatzMeinAngebot />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
