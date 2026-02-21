@@ -16,7 +16,7 @@ import SEO from "@/components/SEO";
 import logoImg from "@/assets/logo-new.png";
 
 // Webhook URL for Zapier/Make – replace with your actual webhook URL
-const WEBHOOK_URL = "";
+const WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/0E6iNh49LTwzGNAFFdno/webhook-trigger/c6b80d91-8ae2-475a-9d1e-35ee9758a069";
 
 export default function ZahnzusatzMeinAngebot() {
   const navigate = useNavigate();
