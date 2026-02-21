@@ -39,7 +39,7 @@ export default function ZahnzusatzMeinAngebot() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -52,48 +52,31 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to webhook using hidden form + iframe (bypasses CORS completely)
+    // Send data to GHL webhook as JSON
     if (WEBHOOK_URL) {
-      const iframeName = "ghl_webhook_frame";
-      let iframe = document.querySelector(`iframe[name="${iframeName}"]`) as HTMLIFrameElement;
-      if (!iframe) {
-        iframe = document.createElement("iframe");
-        iframe.name = iframeName;
-        iframe.style.display = "none";
-        document.body.appendChild(iframe);
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify({
+            first_name: leadData.vorname,
+            last_name: leadData.nachname,
+            email: leadData.email,
+            date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+            datenschutz_akzeptiert: true,
+            source: "zahnzusatz-angebot",
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (err) {
+        console.error("Webhook error:", err);
       }
-
-      const form = document.createElement("form");
-      form.method = "POST";
-      form.action = WEBHOOK_URL;
-      form.target = iframeName;
-      form.style.display = "none";
-
-      const fields: Record<string, string> = {
-        first_name: leadData.vorname,
-        last_name: leadData.nachname,
-        email: leadData.email,
-        date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
-        datenschutz_akzeptiert: "true",
-        source: "zahnzusatz-angebot",
-        timestamp: new Date().toISOString(),
-      };
-
-      Object.entries(fields).forEach(([key, value]) => {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-      });
-
-      document.body.appendChild(form);
-      form.submit();
-      form.remove();
     }
 
-    // Small delay to let the iframe form submit before navigating
-    setTimeout(() => navigate("/zahnzusatzversicherung/angebote"), 500);
+    navigate("/zahnzusatzversicherung/angebote");
   };
   return (
     <div className="min-h-screen flex flex-col bg-background">
