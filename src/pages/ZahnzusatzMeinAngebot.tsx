@@ -36,19 +36,38 @@ export default function ZahnzusatzMeinAngebot() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    sessionStorage.setItem(
-      "zahnzusatz_lead",
-      JSON.stringify({
-        vorname: vorname.trim(),
-        nachname: nachname.trim(),
-        email: email.trim(),
-        geburtsdatum: geburtsdatum!.toISOString(),
-      })
-    );
+    const leadData = {
+      vorname: vorname.trim(),
+      nachname: nachname.trim(),
+      email: email.trim(),
+      geburtsdatum: geburtsdatum!.toISOString(),
+    };
+
+    sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
+
+    // Send data to GHL form in the background
+    try {
+      const formData = new FormData();
+      formData.append("first_name", leadData.vorname);
+      formData.append("last_name", leadData.nachname);
+      formData.append("email", leadData.email);
+      formData.append("date_of_birth", format(geburtsdatum!, "yyyy-MM-dd"));
+      formData.append("formId", "RmY8nLicgsKFnHpu7LSz");
+      formData.append("location_id", "");
+
+      fetch("https://services.leadconnectorhq.com/funnels/submit", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      });
+    } catch (err) {
+      console.error("GHL form submission error:", err);
+    }
+
     navigate("/zahnzusatzversicherung/angebote");
   };
 
