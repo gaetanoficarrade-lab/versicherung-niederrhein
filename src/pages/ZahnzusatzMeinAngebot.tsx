@@ -52,7 +52,7 @@ export default function ZahnzusatzMeinAngebot() {
 
     sessionStorage.setItem("zahnzusatz_lead", JSON.stringify(leadData));
 
-    // Send data to webhook using sendBeacon (reliable even during navigation)
+    // Send data to webhook using XHR (avoids CORS credentials issue with sendBeacon)
     if (WEBHOOK_URL) {
       const payload = JSON.stringify({
         first_name: leadData.vorname,
@@ -63,10 +63,16 @@ export default function ZahnzusatzMeinAngebot() {
         source: "zahnzusatz-angebot",
         timestamp: new Date().toISOString(),
       });
-      navigator.sendBeacon(WEBHOOK_URL, new Blob([payload], { type: "application/json" }));
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", WEBHOOK_URL, true);
+      xhr.setRequestHeader("Content-Type", "text/plain");
+      xhr.withCredentials = false;
+      xhr.send(payload);
     }
 
-    navigate("/zahnzusatzversicherung/angebote");
+    // Small delay to ensure XHR is sent before navigation
+    setTimeout(() => navigate("/zahnzusatzversicherung/angebote"), 300);
   };
   return (
     <div className="min-h-screen flex flex-col bg-background">
