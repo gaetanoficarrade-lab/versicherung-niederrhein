@@ -51,17 +51,20 @@ export default function ZahnzusatzMeinAngebot() {
 
     // Send data to GHL form in the background
     try {
-      const formData = new FormData();
-      formData.append("first_name", leadData.vorname);
-      formData.append("last_name", leadData.nachname);
-      formData.append("email", leadData.email);
-      formData.append("date_of_birth", format(geburtsdatum!, "yyyy-MM-dd"));
-      formData.append("formId", "RmY8nLicgsKFnHpu7LSz");
-      formData.append("location_id", "");
+      const ghlData = {
+        first_name: leadData.vorname,
+        last_name: leadData.nachname,
+        email: leadData.email,
+        date_of_birth: format(geburtsdatum!, "yyyy-MM-dd"),
+        formId: "RmY8nLicgsKFnHpu7LSz",
+      };
 
-      fetch("https://services.leadconnectorhq.com/funnels/submit", {
+      const body = new FormData();
+      body.append("formData", JSON.stringify(ghlData));
+
+      fetch("https://backend.leadconnectorhq.com/forms/submit", {
         method: "POST",
-        body: formData,
+        body,
         mode: "no-cors",
       });
     } catch (err) {
