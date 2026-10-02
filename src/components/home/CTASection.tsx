@@ -62,7 +62,7 @@ export default function CTASection() {
   const isCalendarLoaded = selectedCalendarUrl === BOOKING_URL_KFZ ? iframeLoadedKfz : iframeLoadedOther;
 
   return (
-    <section className="py-24 hero-gradient relative overflow-hidden">
+    <section id="kontakt" className="py-24 hero-gradient relative overflow-hidden scroll-mt-20">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 h-64 w-64 rounded-full bg-background blur-3xl" />
